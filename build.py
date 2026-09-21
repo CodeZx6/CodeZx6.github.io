@@ -353,4 +353,8 @@ urls = [SITE + "/", f"{SITE}/llms.txt", f"{SITE}/publications.bib"] + [paper_url
 open(os.path.join(ROOT, ".gitignore"), "w").write("__pycache__/\n_abstracts_raw.json\n_drafts/\n")
 open(os.path.join(ROOT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{u}</loc><lastmod>{TODAY}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 open(os.path.join(ROOT, ".nojekyll"), "w").write("")
+# IndexNow key file (Bing/Yandex/Naver instant indexing); key stored in .indexnow-key
+kp = os.path.join(ROOT, ".indexnow-key")
+if os.path.exists(kp):
+    k = open(kp).read().strip(); open(os.path.join(ROOT, f"{k}.txt"), "w").write(k)
 print("built", len(PAPERS), "paper pages + index, bib, json, llms.txt, robots.txt, sitemap.xml")
