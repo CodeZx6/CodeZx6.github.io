@@ -21,7 +21,7 @@ Repo: https://github.com/CodeZx6/CodeZx6.github.io (Pages from `main` / root). `
 To update: edit `papers.py` / `enrich.py` → `python3 build.py` → `git add -A && git commit -m "update" && git push`.
 Then verify: https://validator.schema.org/ (paste a paper URL) and https://search.google.com/test/rich-results.
 
-## C. Search-engine + AI-search registration (🔲, ⏱ 20 min)
+## C. Search-engine + AI-search registration (🔲, ⏱ 20 min) — IndexNow (Bing/Yandex/Naver) already submitted ✅; Google and Baidu still need your account
 
 1. **Google Search Console** → add property `codezx6.github.io` (DNS or HTML-file verification) → Sitemaps → submit `sitemap.xml` → URL Inspection → "Request indexing" for `/` and the two speech-paper pages.
 2. **Bing Webmaster Tools** (powers ChatGPT search, Copilot, DuckDuckGo, Perplexity fallback) → import from Google Search Console → submit sitemap → use **IndexNow** for instant indexing.
@@ -50,7 +50,11 @@ Five journal papers are **closed** (KBS 2023, ESWA 2025, TGRS 2024, Neural Netwo
 
 Adding `pdf=` also emits `citation_pdf_url`, which is what Google Scholar needs to show a **[PDF]** link next to your name.
 
-## F. GitHub (🔲, ⏱ 30 min)
+## F. GitHub (✅ mostly done 2026-09-21)
+
+Done by Claude: profile README repo `CodeZx6/CodeZx6`; MCSTL / ST-CSL / MR-UPF / BiST-IF / DSTCN now have DOI + project-page badges, DOI-bearing BibTeX, descriptions, homepage links and topics. IndexNow key hosted on the site and all 14 URLs submitted to Bing/Yandex/Naver (accepted, HTTP 202).
+
+Still yours:
 
 1. Create `CodeZx6/CodeZx6` with the profile README in `templates/README_additions_existing_repos.md` (bottom). Set profile **Website** = homepage.
 2. For MCSTL / ST-CSL / MR-UPF / BiST-IF / DSTCN: paste the badge block, DOI BibTeX, description, website, and **topics** from the same template.
@@ -78,3 +82,16 @@ Adding `pdf=` also emits `citation_pdf_url`, which is what Google Scholar needs 
 - Every new paper: add to `papers.py` → `python3 build.py` → push. Post arXiv first, with ORCID and code link in the submission.
 - Keep one exact title everywhere (arXiv, venue, Scholar, GitHub). Title drift splits citations.
 - Use the method name (DUET, PhysioSER, MCSTL…) consistently in every abstract, README, and post.
+
+
+## J. Ready-to-send texts
+
+**DBLP (email to dblp@dagstuhl.de, subject: "Author page request: Xu Zhang, Macquarie University")**
+
+> Dear dblp team, I am Xu Zhang (ORCID 0000-0002-4143-0715, Macquarie University; homepage https://codezx6.github.io). My publications are currently mixed into a shared "Xu Zhang" profile. Could you please create a dedicated author page for me containing these records: conf/cikm/ZhangGZWZ023, journals/kbs/ZhangGZWGLZD23, journals/eswa/YuZGZSZZY25, journals/tgrs/CaoZCZLD24, journals/eswa/GongYZZNS26, journals/nn/ZhangCGWDGZZ25, journals/peerj-cs/YaoDZLSZ24, journals/tgrs/CaoLZZLDCLD25, journals/corr/abs-2602-13259 (and arXiv:2606.00066 when indexed). Thank you.
+
+**Semantic Scholar (after claiming https://www.semanticscholar.org/author/2260823473, use "Contact us" → Author page merge)**
+
+> Please merge author IDs 2492729361, 2273584640 and 2355676374 into my claimed page 2260823473 (Xu Zhang, ORCID 0000-0002-4143-0715). Also please index arXiv:2606.00066 (DUET), which is missing.
+
+**Google Scholar** → profile → "Edit" → Homepage: https://codezx6.github.io → "Add articles" → search DOI 10.1016/j.array.2026.101124.

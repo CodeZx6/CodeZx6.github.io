@@ -85,17 +85,17 @@ def article_ld(p):
         d["isPartOf"] = {"@type": "Periodical", "name": "arXiv"}
         d["identifier"] = {"@type": "PropertyValue", "propertyID": "arXiv", "value": p["arxiv"]}
     elif p["venue_type"] == "conference":
-        d["isPartOf"] = {"@type": "PublicationEvent", "name": p["venue"]}
+        d["isPartOf"] = {"@type": "Book", "name": p["venue"], "publisher": {"@type": "Organization", "name": p.get("publisher", "")}}
         d["pagination"] = p["pages"]
     else:
         d["isPartOf"] = {"@type": "PublicationVolume", "volumeNumber": p.get("volume", ""), "isPartOf": {"@type": "Periodical", "name": p["venue"], "issn": p.get("issn", "")}}
         d["pagination"] = p.get("pages", "")
     if pdf_url(p): d["encoding"] = {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": pdf_url(p)}
-    if p.get("code"): d["codeRepository"] = p["code"]
+    if p.get("code"): d["subjectOf"] = {"@type": "SoftwareSourceCode", "name": f"{p['short']} code", "codeRepository": p["code"], "programmingLanguage": "Python"}
     if p.get("oa") and "closed" not in p["oa"]: d["isAccessibleForFree"] = True
-    if p.get("aliases"): d["alternativeName"] = [p["short"]] + p["aliases"][:6]
+    alt = [p["short"]] + p.get("aliases", [])[:6] + ([p["zh_title"]] if p.get("zh_title") else [])
+    d["alternateName"] = alt
     d["about"] = [{"@type": "DefinedTerm", "name": k} for k in p["keywords"]]
-    if p.get("zh_title"): d["alternateName"] = p["zh_title"]
     rel = [q for q in PAPERS if q is not p and q.get("group") == p.get("group")]
     if rel: d["citation"] = [{"@type": "ScholarlyArticle", "name": q["title"], "url": paper_url(q)} for q in rel]
     return d
