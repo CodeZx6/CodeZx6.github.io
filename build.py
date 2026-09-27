@@ -5,6 +5,7 @@ Run:  python3 build.py   ->  writes index.html, papers/*.html, publications.bib,
 """
 import json, html, os, re, datetime
 from papers import AUTHOR as A, PAPERS
+from topics import TOPICS, ROWS
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PUBLISH_HOME = False   # False: bio homepage goes to _drafts/home.html (not published); index.html is a bare publication index
@@ -12,7 +13,19 @@ SITE = A["site"].rstrip("/")
 TODAY = datetime.date.today().isoformat()
 ME = A["name"]
 
+_idp = os.path.join(ROOT, "identifiers.json")
+IDS = json.load(open(_idp)) if os.path.exists(_idp) else {}
+PUBLISHERS = {"Expert Systems with Applications": "Elsevier", "Neural Networks": "Elsevier", "Knowledge-Based Systems": "Elsevier",
+              "Array": "Elsevier", "IEEE Transactions on Geoscience and Remote Sensing": "IEEE", "PeerJ Computer Science": "PeerJ"}
+for _p in PAPERS:
+    _p["ids"] = {**IDS.get(_p["key"], {}), **(_p.get("ids") or {})}
+    _p.setdefault("publisher", "ACM" if _p["venue_type"] == "conference" else ("arXiv" if _p["venue_type"] == "preprint" else PUBLISHERS.get(_p["venue"], "")))
+TOPIC_OF = {t["group"]: t for t in TOPICS}
+
 def esc(s): return html.escape(s or "", quote=True)
+def arxiv_html(p): return f"https://arxiv.org/html/{p['arxiv']}" if p.get("arxiv") else None
+def og_url(slug): return f"{SITE}/og/{slug}.png"
+def topic_url(t): return f"{SITE}/topics/{t['slug']}.html"
 def paper_url(p): return f"{SITE}/papers/{p['slug']}.html"
 def doi_url(p): return f"https://doi.org/{p['doi']}" if p.get("doi") else None
 def arxiv_url(p): return f"https://arxiv.org/abs/{p['arxiv']}" if p.get("arxiv") else None
@@ -78,7 +91,9 @@ def article_ld(p):
     d = {"@context": "https://schema.org", "@type": "ScholarlyArticle", "@id": landing(p), "headline": p["title"], "name": p["title"],
          "author": [person_ld(a) for a in p["authors"]], "datePublished": p["date"], "inLanguage": "en",
          "url": paper_url(p), "mainEntityOfPage": paper_url(p), "keywords": ", ".join(p["keywords"]),
-         "description": p["tldr"], "sameAs": [u for u in [doi_url(p), arxiv_url(p)] if u]}
+         "description": p["tldr"], "sameAs": [u for u in [doi_url(p), arxiv_url(p)] + list(p["ids"].values()) if u],
+         "dateModified": TODAY, "image": og_url(p["slug"])}
+    if p.get("publisher"): d["publisher"] = {"@type": "Organization", "name": p["publisher"]}
     if p.get("abstract"): d["abstract"] = p["abstract"]
     if p.get("doi"): d["identifier"] = {"@type": "PropertyValue", "propertyID": "DOI", "value": p["doi"]}
     if p["venue_type"] == "preprint":
@@ -90,7 +105,10 @@ def article_ld(p):
     else:
         d["isPartOf"] = {"@type": "PublicationVolume", "volumeNumber": p.get("volume", ""), "isPartOf": {"@type": "Periodical", "name": p["venue"], "issn": p.get("issn", "")}}
         d["pagination"] = p.get("pages", "")
-    if pdf_url(p): d["encoding"] = {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": pdf_url(p)}
+    enc = []
+    if pdf_url(p): enc.append({"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": pdf_url(p)})
+    if arxiv_html(p): enc.append({"@type": "MediaObject", "encodingFormat": "text/html", "contentUrl": arxiv_html(p)})
+    if enc: d["encoding"] = enc
     if p.get("code"): d["subjectOf"] = {"@type": "SoftwareSourceCode", "name": f"{p['short']} code", "codeRepository": p["code"], "programmingLanguage": "Python"}
     if p.get("oa") and "closed" not in p["oa"]: d["isAccessibleForFree"] = True
     alt = [p["short"]] + p.get("aliases", [])[:6] + ([p["zh_title"]] if p.get("zh_title") else [])
@@ -122,6 +140,8 @@ def scholar_meta(p):
     if p.get("arxiv"): m.append(("citation_arxiv_id", p["arxiv"]))
     if p.get("pmid"): m.append(("citation_pmid", p["pmid"]))
     if pdf_url(p): m.append(("citation_pdf_url", pdf_url(p)))
+    if arxiv_html(p): m.append(("citation_fulltext_html_url", arxiv_html(p)))
+    if p.get("publisher"): m.append(("citation_publisher", p["publisher"]))
     m.append(("citation_abstract_html_url", paper_url(p)))
     m.append(("citation_language", "en"))
     m += [("citation_keywords", k) for k in p["keywords"]]
@@ -152,7 +172,9 @@ button.copy{font:inherit;font-size:.85rem;padding:4px 10px;border:1px solid var(
 .me{font-weight:700}ul{padding-left:1.2em}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:640px){.grid{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
 footer{margin-top:48px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:16px}
-nav a{margin-right:16px}
+nav a{margin-right:16px;display:inline-block}.idx{font-size:.88rem}
+.cmp{border-collapse:collapse;width:100%;font-size:.9rem}.cmp th,.cmp td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid var(--line)}.cmp th{color:var(--muted)}
+@media (max-width:640px){.cmp thead{display:none}.cmp tr{display:block;border-bottom:1px solid var(--line);padding:8px 0}.cmp td{display:block;border:none;padding:2px 0}.cmp td:before{content:attr(data-l)": ";color:var(--muted);font-weight:600}}
 .facts{border-collapse:collapse;width:100%;table-layout:fixed;font-size:.95rem}.facts th,.facts td{text-align:left;vertical-align:top;padding:6px 8px;border-bottom:1px solid var(--line)}.facts th{width:32%;color:var(--muted);font-weight:600}
 """
 
@@ -160,14 +182,18 @@ COPY_JS = """<script>
 document.querySelectorAll('button.copy').forEach(b=>b.addEventListener('click',()=>{const t=document.getElementById(b.dataset.for).innerText;navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent=b.dataset.label,1500)})}));
 </script>"""
 
-def head(title, desc, url, ld, extra="", extra_ld=""):
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
+def head(title, desc, url, ld, extra="", extra_ld="", image=None, alternates=(), lang="en", og_type="article"):
+    image = image or og_url("index")
+    alt = "".join(f'<link rel="alternate" hreflang="{h}" href="{u}">' for h, u in alternates)
+    return f"""<!doctype html><html lang="{lang}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
-<link rel="canonical" href="{url}">
-<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}"><meta property="og:type" content="article">
-<meta name="twitter:card" content="summary">
+<link rel="canonical" href="{url}">{alt}
+<link rel="alternate" type="application/atom+xml" title="Publications of {esc(ME)}" href="{SITE}/feed.xml">
+<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}"><meta property="og:type" content="{og_type}">
+<meta property="og:image" content="{image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{esc(title)}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{image}">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 {extra}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>{extra_ld}
@@ -189,6 +215,7 @@ def link_row(p, small=False):
     if doi_url(p): L.append(("DOI", doi_url(p)))
     if arxiv_url(p): L.append(("arXiv", arxiv_url(p)))
     if pdf_url(p): L.append(("PDF", pdf_url(p)))
+    if arxiv_html(p): L.append(("HTML full text", arxiv_html(p)))
     if p.get("code"): L.append(("Code", p["code"]))
     for k, v in (p.get("links") or {}).items(): L.append((k, v))
     if p.get("pmcid"): L.append(("PMC", f"https://pmc.ncbi.nlm.nih.gov/articles/{p['pmcid']}/"))
@@ -205,11 +232,18 @@ for p in PAPERS:
     lab = "" if p["title"].lower().startswith(p["short"].lower()) else f"{p['short']}: "
     page_title = f"{lab}{p['title']} ({vs}) | {ME}"
     desc = f"{p['short']} by {', '.join(p['authors'])} ({vs}). {p['tldr']}"
-    body = head(page_title, desc, paper_url(p), ld, scholar_meta(p), f'<script type="application/ld+json">{json.dumps(fld, ensure_ascii=False)}</script>')
-    body += f'<nav><a href="../">All publications</a><a href="../publications.bib">BibTeX (all)</a><a href="{p["slug"]}.bib">BibTeX (this paper)</a></nav>'
+    _tp = TOPIC_OF.get(p.get("group"))
+    _crumbs = [("Publications", SITE + "/")] + ([(_tp["short"], topic_url(_tp))] if _tp else []) + [(p["short"], paper_url(p))]
+    bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(_crumbs)]}
+    body = head(page_title, desc, paper_url(p), ld, scholar_meta(p),
+                f'<script type="application/ld+json">{json.dumps(fld, ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(bc, ensure_ascii=False)}</script>',
+                image=og_url(p["slug"]))
+    tl = f'<a href="../topics/{_tp["slug"]}.html">Topic: {esc(_tp["short"])}</a>' if _tp else ""
+    body += f'<nav><a href="../">All publications</a>{tl}<a href="../publications.bib">BibTeX (all)</a><a href="{p["slug"]}.bib">BibTeX (this paper)</a><a href="../zh/">中文</a></nav>'
     body += f"<h1>{esc(p['title'])}</h1><p class=\"sub\">{authors_html(p)}</p><p class=\"sub\">{esc(venue_line(p))}"
     if p.get("oa") and "closed" not in p["oa"]: body += f" · Open access ({esc(p['oa'])})"
     body += "</p>" + link_row(p)
+    if p["ids"]: body += '<p class="sub idx">Also indexed in: ' + " · ".join(f'<a href="{esc(u)}" rel="noopener">{esc(k)}</a>' for k, u in p["ids"].items()) + "</p>"
     body += f'<div class="tldr"><strong>TL;DR.</strong> {esc(p["tldr"])}</div>'
     # quick facts (entity statements that retrieval systems can quote directly)
     body += "<h2>Quick facts</h2><table class=\"facts\">"
@@ -282,9 +316,11 @@ else:
     open(os.path.join(ROOT, "_drafts", "home.html"), "w").write(b)
     person_min = {"@context": "https://schema.org", "@type": "Person", "@id": f"{SITE}/#me", "name": ME, "url": SITE, "affiliation": {"@type": "Organization", "name": A["affiliation"]}, "sameAs": person["sameAs"]}
     ld2 = [person_min, index_ld[2]]
-    b2 = head(f"Publications — {ME}", f"Publications by {ME} ({A['affiliation']}) with abstracts, DOIs, arXiv links, code, and BibTeX.", SITE + "/", ld2)
+    b2 = head(f"Publications — {ME}", f"Publications by {ME} ({A['affiliation']}) with abstracts, DOIs, arXiv links, code, and BibTeX.", SITE + "/", ld2,
+              alternates=[("en", SITE + "/"), ("zh-CN", SITE + "/zh/"), ("x-default", SITE + "/")], og_type="website")
     b2 += f"""<h1>Publications — {esc(ME)}</h1><p class="sub">{esc(A['affiliation'])} · <a href="{A['scholar']}">Google Scholar</a> · <a href="{A['orcid']}">ORCID 0000-0002-4143-0715</a> · <a href="{A['github']}">GitHub</a> · <a href="publications.bib">BibTeX (all)</a> · <a href="publications.json">JSON</a> · <a href="llms.txt">llms.txt</a></p>
-<p class="sub">Each paper has its own page with a plain-language summary, quick facts, abstract, FAQ, Chinese summary, related search terms, and copyable BibTeX and APA citations.</p>"""
+<p class="sub">Each paper has its own page with a plain-language summary, quick facts, abstract, FAQ, Chinese summary, related search terms, and copyable BibTeX and APA citations. <a href="zh/">中文版</a></p>
+<h2>Topics</h2><ul>""" + "".join(f'<li><a href="topics/{t["slug"]}.html">{esc(t["title"])}</a></li>' for t in TOPICS) + "</ul>"
     year = None
     for p in PAPERS:
         if p["year"] != year:
@@ -311,6 +347,8 @@ for p in PAPERS:
     ids = " · ".join(x for x in [f"DOI {p['doi']}" if p.get("doi") else "", f"arXiv:{p['arxiv']}" if p.get("arxiv") else ""] if x)
     lab = "" if p["title"].lower().startswith(p["short"].lower()) else f"{p['short']}: "
     llms += f"- [{lab}{p['title']}]({paper_url(p)}): {', '.join(p['authors'])}. {venue_line(p)}. {ids}. {p['tldr']} Also known as: {'; '.join(p.get('aliases', [])[:5])}.\n"
+llms += "\n## Topic overviews\n\n" + "".join(f"- [{t['title']}]({topic_url(t)}): {t['intro'][0]}\n" for t in TOPICS)
+llms += f"- [中文论文列表]({SITE}/zh/): Chinese titles and summaries of every paper\n"
 llms += f"""
 ## Code
 
@@ -346,10 +384,116 @@ for p in PAPERS:
     full += f"BibTeX:\n```bibtex\n{bibtex(p)}\n```\n\nAPA: {apa(p)}\n\n---\n\n"
 open(os.path.join(ROOT, "llms-full.txt"), "w").write(full)
 
+# ---------- topic hub pages ----------
+os.makedirs(os.path.join(ROOT, "topics"), exist_ok=True)
+for t in TOPICS:
+    mem = [p for p in PAPERS if p.get("group") == t["group"]]
+    fq = list(t.get("faq", []))
+    ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": t["title"], "url": topic_url(t), "description": t["intro"][0],
+           "inLanguage": "en", "author": {"@id": f"{SITE}/#me", "@type": "Person", "name": ME}, "image": og_url("topic-" + t["slug"]),
+           "about": [{"@type": "Thing", "name": t["short"]}],
+           "hasPart": [{"@type": "ScholarlyArticle", "name": p["title"], "url": paper_url(p), "sameAs": landing(p)} for p in mem]},
+          {"@context": "https://schema.org", "@type": "ItemList", "name": t["title"], "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": paper_url(p), "name": p["title"]} for i, p in enumerate(mem)]}]
+    if fq: ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in fq]})
+    ld.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Publications", "item": SITE + "/"}, {"@type": "ListItem", "position": 2, "name": t["short"], "item": topic_url(t)}]})
+    b = head(f"{t['title']} | {ME}", t["intro"][0][:300], topic_url(t), ld[0],
+             extra_ld="".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld[1:]),
+             image=og_url("topic-" + t["slug"]), og_type="website")
+    b += f'<nav><a href="../">All publications</a><a href="../zh/">中文</a></nav><h1>{esc(t["title"])}</h1>'
+    b += "".join(f"<p>{esc(x)}</p>" for x in t["intro"])
+    b += '<h2>Papers compared</h2><table class="cmp"><thead><tr><th>Method</th><th>Published</th><th>Core idea</th><th>Evaluation</th><th>Code</th></tr></thead><tbody>'
+    for p in mem:
+        idea, ev = ROWS.get(p["key"], ("", ""))
+        code = f'<a href="{p["code"]}">GitHub</a>' if p.get("code") else "—"
+        b += f'<tr><td data-l="Method"><a href="../papers/{p["slug"]}.html"><strong>{esc(p["short"])}</strong></a></td><td data-l="Published">{esc(venue_line(p))}</td><td data-l="Core idea">{esc(idea)}</td><td data-l="Evaluation">{esc(ev)}</td><td data-l="Code">{code}</td></tr>'
+    b += "</tbody></table>"
+    for p in mem:
+        b += f'<h2 id="{p["slug"]}"><a href="../papers/{p["slug"]}.html">{esc(p["short"])}: {esc(p["title"])}</a></h2><p class="sub">{authors_html(p)} · {esc(venue_line(p))}</p><p>{esc(p["tldr"])}</p>'
+        if p.get("findings"): b += "<ul>" + "".join(f"<li>{esc(f)}</li>" for f in p["findings"][:4]) + "</ul>"
+        b += link_row(p, small=True)
+    if fq: b += "<h2>Frequently asked questions</h2>" + "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in fq)
+    b += f'<section lang="zh-CN"><h2>中文概述</h2><h3>{esc(t["zh_title"])}</h3><p>{esc(t["zh_intro"])}</p></section>'
+    b += "<h2>Cite these papers</h2><pre><code>" + esc("\n\n".join(bibtex(p) for p in mem)) + "</code></pre>"
+    b += f'<footer><a href="../">Publications of {esc(ME)}</a> · <a href="{A["orcid"]}">ORCID</a> · <a href="{A["scholar"]}">Google Scholar</a> · Last updated {TODAY}</footer></main></body></html>'
+    open(os.path.join(ROOT, "topics", f"{t['slug']}.html"), "w").write(b)
+
+# ---------- Chinese publication index ----------
+os.makedirs(os.path.join(ROOT, "zh"), exist_ok=True)
+zh_ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "张旭（Xu Zhang）论文列表", "url": SITE + "/zh/", "inLanguage": "zh-CN",
+         "author": {"@type": "Person", "@id": f"{SITE}/#me", "name": ME, "alternateName": "张旭", "sameAs": [A["orcid"], A["scholar"], A["github"]]},
+         "hasPart": [{"@type": "ScholarlyArticle", "name": p["title"], "alternateName": p.get("zh_title") or p["title"], "url": paper_url(p)} for p in PAPERS]}
+z = head("张旭（Xu Zhang，麦考瑞大学）论文列表：语音情感识别、情感语音合成、城市流量与 OD 预测、高光谱图像分类",
+         "张旭（Xu Zhang，麦考瑞大学计算机学院）的论文中文索引：每篇论文的中文标题、中文摘要、DOI/arXiv、代码与 BibTeX 引用。",
+         SITE + "/zh/", zh_ld, image=og_url("index"), alternates=[("en", SITE + "/"), ("zh-CN", SITE + "/zh/"), ("x-default", SITE + "/")], lang="zh-CN", og_type="website")
+z += f'<nav><a href="../">English</a><a href="../publications.bib">BibTeX</a></nav><h1>张旭（Xu Zhang）论文列表</h1><p class="sub">麦考瑞大学计算机学院（School of Computing, Macquarie University）· <a href="{A["orcid"]}">ORCID 0000-0002-4143-0715</a> · <a href="{A["scholar"]}">Google Scholar</a> · <a href="{A["github"]}">GitHub</a></p>'
+z += "<h2>研究主题</h2><ul>" + "".join(f'<li><a href="../topics/{t["slug"]}.html">{esc(t["zh_title"])}</a>：{esc(t["zh_intro"])}</li>' for t in TOPICS) + "</ul>"
+year = None
+for p in PAPERS:
+    if p["year"] != year:
+        year = p["year"]; z += f"<h2>{year} 年</h2>"
+    z += f'<div class="paper"><div class="t"><a href="../papers/{p["slug"]}.html">{esc(p.get("zh_title") or p["title"])}</a></div><div class="a" lang="en">{esc(p["title"])}</div><div class="v">{authors_html(p)} · {esc(venue_line(p))}</div>'
+    if p.get("zh_summary"): z += f'<p style="margin:6px 0">{esc(p["zh_summary"])}</p>'
+    if p.get("zh_keywords"): z += '<p class="sub">关键词：' + esc("；".join(p["zh_keywords"])) + "</p>"
+    z += link_row(p, small=True) + "</div>"
+z += f'<footer><a href="../">English version</a> · <a href="{A["orcid"]}">ORCID</a> · <a href="{A["scholar"]}">Google Scholar</a> · 更新于 {TODAY}</footer></main></body></html>'
+open(os.path.join(ROOT, "zh", "index.html"), "w").write(z)
+
+# ---------- Atom feed ----------
+def _x(s): return html.escape(s or "", quote=True)
+feed = f'<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n<title>Publications of {_x(ME)}</title>\n<link href="{SITE}/feed.xml" rel="self"/>\n<link href="{SITE}/"/>\n<id>{SITE}/</id>\n<updated>{TODAY}T00:00:00Z</updated>\n<author><name>{_x(ME)}</name><uri>{A["orcid"]}</uri></author>\n'
+for p in sorted(PAPERS, key=lambda q: q["date"], reverse=True):
+    feed += f'<entry><title>{_x(p["title"])}</title><link href="{paper_url(p)}"/><id>{paper_url(p)}</id><published>{p["date"]}T00:00:00Z</published><updated>{TODAY}T00:00:00Z</updated>'
+    feed += "".join(f"<author><name>{_x(a)}</name></author>" for a in p["authors"])
+    feed += f'<summary>{_x(p["tldr"])}</summary>' + "".join(f'<category term="{_x(k)}"/>' for k in p["keywords"][:6]) + "</entry>\n"
+open(os.path.join(ROOT, "feed.xml"), "w").write(feed + "</feed>\n")
+
+# ---------- social preview images (1200x630) ----------
+def _og_images():
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        print("PIL missing: og images skipped"); return
+    os.makedirs(os.path.join(ROOT, "og"), exist_ok=True)
+    F = "/System/Library/Fonts/HelveticaNeue.ttc"
+    def font(sz, bold):
+        try: return ImageFont.truetype(F, sz, index=1 if bold else 0)
+        except Exception: return ImageFont.load_default()
+    def wrap(d, text, f, width):
+        lines, cur = [], ""
+        for w in text.split():
+            t = (cur + " " + w).strip()
+            if d.textlength(t, font=f) <= width: cur = t
+            else: lines.append(cur); cur = w
+        return lines + ([cur] if cur else [])
+    def card(name, kicker, big, title, foot):
+        im = Image.new("RGB", (1200, 630), (251, 250, 247)); d = ImageDraw.Draw(im)
+        d.rectangle([0, 0, 18, 630], fill=(11, 95, 165))
+        d.text((80, 64), kicker, font=font(30, False), fill=(95, 91, 83))
+        sz = 84
+        while sz > 44 and d.textlength(big, font=font(sz, True)) > 1040: sz -= 4
+        d.text((80, 118 + (84 - sz) // 2), big, font=font(sz, True), fill=(28, 27, 25))
+        ft = font(40, False); y = 250
+        lines = wrap(d, title, ft, 1040)
+        if len(lines) > 5: lines = lines[:5]; lines[-1] = lines[-1] + " …"
+        for ln in lines:
+            d.text((80, y), ln, font=ft, fill=(28, 27, 25)); y += 54
+        d.line([80, 540, 1120, 540], fill=(228, 224, 216), width=2)
+        d.text((80, 560), foot, font=font(28, False), fill=(11, 95, 165))
+        im.save(os.path.join(ROOT, "og", name + ".png"), optimize=True)
+    for p in PAPERS:
+        vs = p.get("venue_short") or (p["venue"] if p["venue_type"] != "preprint" else f"arXiv:{p['arxiv']}")
+        big = p["short"]
+        foot = "codezx6.github.io · " + ", ".join(p["authors"][:3]) + (" et al." if len(p["authors"]) > 3 else "")
+        card(p["slug"], f"{vs} · {p['year']}" if str(p["year"]) not in vs else vs, big, p["title"], foot)
+    for t in TOPICS:
+        card("topic-" + t["slug"], "Topic overview", t["short"], t["title"], "codezx6.github.io · Xu Zhang, Macquarie University")
+    card("index", "Macquarie University · School of Computing", "Xu Zhang", "Publications: speech emotion recognition, emotional TTS, urban flow and OD prediction, hyperspectral image classification", "codezx6.github.io")
+_og_images()
+
 # ---------- robots / sitemap ----------
 bots = ["*", "Googlebot", "Bingbot", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "anthropic-ai", "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot", "Applebot-Extended", "CCBot", "cohere-ai", "Meta-ExternalAgent", "Bytespider", "DuckAssistBot", "YouBot", "Amazonbot", "PetalBot", "Baiduspider", "Sogou web spider", "360Spider", "YisouSpider"]
 open(os.path.join(ROOT, "robots.txt"), "w").write("".join(f"User-agent: {u}\nAllow: /\n\n" for u in bots) + f"Sitemap: {SITE}/sitemap.xml\n")
-urls = [SITE + "/", f"{SITE}/llms.txt", f"{SITE}/publications.bib"] + [paper_url(p) for p in PAPERS]
+urls = [SITE + "/", SITE + "/zh/", f"{SITE}/llms.txt", f"{SITE}/publications.bib"] + [topic_url(t) for t in TOPICS] + [paper_url(p) for p in PAPERS]
 # merge (never overwrite) .gitignore so private files stay out of the public repo
 _gi = os.path.join(ROOT, ".gitignore")
 _have = open(_gi).read().split("\n") if os.path.exists(_gi) else []
@@ -361,4 +505,4 @@ open(os.path.join(ROOT, ".nojekyll"), "w").write("")
 kp = os.path.join(ROOT, ".indexnow-key")
 if os.path.exists(kp):
     k = open(kp).read().strip(); open(os.path.join(ROOT, f"{k}.txt"), "w").write(k)
-print("built", len(PAPERS), "paper pages + index, bib, json, llms.txt, robots.txt, sitemap.xml")
+print("built", len(PAPERS), "paper pages,", len(TOPICS), "topic hubs, zh index, feed, og images, bib, json, llms.txt, robots.txt, sitemap.xml")

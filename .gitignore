@@ -4,3 +4,10 @@ _drafts/
 templates/
 CHECKLIST.md
 *.pyc
+build.py
+papers.py
+enrich.py
+topics.py
+identifiers.json
+README.md
+.indexnow-key
