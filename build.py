@@ -350,7 +350,11 @@ open(os.path.join(ROOT, "llms-full.txt"), "w").write(full)
 bots = ["*", "Googlebot", "Bingbot", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "anthropic-ai", "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot", "Applebot-Extended", "CCBot", "cohere-ai", "Meta-ExternalAgent", "Bytespider", "DuckAssistBot", "YouBot", "Amazonbot", "PetalBot", "Baiduspider", "Sogou web spider", "360Spider", "YisouSpider"]
 open(os.path.join(ROOT, "robots.txt"), "w").write("".join(f"User-agent: {u}\nAllow: /\n\n" for u in bots) + f"Sitemap: {SITE}/sitemap.xml\n")
 urls = [SITE + "/", f"{SITE}/llms.txt", f"{SITE}/publications.bib"] + [paper_url(p) for p in PAPERS]
-open(os.path.join(ROOT, ".gitignore"), "w").write("__pycache__/\n_abstracts_raw.json\n_drafts/\n")
+# merge (never overwrite) .gitignore so private files stay out of the public repo
+_gi = os.path.join(ROOT, ".gitignore")
+_have = open(_gi).read().split("\n") if os.path.exists(_gi) else []
+_need = ["__pycache__/", "_abstracts_raw.json", "_drafts/", "templates/", "CHECKLIST.md", "*.pyc"]
+open(_gi, "w").write("\n".join([x for x in _have if x] + [x for x in _need if x not in _have]) + "\n")
 open(os.path.join(ROOT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{u}</loc><lastmod>{TODAY}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 open(os.path.join(ROOT, ".nojekyll"), "w").write("")
 # IndexNow key file (Bing/Yandex/Naver instant indexing); key stored in .indexnow-key

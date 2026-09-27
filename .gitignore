@@ -1,3 +1,6 @@
 __pycache__/
 _abstracts_raw.json
 _drafts/
+templates/
+CHECKLIST.md
+*.pyc
