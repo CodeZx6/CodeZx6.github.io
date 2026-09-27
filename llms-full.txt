@@ -10,6 +10,7 @@ Preferred citation: the BibTeX on each paper page or at https://codezx6.github.i
 - [Urban flow prediction with masked and contrastive spatio-temporal pre-training](https://codezx6.github.io/topics/urban-flow-prediction.html): Urban flow prediction forecasts future flows across city regions from historical flow data and supports services such as trip planning, congestion control, and public safety. Three papers (Zhang et al., CIKM 2023; Zhang et al., Knowledge-Based Systems 2023; Zhang et al., Neural Networks 2025) develop self-supervised spatio-temporal pre-training for this task.
 - [Origin-destination (OD) flow and demand prediction for metro and taxi systems](https://codezx6.github.io/topics/origin-destination-prediction.html): Origin-destination (OD) prediction forecasts the flow or demand between pairs of stations or regions, which supports real-time traffic management, vehicle dispatch, and resource allocation in intelligent transportation systems. Two papers (Yu et al., Expert Systems with Applications 2025; Gong et al., Expert Systems with Applications 2026) study this problem on metro and taxi data.
 - [Hyperspectral image classification: cross-domain few-shot learning and superpixel mutual enhancement](https://codezx6.github.io/topics/hyperspectral-image-classification.html): Two IEEE Transactions on Geoscience and Remote Sensing papers (Cao et al., 2024; Cao et al., 2025) study hyperspectral image (HSI) classification.
+- [Research area map](https://codezx6.github.io/areas.html): fields, tasks, datasets and models mapped to papers
 - [中文论文索引](https://codezx6.github.io/zh/): Chinese titles and summaries of every paper
 
 ## Papers
@@ -50,6 +51,17 @@ Page: https://codezx6.github.io/papers/duet.html
 Keywords: emotional text-to-speech, emotion control, diffusion-based TTS, flow-matching TTS, representation steering, classifier guidance, differentiable vocoder, humanoid robot
 
 TL;DR: DUET adds emotion control to frozen diffusion and flow-matching TTS models by steering hidden states along a linearly decodable emotion direction and refining the mel estimate with emotion-recognizer gradients passed through a differentiable vocoder. With GradTTS on ESD it reaches 75.5% average emotion accuracy (strongest supervised baseline: 46.8%).
+
+Task: emotional text-to-speech; emotional speech synthesis; expressive speech synthesis; emotion-controllable TTS; controllable speech synthesis; affective speech generation; training-free emotion control
+Method: activation steering; representation steering; steering vectors for TTS; inference-time intervention; classifier guidance for speech; linear probing of hidden states; emotion direction in hidden states; speaker-emotion disentanglement
+Models used or compared: F5-TTS; Matcha-TTS; Grad-TTS; ProDiff; StableTTS; Vocos vocoder; emotion2vec; Qwen3-TTS; CosyVoice2; EmoKnob; EmoSphere++; IndexTTS2
+Datasets: ESD (Emotional Speech Dataset); CREMA-D; IEMOCAP
+中文: 情感语音合成; 情感可控语音合成; 表现力语音合成; 可控语音合成; 表征引导; 推理时干预; 扩散模型语音合成; 流匹配语音合成; 人形机器人语音
+Fields (broad to narrow): artificial intelligence; machine learning; deep learning; speech and audio processing; spoken language technology; generative AI; speech synthesis; text-to-speech (TTS); expressive TTS; emotional TTS; emotion control in TTS; training-free emotion steering
+Related areas: affective computing; human-robot interaction; social robotics; embodied AI; conversational agents; voice assistants; digital humans; controllable generation; representation engineering; mechanistic interpretability; diffusion models; flow matching; score-based generative models; neural vocoders; mel spectrogram; prosody modeling; speaking style control; zero-shot TTS; voice cloning; emotional voice conversion; speech emotion recognition
+Applications: expressive humanoid robots; empathetic dialogue systems; audiobook narration; game and virtual character voices; assistive speech
+Related benchmarks (not used in this paper): EmoV-DB; RAVDESS; MSP-Podcast; LibriTTS; VCTK; LJSpeech
+中文 (扩展): 语音合成; 文本转语音; TTS; 情感TTS; 情绪语音合成; 风格可控语音合成; 韵律控制; 扩散模型; 流匹配; 声码器; 梅尔频谱; 表征工程; 可解释性; 情感计算; 人机交互; 社交机器人; 具身智能; 数字人; 零样本语音合成; 情感语音转换
 
 Task: Emotion control for pretrained diffusion and flow-matching text-to-speech models, with the TTS backbone kept frozen (no retraining)
 Full name: DUET = unified DUal-space Emotion conTrol
@@ -130,6 +142,17 @@ Keywords: speech emotion recognition, physiology-informed vocal representation, 
 
 TL;DR: PhysioSER complements a frozen self-supervised (SSL) backbone with a compact physiology-informed branch that encodes vocal amplitude and phase features with quaternion convolutions, for speech emotion recognition. With frozen WavLM on CREMA-D, it raises weighted accuracy from 69.69% to 75.20%.
 
+Task: speech emotion recognition (SER); emotion recognition from speech; vocal emotion recognition; multilingual speech emotion recognition; paralinguistic analysis; affective computing
+Method: phase-aware speech features; group delay; instantaneous frequency; spectral flux; quaternion convolution; quaternion neural networks; frozen self-supervised speech representations; InfoNCE contrastive alignment; interpretable speech emotion recognition; parameter-efficient SER
+Models used: wav2vec 2.0; HuBERT; WavLM; emotion2vec; BEATs; CLAP audio encoder
+Datasets: CREMA-D; RAVDESS; EmoV-DB; JL-Corpus; EMNS; RESD; nEMO; AESDD; Emozionalmente; Oréau; MESD; SUBESCO; PAVOQUE; CaFE
+中文: 语音情感识别; 语音情绪识别; 相位特征; 群延迟; 瞬时频率; 四元数卷积; 自监督语音表征; 多语言语音情感识别; 情感计算
+Fields (broad to narrow): artificial intelligence; machine learning; deep learning; speech and audio processing; spoken language technology; paralinguistics; affective computing; speech emotion recognition (SER); physiology-informed SER
+Related areas: emotion recognition; multimodal emotion recognition; audio classification; speech representation learning; self-supervised learning; foundation models for audio; voice physiology; vocal tract and glottal source; signal processing; time-frequency analysis; short-time Fourier transform (STFT); hypercomplex neural networks; interpretable machine learning; cross-lingual transfer; human-robot interaction; social robotics; mental health assessment
+Applications: emotion-aware humanoid robots; call-centre analytics; psychological assessment support; human-computer interaction; voice assistants
+Related benchmarks (not used in this paper): IEMOCAP; MSP-Podcast; ESD; TESS; SAVEE; EmoDB; CASIA
+中文 (扩展): 情感识别; 语音情绪分类; 副语言信息; 语音表征学习; 自监督学习; 音频基础模型; 发声生理; 声道; 声门; 短时傅里叶变换; 时频分析; 超复数神经网络; 可解释机器学习; 跨语言迁移; 人机交互; 心理健康评估
+
 Task: Utterance-level speech emotion recognition (SER), motivated by humanoid-robot uses such as social interaction and robotic psychological diagnosis
 Architecture: Compact plug-and-play physiology-informed branch running in parallel with a frozen self-supervised (SSL) backbone; CPA aligns the two, and a shallow attention fusion head classifies
 Inputs: Raw waveform for the SSL branch; for the physiology branch, an STFT-derived quartet: log-magnitude M, log-magnitude rate ρ (spectral flux), instantaneous frequency f_inst, group delay τ_g
@@ -208,6 +231,17 @@ Page: https://codezx6.github.io/papers/dstcn.html
 Keywords: origin-destination demand prediction, spatio-temporal modeling, Transformer, graph neural network, intelligent transportation systems, OD demand matrix, spatio-temporal correlation
 
 TL;DR: DSTCN (Dynamic Spatio-Temporal Correlation Network) forecasts origin-destination demand matrices with three modules: Glstm2D for origin- and destination-side demand trends, Simformer for Transformer-based spatial similarity across the OD matrix, and FF-TM for feature fusion and temporal modeling. On NYC-TOD2018 its MAE of 1.469 is 3.04% below the best baseline.
+
+Task: origin-destination (OD) demand prediction; OD matrix forecasting; travel demand forecasting; taxi demand prediction; metro passenger flow prediction; spatio-temporal forecasting
+Method: BiLSTM; spatio-temporal graph learning; Transformer spatial similarity; GRU; temporal convolution; graph neural network for OD prediction
+Datasets: NYC-TOD2018; NYC-TOD2019; HZMetro (Hangzhou metro); NYC yellow taxi
+Compared with: GEML; MPGCN; HMOD; CMOD; STGCN; STSGCN; DGCN; STTN; TGCRN
+中文: OD 需求预测; 起讫点需求预测; OD 矩阵预测; 出行需求预测; 出租车需求预测; 地铁客流预测; 时空图学习
+Fields (broad to narrow): artificial intelligence; machine learning; data mining; spatio-temporal data mining; time series forecasting; intelligent transportation systems; smart cities; urban computing; traffic prediction; travel demand forecasting; origin-destination (OD) demand prediction; dynamic spatio-temporal correlation modeling
+Related areas: travel demand modeling; public transit analytics; metro systems; ride-hailing demand; taxi demand; mobility on demand; spatio-temporal graph neural networks; Transformers for spatio-temporal data; graph structure learning; bidirectional LSTM; temporal convolutional networks; external factors
+Applications: real-time traffic management; dynamic vehicle dispatch; fleet management; resource allocation; transport planning
+Related benchmarks (not used in this paper): SHMetro; NYC Citi Bike OD; Chicago taxi OD; Beijing subway
+中文 (扩展): 出行需求预测; OD 需求; 起讫点矩阵; 客流预测; 网约车需求预测; 出租车调度; 车辆调度; 车队管理; 时空图神经网络; 图结构学习; 双向LSTM; 时序卷积网络
 
 Task: Origin-destination (OD) demand prediction: forecasting the N x N matrix of passengers travelling from each region to every other region in upcoming time intervals
 Method components: Glstm2D (D-Glstm and O-Glstm: BiLSTM plus spatio-temporal graph learning), Simformer (Transformer-based spatial similarity module), FF-TM (feature fusion, GRU, multi-head temporal convolution)
@@ -288,6 +322,16 @@ Keywords: hyperspectral image classification, superpixel segmentation, feature f
 
 TL;DR: S²CMEN (S2CMEN) is a hyperspectral image classification network in which superpixel segmentation and classification enhance each other through a unified loss, combining superpixel-based global spatial context with Spectral-Swin Transformer spectral features. It reaches 97.38% overall accuracy on Indian Pines.
 
+Task: hyperspectral image classification; HSI classification; superpixel segmentation; remote sensing image classification
+Method: superpixel-based classification; graph convolutional network (GCN); Swin Transformer; spatial-spectral fusion; global spatial context; multi-task mutual enhancement
+Datasets: Indian Pines; Pavia University; Houston
+中文: 高光谱图像分类; 高光谱遥感; 超像素分割; 图卷积网络; 空谱融合; 遥感图像分类
+Fields (broad to narrow): artificial intelligence; computer vision; remote sensing; Earth observation; hyperspectral imaging; hyperspectral image classification; superpixel-based HSI classification; joint segmentation and classification
+Related areas: image segmentation; superpixels (SLIC); graph neural networks; graph convolutional networks; Vision Transformers; Swin Transformer; multi-task learning; spectral-spatial feature fusion; global context modeling; land cover classification
+Applications: land-cover mapping; precision agriculture; environmental monitoring; urban mapping; geological survey
+Related benchmarks (not used in this paper): Salinas; Pavia Centre; Kennedy Space Center (KSC); Botswana; WHU-Hi; Chikusei
+中文 (扩展): 遥感; 对地观测; 高光谱成像; 图像分割; 超像素; 图神经网络; 视觉Transformer; 多任务学习; 空谱特征融合; 全局上下文建模; 地物分类; 土地覆盖制图
+
 Task: Hyperspectral image (HSI) classification
 Core idea: Superpixel segmentation and classification enhance each other; the two branches are jointly optimized via a unified loss (the abstract calls it a unit loss)
 GSAM: Global spatial adaptive module: an adaptive spectral-superpixel network (ASSN) plus a graph convolutional network (GCN) that captures global spatial dependencies by adaptively deriving superpixels
@@ -363,6 +407,17 @@ Page: https://codezx6.github.io/papers/mr-ufp.html
 Keywords: urban flow prediction, mutual reinforcement, multi-scale region information, spatial–temporal systems, spatial-temporal random masking, contrastive pre-training, multi-scale region classification, intelligent transportation systems
 
 TL;DR: MR-UFP predicts the inflow and outflow of city grid regions, even with limited training data, by pre-training encoders with spatial-temporal masking and contrastive learning and training flow prediction jointly with a multi-scale region-classification task. On full TaxiBJ and BikeNYC it beats all 13 baselines (RMSE 14.32 and 4.45).
+
+Task: urban flow prediction; crowd flow prediction; inflow and outflow prediction; traffic prediction with limited data; spatio-temporal forecasting
+Method: multi-task learning; auxiliary region classification task; multi-scale region information; masked pre-training; spatial-temporal contrastive pre-training; environment feature fusion; attention-derived graph; GCN
+Datasets: TaxiBJ; BikeNYC
+Compared with: ST-ResNet; ATFM; AGCRN; STGCN; PDFormer; STAEformer; DeepMeshCity; MC-STL; ST-FCL
+中文: 城市流量预测; 人群流量预测; 交通流量预测; 多任务学习; 多尺度区域; 掩码预训练; 对比预训练
+Fields (broad to narrow): artificial intelligence; machine learning; data mining; spatio-temporal data mining; time series forecasting; intelligent transportation systems; smart cities; urban computing; traffic prediction; crowd flow prediction; urban flow prediction; multi-task spatio-temporal learning
+Related areas: traffic forecasting; multi-task learning; auxiliary learning; urban region profiling; region representation learning; text-enhanced spatio-temporal modeling; self-supervised learning; masked pre-training; contrastive learning; spatio-temporal graph neural networks; data-efficient learning; external factors (weather, holidays)
+Applications: traffic management; resource allocation; route optimization; urban planning; bike-sharing operations
+Related benchmarks (not used in this paper): TaxiNYC; BikeDC; PEMS-BAY; METR-LA; PeMS04; PeMS08
+中文 (扩展): 交通预测; 时空数据挖掘; 智能交通; 智慧城市; 城市计算; 多任务学习; 辅助任务学习; 区域画像; 区域表征学习; 数据高效学习; 天气与节假日外部因素; 路径优化; 资源分配
 
 Task: Urban flow prediction: forecasting the inflow and outflow of each grid region in a city, a key component of intelligent transportation systems
 Pre-training: EncM, a ViT encoder pre-trained to reconstruct spatio-temporally masked regions (75% masking rate), and EncC, a global–local cross-attention encoder pre-trained with a triplet loss on temporally shuffled negatives
@@ -445,6 +500,17 @@ Keywords: Origin–destination flow prediction, Spatio-temporal data, Bi-directi
 
 TL;DR: BiST-IF predicts origin–destination (OD) flows between metro stations or urban areas by correcting delayed recent OD matrices, applying bi-directional origin/destination attention, and fusing arrival-side (Out-OD) flows through an attention-based mutual information mechanism. It lowers MAE by an average of 7.55% on HZMetro relative to the best baseline.
 
+Task: origin-destination (OD) flow prediction; OD matrix forecasting; metro passenger flow prediction; inter-station passenger flow forecasting; taxi OD demand prediction; incomplete OD data
+Method: OD delay correction; arrival flow (Out-OD); bi-directional attention; BiLSTM; mutual information attention; gated feature update
+Datasets: HZMetro (Hangzhou metro); NYC-TOD2018 (New York yellow taxi)
+Compared with: HIAM; GEML; MPGCN; STGCN; DGCN; STTN
+中文: OD 流量预测; OD 矩阵预测; 地铁客流预测; 站间客流预测; 出租车 OD 需求预测; OD 延迟校正
+Fields (broad to narrow): artificial intelligence; machine learning; data mining; spatio-temporal data mining; time series forecasting; intelligent transportation systems; smart cities; urban computing; traffic prediction; passenger flow prediction; origin-destination (OD) prediction; OD prediction with delayed data
+Related areas: travel demand modeling; public transit analytics; metro systems; rail transit; smart card data (AFC); ride-hailing demand; spatio-temporal graph neural networks; attention mechanisms; recurrent neural networks; missing data imputation; data completion; mutual information; gating mechanisms
+Applications: metro operations; train scheduling; crowd control in stations; taxi dispatch; transport planning
+Related benchmarks (not used in this paper): SHMetro; NYC Citi Bike OD; Chicago taxi OD; Beijing subway
+中文 (扩展): 客流预测; OD 预测; 起讫点矩阵; 出行需求建模; 公共交通分析; 轨道交通; 地铁; 刷卡数据; 网约车需求; 数据补全; 缺失数据填补; 注意力机制; 循环神经网络; 互信息; 门控机制; 地铁运营; 交通规划
+
 Task: Origin–destination (OD) flow prediction: forecasting passenger flows between metro stations or urban areas for intelligent transport systems
 Full name: Bi-directional Spatio-Temporal Inference and Interconnected Feature Evolution (title and body); the abstract expands BiST-IF as Bidirectional Attention and Interconnected Feature Evolution
 Modules: OD Delay Correction (ODDC); OD flow Bi-directional Attention (ODBA: BiLSTM, origin–destination bi-directional attention, spatio-temporal extraction); Mutual Information Flow Evolution (MFE: Out-OD features, 4-head attention, gated update)
@@ -525,6 +591,16 @@ Keywords: visual recognition, leaf disease identification, attention mechanism, 
 
 TL;DR: A tomato leaf disease detector that adds the DyHead attention module to YOLOv4-tiny and trains it with a Focaler-SIoU box loss. On PlantDoc tomato leaf images it reaches 93.64% mAP, 10.3 percentage points above the YOLOv4-tiny baseline.
 
+Task: plant disease detection; plant disease recognition; tomato leaf disease detection; crop disease identification; small object detection; real-time object detection
+Method: YOLOv4-tiny; DyHead (dynamic head); scale-aware, spatial-aware and task-aware attention; Focaler-SIoU loss
+Datasets: PlantDoc
+中文: 植物病害检测; 番茄叶片病害识别; 农作物病害识别; 小目标检测; 目标检测; YOLO
+Fields (broad to narrow): artificial intelligence; computer vision; object detection; agricultural computer vision; plant disease detection; tomato leaf disease detection; attention-enhanced lightweight detection
+Related areas: precision agriculture; smart farming; plant phenotyping; image classification; YOLO detectors; lightweight detectors; edge deployment; attention mechanisms; bounding-box regression losses; data augmentation; deep learning in agriculture
+Applications: crop disease monitoring; early disease warning; yield-loss prevention; field scouting apps; greenhouse monitoring
+Related benchmarks (not used in this paper): PlantVillage; PlantDoc (full); Tomato leaf disease (Kaggle); IP102
+中文 (扩展): 农业计算机视觉; 精准农业; 智慧农业; 植物表型; 作物病害监测; 病害早期预警; YOLO; 轻量化检测; 边缘部署; 注意力机制; 数据增强; 深度学习农业应用
+
 Task: Detection and classification of tomato leaf diseases, treated as small-target (lesion) recognition
 Base detector: YOLOv4-tiny (written 'YOLOv4 (tiny)') with a CSPDarknet53-Tiny backbone; images resized to 416 × 416 pixels
 Attention module: DyHead (Dai et al., 2021): scale-, spatial- and task-aware attention on the detection head; 2 stacked modules, embedding dimension 128
@@ -603,6 +679,17 @@ Page: https://codezx6.github.io/papers/spatial-spectral-semantic-fsl.html
 Keywords: hyperspectral image classification, few-shot learning, cross-domain, domain adaptation, distribution alignment, spatial-spectral, semantic-enhanced domain alignment, remote sensing
 
 TL;DR: S3CFSL classifies new hyperspectral scenes from five labelled samples per class by transferring knowledge from the labelled Chikusei scene. It combines a cross-spatial–spectral transformer, Gaussian feature denoising and semantic-enhanced domain alignment, and reports 98.52% overall accuracy on Pavia Centre, 88.79% on Salinas and 77.63% on Houston.
+
+Task: hyperspectral image classification; HSI classification; cross-domain few-shot learning; few-shot hyperspectral classification; domain adaptation for remote sensing; remote sensing image classification
+Method: meta-learning (episodic training); feature denoising; semantic-aware domain alignment; spatial-spectral Transformer; spatial-spectral feature extraction
+Datasets: Chikusei; Pavia Centre; Salinas; Houston
+Compared with: DFSL; DCFSL; CMFSL; Gia-FSL; GCC-FSL; DMCM
+中文: 高光谱图像分类; 高光谱遥感; 跨域小样本学习; 小样本学习; 域适应; 元学习; 遥感图像分类
+Fields (broad to narrow): artificial intelligence; computer vision; remote sensing; Earth observation; hyperspectral imaging; hyperspectral image classification; few-shot hyperspectral classification; cross-domain few-shot HSI classification
+Related areas: few-shot learning; meta-learning; transfer learning; domain adaptation; domain generalization; label-efficient learning; Vision Transformers; spectral-spatial feature learning; denoising; land cover classification; multispectral imaging
+Applications: land-cover mapping; precision agriculture; mineral exploration; environmental monitoring; urban mapping
+Related benchmarks (not used in this paper): Indian Pines; Pavia University; Kennedy Space Center (KSC); Botswana; WHU-Hi
+中文 (扩展): 遥感; 对地观测; 高光谱成像; 小样本高光谱分类; 迁移学习; 域泛化; 标签高效学习; 视觉Transformer; 空谱特征学习; 去噪; 地物分类; 土地覆盖制图; 环境监测
 
 Task: Cross-domain few-shot hyperspectral image (HSI) classification, where source and target scenes have non-overlapping class label sets
 Problems addressed: Residual noise left after preprocessing, and sample-selection bias that can create false statistical correlations between domains and reduce generalisation
@@ -683,6 +770,17 @@ Page: https://codezx6.github.io/papers/st-csl.html
 Keywords: urban flow prediction, crowd flow prediction, contrastive learning, spatio-temporal fusion, multi-view representation fusion, multi-view influencing factors, spatio-temporal systems, traffic prediction
 
 TL;DR: ST-FCL predicts grid-level urban inflow and outflow by fusing temporal and spatial views, learned through contrastive pretraining, with an external-factor view. On the full TaxiBJ dataset it reaches RMSE 14.71, against 15.41 for the best baseline, ATFM.
+
+Task: urban flow prediction; crowd flow prediction; inflow and outflow prediction; traffic flow forecasting; spatio-temporal forecasting
+Method: multi-view contrastive learning; temporal-view contrastive learning; spatial-view contrastive learning; closeness, period and trend; periodicity modeling; functional region similarity; multi-view fusion
+Datasets: TaxiBJ; BikeNYC
+Compared with: ST-ResNet; STGCN; ATFM; AGCRN; STTN; ST-GSP; STAEformer; PDFormer
+中文: 城市流量预测; 人群流量预测; 交通流量预测; 时空预测; 多视图对比学习; 周期性建模; 功能区相似性
+Fields (broad to narrow): artificial intelligence; machine learning; data mining; spatio-temporal data mining; time series forecasting; intelligent transportation systems; smart cities; urban computing; traffic prediction; crowd flow prediction; urban flow prediction; multi-view contrastive spatio-temporal learning
+Related areas: traffic forecasting; spatio-temporal graph neural networks; contrastive representation learning; self-supervised learning; multi-view learning; periodic pattern mining; functional zones; urban region representation; mobility modeling; resource-limited learning; deep spatio-temporal residual networks
+Applications: urban planning; traffic management; public safety; event crowd management; bike-sharing rebalancing
+Related benchmarks (not used in this paper): TaxiNYC; BikeDC; PEMS-BAY; METR-LA; PeMS04; PeMS08
+中文 (扩展): 交通预测; 时空数据挖掘; 时间序列预测; 智能交通; 智慧城市; 城市计算; 对比表征学习; 多视图学习; 周期模式挖掘; 城市功能区; 区域表征; 小样本/低资源时空预测; 城市规划
 
 Task: Next-step urban flow prediction: inflow and outflow for every cell of a city grid
 Contrastive pretraining: Temporal view: triplet loss on Gaussian-blur-augmented data, with closest or aggregated (Top-K) sampling. Spatial view: InfoNCE-style loss with multiple positives chosen by a distance threshold λ
@@ -765,6 +863,17 @@ Keywords: urban flow prediction, spatio-temporal predictive modeling, spatio-tem
 
 TL;DR: MC-STL pre-trains two encoders for urban flow prediction: a ViT encoder learns to reconstruct regions masked at different timestamps, and its attention weights also build a GCN adjacency matrix; a global-local cross-attention encoder learns a temporal-order contrastive task. It reaches RMSE 14.53 on full TaxiBJ.
 
+Task: urban flow prediction; crowd flow prediction; citywide crowd flow forecasting; inflow and outflow prediction; grid-based traffic flow forecasting; spatio-temporal forecasting
+Method: masked spatio-temporal pre-training; self-supervised pre-training for traffic prediction; spatio-temporal contrastive learning; Vision Transformer (ViT) encoder; attention-derived graph; GCN; global-local cross-attention
+Datasets: TaxiBJ; BikeNYC
+Compared with: ST-ResNet; AGCRN; ATFM; ST-SSL; ST-GSP; Multi-STGCnet
+中文: 城市流量预测; 人群流量预测; 交通流量预测; 流入流出预测; 时空预测; 掩码预训练; 时空对比学习; 自监督预训练
+Fields (broad to narrow): artificial intelligence; machine learning; data mining; spatio-temporal data mining; time series forecasting; intelligent transportation systems; smart cities; urban computing; traffic prediction; crowd flow prediction; urban flow prediction; self-supervised spatio-temporal pre-training
+Related areas: traffic forecasting; spatio-temporal graph neural networks; graph neural networks; Transformers for time series; masked autoencoders; self-supervised learning; contrastive learning; representation learning; mobility modeling; human mobility; spatio-temporal heterogeneity; citywide prediction; grid-based prediction; deep spatio-temporal residual networks
+Applications: traffic management; congestion control; trip planning; public safety; ride-hailing dispatch; bike-sharing rebalancing
+Related benchmarks (not used in this paper): TaxiNYC; BikeDC; BikeChicago; PEMS-BAY; METR-LA; PeMS04; PeMS08
+中文 (扩展): 交通预测; 时空数据挖掘; 时间序列预测; 智能交通; 智慧城市; 城市计算; 时空图神经网络; 图神经网络; 掩码自编码器; 自监督学习; 表征学习; 人类移动性; 网格流量预测; 交通管理; 共享单车调度
+
 Task: Urban flow prediction (UFP): next-step forecasting of region-level inflow and outflow maps
 Mask-enhanced branch: ViT encoder (Enc_M) pre-trained to reconstruct regions masked at different timestamps; masking rate 0.75 gave the lowest RMSE among 0.25, 0.5 and 0.75
 Graph processing module (GPM): Enc_M attention weights, summed over heads and batch, thresholded and normalised, form the adjacency matrix of a two-layer GCN that extracts important regions
@@ -844,6 +953,16 @@ Page: https://codezx6.github.io/papers/urmdet-simfire.html
 Keywords: trustworthy AI, multimodal fusion, uncertainty quantification, reliability learning, safety-critical perception, object detection, fire and smoke analytics, fire and smoke detection
 
 TL;DR: URMDet-SimFire is an uncertainty- and reliability-aware multimodal object detection framework for fire and smoke that reweights each input modality by its estimated reliability and calibrates each detection's confidence by its uncertainty. In simulation only, it raised F1 from 0.4348 (vision-only baseline) to 0.4638.
+
+Task: fire detection; smoke detection; fire and smoke detection; multimodal object detection; trustworthy perception; robust detection with missing modalities
+Method: uncertainty calibration; reliability-weighted fusion; sensor fusion; expected calibration error (ECE); YOLOv8-style detector; simulation-based evaluation
+Datasets: SimFire-Main (synthetic); SimFire-Corruption (synthetic)
+中文: 火灾检测; 烟雾检测; 火灾烟雾检测; 多模态目标检测; 不确定性估计; 可信感知; 多传感器融合
+Fields (broad to narrow): artificial intelligence; computer vision; object detection; multimodal perception; trustworthy AI; uncertainty-aware multimodal object detection; fire and smoke detection
+Related areas: multimodal fusion; sensor fusion; uncertainty quantification; model calibration; robustness; missing modalities; safety-critical AI; thermal imaging; IoT sensors; simulation and synthetic data; anomaly detection; YOLO detectors
+Applications: industrial fire monitoring; wildfire and smoke alarms; smart buildings; safety surveillance; emergency response
+Related benchmarks (not used in this paper): D-Fire; FLAME; FASDD; Foggia fire video dataset
+中文 (扩展): 可信人工智能; 多模态感知; 多传感器融合; 不确定性量化; 模型校准; 鲁棒性; 模态缺失; 安全关键AI; 热成像; 物联网传感器; 合成数据; 工业火灾监测; 消防预警; 智慧楼宇
 
 Task: Multimodal fire and smoke object detection (two classes: fire, smoke), validated in simulation
 Architecture: YOLOv8-style visual branch with edge-aware attention and scale-adaptive fusion, plus four non-visual encoders: thermal cues, environmental sensors, smoke-diffusion attributes, textual scene priors
