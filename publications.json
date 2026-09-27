@@ -12,31 +12,32 @@
   "venue_type": "preprint",
   "year": 2026,
   "online_date": "2026-05-20",
-  "cite_date": "2026/05/20",
+  "cite_date": "2026",
   "arxiv": "2606.00066",
+  "oa_label": "Free to read on arXiv (arXiv non-exclusive distribution licence)",
   "keywords": [
    "emotional text-to-speech",
    "emotion control",
-   "diffusion TTS",
+   "diffusion-based TTS",
    "flow-matching TTS",
-   "activation steering",
+   "representation steering",
    "classifier guidance",
-   "plug-and-play",
-   "humanoid robot",
-   "Ameca"
+   "differentiable vocoder",
+   "humanoid robot"
   ],
-  "tldr": "DUET adds fine-grained, plug-and-play emotion control to pretrained diffusion and flow-matching TTS models by steering a linearly decodable emotion direction in hidden space and guiding the mel output through a differentiable vocoder, with no retraining.",
+  "tldr": "DUET adds emotion control to frozen diffusion and flow-matching TTS models by steering hidden states along a linearly decodable emotion direction and refining the mel estimate with emotion-recognizer gradients passed through a differentiable vocoder. With GradTTS on ESD it reaches 75.5% average emotion accuracy (strongest supervised baseline: 46.8%).",
   "abstract": "Diffusion and flow-matching based text-to-speech (TTS) models excel in naturalness but often lack explicit emotion control, as emotional signals remain entangled with speaker identity. We discover that emotion embedding emerges as a linearly decodable direction of frozen hidden states, nearly orthogonal to the direction embedding speaker identity. This inspires a plug-and-play framework DUET for emotion control over pretrained diffusion and flow-matching based TTS models. During generation, DUET unifies dual-space control to achieve fine-grained emotion intervention in a single per-step update: hidden space steering shifts generation along the target emotion direction, while mel-space guidance refines spectral details through gradients backpropagated from a differentiable vocoder. We validate DUET on five architecturally diverse pretrained TTS backbones across three datasets, where it outperforms 10 supervised state-of-the-art emotional TTS baselines across paradigms and achieves the highest human-rated emotion appropriateness. To further showcase its qualitative behavior, we deploy DUET on an Ameca humanoid robot, where it produces richly expressive emotional speech on the humanoid, demonstrating the strong potential for plug-and-play affective interaction for embodied agents.",
   "zh_title": "DUET：面向扩散与流匹配文本转语音的统一双空间情感控制",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/91d3f128d42451ace3385337cc2bf59dc8f7c187",
    "OpenAlex": "https://openalex.org/W7163124116",
-   "dblp": "https://dblp.org/rec/journals/corr/abs-2606-00066.html"
+   "dblp": "https://dblp.org/rec/journals/corr/abs-2606-00066",
+   "alphaXiv": "https://www.alphaxiv.org/abs/2606.00066"
   },
+  "doi": "10.48550/arXiv.2606.00066",
   "url": "https://codezx6.github.io/papers/duet.html",
-  "pdf": "https://codezx6.github.io/papers/duet.pdf",
   "bibtex": "@article{zhang2026duet,\n  title        = {{DUET}: Unified Dual-Space Emotion Control for Diffusion and Flow-Matching Driven Text-to-Speech},\n  author       = {Zhang, Xu and Cao, Longbing and Wu, Zhangkai},\n  journal      = {arXiv preprint arXiv:2606.00066},\n  year         = {2026},\n  eprint       = {2606.00066},\n  archivePrefix= {arXiv},\n  primaryClass = {cs.SD},\n  doi          = {10.48550/arXiv.2606.00066},\n  url          = {https://arxiv.org/abs/2606.00066}\n}",
-  "apa": "Zhang, X., Cao, L., & Wu, Z. (2026). DUET: Unified Dual-Space Emotion Control for Diffusion and Flow-Matching Driven Text-to-Speech. arXiv preprint arXiv:2606.00066. https://doi.org/10.48550/arXiv.2606.00066"
+  "apa": "Zhang, X., Cao, L., & Wu, Z. (2026). DUET: Unified Dual-Space Emotion Control for Diffusion and Flow-Matching Driven Text-to-Speech. arXiv. https://doi.org/10.48550/arXiv.2606.00066"
  },
  {
   "key": "zhang2026physioser",
@@ -52,29 +53,32 @@
   "venue_type": "preprint",
   "year": 2026,
   "online_date": "2026-02-03",
-  "cite_date": "2026/02/03",
+  "cite_date": "2026",
   "arxiv": "2602.13259",
+  "oa_label": "Free to read on arXiv (arXiv non-exclusive distribution license)",
   "keywords": [
    "speech emotion recognition",
-   "physiology-informed",
-   "quaternion convolution",
+   "physiology-informed vocal representation",
+   "quaternion neural networks",
+   "self-supervised learning",
    "amplitude and phase",
-   "self-supervised speech models",
-   "interpretable SER",
+   "group delay and instantaneous frequency",
    "humanoid robot"
   ],
-  "tldr": "PhysioSER couples vocal amplitude and phase through voice anatomy and physiology (VAP) informed quaternion representations, aligned with a frozen self-supervised backbone, giving an interpretable and efficient plug-and-play speech emotion recognizer validated on 14 datasets and 10 languages.",
+  "tldr": "PhysioSER complements a frozen self-supervised (SSL) backbone with a compact physiology-informed branch that encodes vocal amplitude and phase features with quaternion convolutions, for speech emotion recognition. With frozen WavLM on CREMA-D, it raises weighted accuracy from 69.69% to 75.20%.",
   "abstract": "Speech emotion recognition (SER) is essential for humanoid robot tasks such as social robotic interactions and robotic psychological diagnosis, where interpretable and efficient models are critical for safety and performance. Existing deep models trained on large datasets remain largely uninterpretable, often insufficiently modeling underlying emotional acoustic signals and failing to capture and analyze the core physiology of emotional vocal behaviors. Physiological research on human voices shows that the dynamics of vocal amplitude and phase correlate with emotions through the vocal tract filter and the glottal source. However, most existing deep models solely involve amplitude but fail to couple the physiological features of and between amplitude and phase. Here, we propose PhysioSER, a physiology-informed vocal spectrotemporal representation learning method, to address these issues with a compact, plug-and-play design. PhysioSER constructs amplitude and phase views informed by voice anatomy and physiology (VAP) to complement SSL models for SER. This VAP-informed framework incorporates two parallel workflows: a vocal feature representation branch to decompose vocal signals based on VAP, embed them into a quaternion field, and use Hamilton-structured quaternion convolutions for modeling their dynamic interactions; and a latent representation branch based on a frozen SSL backbone. Then, utterance-level features from both workflows are aligned by a Contrastive Projection and Alignment framework, followed by a shallow attention fusion head for SER classification. PhysioSER is shown to be interpretable and efficient for SER through extensive evaluations across 14 datasets, 10 languages, and 6 backbones, and its practical efficacy is validated by real-time deployment on a humanoid robotic platform.",
   "zh_title": "学习生理信息引导的嗓音时频表示用于语音情感识别（PhysioSER）",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/4b9ce4a9b01f9afd6781e11ed31622b5e35b5d9f",
    "OpenAlex": "https://openalex.org/W7129870466",
-   "dblp": "https://dblp.org/rec/journals/corr/abs-2602-13259.html"
+   "dblp": "https://dblp.org/rec/journals/corr/abs-2602-13259.html",
+   "Hugging Face": "https://huggingface.co/papers/2602.13259",
+   "alphaXiv": "https://www.alphaxiv.org/abs/2602.13259"
   },
+  "doi": "10.48550/arXiv.2602.13259",
   "url": "https://codezx6.github.io/papers/physioser.html",
-  "pdf": "https://codezx6.github.io/papers/physioser.pdf",
   "bibtex": "@article{zhang2026physioser,\n  title        = {Learning Physiology-Informed Vocal Spectrotemporal Representations for Speech Emotion Recognition},\n  author       = {Zhang, Xu and Cao, Longbing and Yang, Runze and Wu, Zhangkai},\n  journal      = {arXiv preprint arXiv:2602.13259},\n  year         = {2026},\n  eprint       = {2602.13259},\n  archivePrefix= {arXiv},\n  primaryClass = {cs.SD},\n  doi          = {10.48550/arXiv.2602.13259},\n  url          = {https://arxiv.org/abs/2602.13259}\n}",
-  "apa": "Zhang, X., Cao, L., Yang, R., & Wu, Z. (2026). Learning Physiology-Informed Vocal Spectrotemporal Representations for Speech Emotion Recognition. arXiv preprint arXiv:2602.13259. https://doi.org/10.48550/arXiv.2602.13259"
+  "apa": "Zhang, X., Cao, L., Yang, R., & Wu, Z. (2026). Learning Physiology-Informed Vocal Spectrotemporal Representations for Speech Emotion Recognition. arXiv. https://doi.org/10.48550/arXiv.2602.13259"
  },
  {
   "key": "gong2026dstcn",
@@ -91,35 +95,37 @@
   "venue": "Expert Systems with Applications",
   "venue_type": "journal",
   "year": 2026,
-  "online_date": "2025-10-25",
-  "cite_date": "2025/10/25",
+  "online_date": "2025-10-24",
+  "cite_date": "2026/03",
   "volume": "299",
   "pages": "130095",
+  "article_number": "130095",
   "doi": "10.1016/j.eswa.2025.130095",
   "issn": [
    "0957-4174"
   ],
-  "code": "https://github.com/CodeZx6/DSTCN",
+  "oa_label": "Open access, CC BY 4.0",
   "keywords": [
    "origin-destination demand prediction",
-   "metro OD matrix",
-   "spatio-temporal correlation",
-   "graph convolution",
-   "attention",
-   "intelligent transportation"
+   "spatio-temporal modeling",
+   "Transformer",
+   "graph neural network",
+   "intelligent transportation systems",
+   "OD demand matrix",
+   "spatio-temporal correlation"
   ],
-  "tldr": "DSTCN (Dynamic Spatio-Temporal Correlation Network) forecasts origin-destination demand with three modules: Glstm2D for bidirectional origin/destination demand trends, Simformer for Transformer-based inter-regional similarity over the OD matrix, and FF-TM for temporal fusion; it beats state-of-the-art baselines on NYC-TOD2018, NYC-TOD2019, and HZMetro.",
+  "tldr": "DSTCN (Dynamic Spatio-Temporal Correlation Network) forecasts origin-destination demand matrices with three modules: Glstm2D for origin- and destination-side demand trends, Simformer for Transformer-based spatial similarity across the OD matrix, and FF-TM for feature fusion and temporal modeling. On NYC-TOD2018 its MAE of 1.469 is 3.04% below the best baseline.",
   "abstract": "Accurate Origin-Destination (OD) demand prediction is fundamental to intelligent transportation systems (ITS), enabling real-time traffic management, dynamic vehicle dispatch, and efficient resource allocation in urban environments. However, OD demand exhibits complex, dynamic, and highly coupled spatio-temporal patterns that remain challenging for existing models. We propose a novel Dynamic Spatio-Temporal Correlation Network (DSTCN) for OD demand forecasting. DSTCN features three key components: (1) a bidirectional demand trend modeling module (Glstm2D) that jointly learns demand evolution from both origin and destination perspectives; (2) a Transformer-based spatial similarity module (Simformer) to dynamically extract and integrate inter-regional correlations across the OD matrix; and (3) a temporal fusion and modeling module (FF-TM) that combines and processes multi-source spatio-temporal features for next-step prediction. Extensive experiments on three large-scale real-world datasets (NYC-TOD2018, NYC-TOD2019, and HZMetro) demonstrate that DSTCN consistently outperforms state-of-the-art baselines across diverse urban scenarios.",
   "zh_title": "利用动态时空相关性进行起讫点（OD）需求预测",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/3280054fb90a717ff4d4c3c752cf159dee3146aa",
    "OpenAlex": "https://openalex.org/W4415532687",
-   "dblp": "https://dblp.org/rec/journals/eswa/GongYZZNS26.html"
+   "dblp": "https://dblp.org/rec/journals/eswa/GongYZZNS26",
+   "Publisher page": "https://www.sciencedirect.com/science/article/pii/S095741742503711X"
   },
   "url": "https://codezx6.github.io/papers/dstcn.html",
-  "pdf": "https://codezx6.github.io/papers/dstcn.pdf",
   "bibtex": "@article{gong2026dstcn,\n  title        = {Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction},\n  author       = {Gong, Yongshun and Yu, Piao and Zhang, Xu and Zhang, Xinxin and Nie, Xiushan and Sun, Haoliang},\n  journal      = {Expert Systems with Applications},\n  year         = {2026},\n  volume       = {299},\n  pages        = {130095},\n  doi          = {10.1016/j.eswa.2025.130095},\n  issn         = {0957-4174},\n  url          = {https://doi.org/10.1016/j.eswa.2025.130095}\n}",
-  "apa": "Gong, Y., Yu, P., Zhang, X., Zhang, X., Nie, X., & Sun, H. (2026). Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction. Expert Systems with Applications, 299, 130095. https://doi.org/10.1016/j.eswa.2025.130095"
+  "apa": "Gong, Y., Yu, P., Zhang, X., Zhang, X., Nie, X., & Sun, H. (2026). Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction. Expert Systems with Applications, 299, Article 130095. https://doi.org/10.1016/j.eswa.2025.130095"
  },
  {
   "key": "cao2025mutual",
@@ -139,33 +145,38 @@
   "venue": "IEEE Transactions on Geoscience and Remote Sensing",
   "venue_type": "journal",
   "year": 2025,
-  "online_date": "2025-09-10",
-  "cite_date": "2025/09/10",
+  "online_date": "2025-09-11",
+  "cite_date": "2025",
   "volume": "63",
   "pages": "1-14",
+  "article_number": "5524714",
   "doi": "10.1109/TGRS.2025.3608942",
   "issn": [
+   "0196-2892",
    "1558-0644"
   ],
   "keywords": [
    "hyperspectral image classification",
    "superpixel segmentation",
+   "feature fusion",
+   "Transformer",
+   "graph convolutional network",
    "mutual enhancement",
-   "remote sensing",
-   "deep learning"
+   "global spatial context",
+   "remote sensing"
   ],
-  "tldr": "A network in which superpixel segmentation and hyperspectral classification reinforce each other, so segmentation boundaries and class predictions improve jointly.",
-  "abstract": "Most existing hyperspectral image (HSI) classification methods primarily focus on capturing subtle spectral variations by leveraging local spectral-spatial cues derived from patch-level representations. However, limited attention has been given to exploring the global spatial contextual correlations among pixels of HSI. In this study, we propose the Superpixel Segmentation and Classification Mutual Enhancement Network (S2CMEN), a novel framework that integrates global spatial correlations with spectral information through the mutual enhancement of superpixel segmentation and classification. Specifically, a global spatial adaptive module (GSAM) is designed to obtain the direct correlation of the global classes in HSI. It consists of an Adaptive Spectral-Superpixel Network (ASSN) and a Graph Convolutional Network (GCN), forming a synergistic architecture that effectively captures global spatial relationships by adaptively deriving superpixel results from HSIs. Notably, GSAM offers a transferable global spatial representation for HSI tasks, enabling integration with other spectral feature extraction models. Furthermore, we develop a Spatial-Spectral Fusion Module (SSFM) to obtain comprehensive spectral features and fuse them with the extracted global spatial features. Finally, under the constraint of a unit loss, the Mutual Enhancement Strategy (MES) can make the superpixel segmentation loss and the classification loss mutually enhance each other for better performance. We conducted extensive experiments on three public datasets. The proposed S2CMEN achieves overall classification accuracies of 97.38%, 92.33%, and 91.38% on Indian Pines, Pavia University, and Houston, respectively, consistently surpassing existing state-of-the-art methods.",
+  "tldr": "S²CMEN (S2CMEN) is a hyperspectral image classification network in which superpixel segmentation and classification enhance each other through a unified loss, combining superpixel-based global spatial context with Spectral-Swin Transformer spectral features. It reaches 97.38% overall accuracy on Indian Pines.",
+  "abstract": "Most existing hyperspectral image (HSI) classification methods primarily focus on capturing subtle spectral variations by leveraging local spectral–spatial cues derived from patch-level representations. However, limited attention has been given to exploring the global spatial contextual correlations among pixels of HSI. In this study, we propose the superpixel segmentation and classification mutual enhancement network (S²CMEN), a novel framework that integrates global spatial correlations with spectral information through the mutual enhancement of superpixel segmentation and classification. Specifically, a global spatial adaptive module (GSAM) is designed to obtain the direct correlation of the global classes in HSI. It consists of an adaptive spectral-superpixel network (ASSN) and a graph convolutional network (GCN), forming a synergistic architecture that effectively captures global spatial relationships by adaptively deriving superpixel results from HSIs. Notably, GSAM offers a transferable global spatial representation for HSI tasks, enabling integration with other spectral feature extraction models. Furthermore, we develop a spatial–spectral fusion module (SSFM) to obtain comprehensive spectral features and fuse them with the extracted global spatial features. Finally, under the constraint of a unit loss, the mutual enhancement strategy (MES) can make the superpixel segmentation loss and the classification loss mutually enhance each other for better performance. We conducted extensive experiments on three public datasets. The proposed S²CMEN achieves overall classification accuracies of 97.38%, 92.33%, and 91.38% on Indian Pines (IPs), Pavia University (PU), and Houston, respectively, consistently surpassing existing state-of-the-art methods.",
   "zh_title": "用于高光谱图像超像素分割与分类的互增强网络（S2CMEN）",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/79f6105a9241944061369296d78d773e9c94b717",
    "OpenAlex": "https://openalex.org/W4414117408",
-   "dblp": "https://dblp.org/rec/journals/tgrs/CaoLZZLDCLD25.html"
+   "dblp": "https://dblp.org/rec/journals/tgrs/CaoLZZLDCLD25.html",
+   "IEEE Xplore": "https://ieeexplore.ieee.org/document/11159546"
   },
   "url": "https://codezx6.github.io/papers/mutual-enhancement-hsi.html",
-  "pdf": null,
-  "bibtex": "@article{cao2025mutual,\n  title        = {A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image},\n  author       = {Cao, Mengxin and Li, Yongmin and Zhang, Xu and Zhao, Guixin and Lv, Guohua and Dong, Aimei and Cheng, Jinyong and Li, Wei and Dong, Xiangjun},\n  journal      = {IEEE Transactions on Geoscience and Remote Sensing},\n  year         = {2025},\n  volume       = {63},\n  pages        = {1--14},\n  doi          = {10.1109/TGRS.2025.3608942},\n  issn         = {1558-0644},\n  url          = {https://doi.org/10.1109/TGRS.2025.3608942}\n}",
-  "apa": "Cao, M., Li, Y., Zhang, X., Zhao, G., Lv, G., Dong, A., Cheng, J., Li, W., & Dong, X. (2025). A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image. IEEE Transactions on Geoscience and Remote Sensing, 63, 1-14. https://doi.org/10.1109/TGRS.2025.3608942"
+  "bibtex": "@article{cao2025mutual,\n  title        = {A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image},\n  author       = {Cao, Mengxin and Li, Yongmin and Zhang, Xu and Zhao, Guixin and Lv, Guohua and Dong, Aimei and Cheng, Jinyong and Li, Wei and Dong, Xiangjun},\n  journal      = {IEEE Transactions on Geoscience and Remote Sensing},\n  year         = {2025},\n  volume       = {63},\n  pages        = {5524714},\n  doi          = {10.1109/TGRS.2025.3608942},\n  issn         = {0196-2892},\n  url          = {https://doi.org/10.1109/TGRS.2025.3608942}\n}",
+  "apa": "Cao, M., Li, Y., Zhang, X., Zhao, G., Lv, G., Dong, A., Cheng, J., Li, W., & Dong, X. (2025). A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image. IEEE Transactions on Geoscience and Remote Sensing, 63, Article 5524714. https://doi.org/10.1109/TGRS.2025.3608942"
  },
  {
   "key": "zhang2025mrufp",
@@ -185,37 +196,41 @@
   "venue_type": "journal",
   "year": 2025,
   "online_date": "2024-11-16",
-  "cite_date": "2024/11/16",
+  "cite_date": "2025/02",
   "volume": "182",
   "pages": "106900",
+  "article_number": "106900",
   "doi": "10.1016/j.neunet.2024.106900",
   "pmid": "39579750",
   "issn": [
-   "0893-6080"
+   "0893-6080",
+   "1879-2782"
   ],
   "code": "https://github.com/CodeZx6/MR-UPF",
   "keywords": [
    "urban flow prediction",
-   "spatial-temporal heterogeneity",
+   "mutual reinforcement",
+   "multi-scale region information",
+   "spatial–temporal systems",
+   "spatial-temporal random masking",
    "contrastive pre-training",
-   "random masking",
    "multi-scale region classification",
-   "multi-task learning",
    "intelligent transportation systems"
   ],
-  "tldr": "MR-UFP improves urban flow prediction on small or noisy data by pre-training with spatial-temporal masking and contrastive learning, then jointly training the predictor with a multi-scale region-classification task that mutually reinforces spatial features.",
+  "tldr": "MR-UFP predicts the inflow and outflow of city grid regions, even with limited training data, by pre-training encoders with spatial-temporal masking and contrastive learning and training flow prediction jointly with a multi-scale region-classification task. On full TaxiBJ and BikeNYC it beats all 13 baselines (RMSE 14.32 and 4.45).",
   "abstract": "Intelligent Transportation Systems (ITS) are essential for modern urban development, with urban flow prediction being a key component. Accurate flow prediction optimizes routes and resource allocation, benefiting residents, businesses, and the environment. However, few methods address the spatial-temporal heterogeneity of urban flows. Existing methods typically capture spatial features solely from urban flows, but spatial feature sensitivity becomes a bottleneck when dealing with small or noisy datasets. To address this issue, we propose a method for urban flow prediction via mutual reinforcement with multi-scale regional information (MR-UFP). Firstly, we employ spatial-temporal random masking and spatial-temporal contrastive learning pre-training to directly mine spatial-temporal heterogeneity from historical flow data. Secondly, we transform the task of spatial feature extraction and embedding for urban flow prediction into a mutual reinforcement task by multi-scale region classification auxiliary task. The adaptive environment fusion module and real-time graph processing dynamically correlate regional and environmental features during flow prediction. To balance the mutual reinforcement of the two tasks, we design a joint loss function to optimize feature embedding and feedback correction, ensuring robust and accurate urban flow prediction. Extensive experiments on two real-world datasets demonstrate that MR-UFP outperforms baseline models, showcasing its robustness and effectiveness even with minimal data.",
-  "zh_title": "基于多尺度区域信息互增强的城市流量预测（MR-UFP）",
+  "zh_title": "借助多尺度区域信息的互增强学习提升城市流量预测（MR-UFP）",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/9d8ac3b0d0de4f53aa8f90e0908a4203258915aa",
    "OpenAlex": "https://openalex.org/W4404443084",
-   "dblp": "https://dblp.org/rec/journals/nn/ZhangCGWDGZZ25.html",
-   "PubMed": "https://pubmed.ncbi.nlm.nih.gov/39579750/"
+   "dblp": "https://dblp.org/rec/journals/nn/ZhangCGWDGZZ25",
+   "PubMed": "https://pubmed.ncbi.nlm.nih.gov/39579750/",
+   "Publisher page": "https://www.sciencedirect.com/science/article/pii/S0893608024008293",
+   "PolyU Institutional Research Archive": "https://ira.lib.polyu.edu.hk/handle/10397/110416"
   },
   "url": "https://codezx6.github.io/papers/mr-ufp.html",
-  "pdf": null,
   "bibtex": "@article{zhang2025mrufp,\n  title        = {Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information},\n  author       = {Zhang, Xu and Cao, Mengxin and Gong, Yongshun and Wu, Xiaoming and Dong, Xiangjun and Guo, Ying and Zhao, Long and Zhang, Chengqi},\n  journal      = {Neural Networks},\n  year         = {2025},\n  volume       = {182},\n  pages        = {106900},\n  doi          = {10.1016/j.neunet.2024.106900},\n  issn         = {0893-6080},\n  url          = {https://doi.org/10.1016/j.neunet.2024.106900}\n}",
-  "apa": "Zhang, X., Cao, M., Gong, Y., Wu, X., Dong, X., Guo, Y., Zhao, L., & Zhang, C. (2025). Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information. Neural Networks, 182, 106900. https://doi.org/10.1016/j.neunet.2024.106900"
+  "apa": "Zhang, X., Cao, M., Gong, Y., Wu, X., Dong, X., Guo, Y., Zhao, L., & Zhang, C. (2025). Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information. Neural Networks, 182, Article 106900. https://doi.org/10.1016/j.neunet.2024.106900"
  },
  {
   "key": "yu2025bistif",
@@ -235,36 +250,38 @@
   "venue_type": "journal",
   "year": 2025,
   "online_date": "2024-11-22",
-  "cite_date": "2024/11/22",
+  "cite_date": "2025/03",
   "volume": "264",
   "pages": "125679",
+  "article_number": "125679",
   "doi": "10.1016/j.eswa.2024.125679",
   "issn": [
    "0957-4174"
   ],
   "code": "https://github.com/CodeZx6/BiST-IF",
   "keywords": [
-   "origin-destination flow prediction",
+   "Origin–destination flow prediction",
+   "Spatio-temporal data",
+   "Bi-directional attention mechanism",
+   "Traffic prediction",
+   "Intelligent transport systems",
    "OD delay correction",
-   "bi-directional attention",
-   "mutual information",
    "Out-OD flow",
-   "HZMetro",
-   "NYC taxi",
-   "intelligent transportation"
+   "Mutual information mechanism"
   ],
-  "tldr": "BiST-IF predicts metro and taxi origin-destination flows by correcting delayed OD matrices, applying bi-directional origin/destination attention, and letting OD and arrival (Out-OD) flows evolve jointly through mutual-information attention.",
-  "abstract": "Origin–destination (OD) flow prediction is crucial for predicting inter-station passenger flows in intelligent transport systems. However, previous OD prediction methods have ignored the delay of OD flows and failed to focus on the supplementary effect of the arrival OD flow (Out-OD) flow data on OD flows. We innovatively propose an OD flow prediction method based on Bidirectional Attention and Interconnected Feature Evolution (BiST-IF) to address these challenges. Firstly, we propose a correction method based on period delay probability and real-time flow features for OD flow information. Furthermore, for the flow information of different periods, we design a bi-directional attention module to achieve the preliminary prediction by deconstructing and analyzing the temporal and flow features of OD flow and fusing the temporal and spatial features. After that, we design the mutual information module of Out-OD and OD flows to model their interconnected feature evolution.",
-  "zh_title": "通过双向时空推理与互联特征演化增强起讫点（OD）流量预测（BiST-IF）",
+  "tldr": "BiST-IF predicts origin–destination (OD) flows between metro stations or urban areas by correcting delayed recent OD matrices, applying bi-directional origin/destination attention, and fusing arrival-side (Out-OD) flows through an attention-based mutual information mechanism. It lowers MAE by an average of 7.55% on HZMetro relative to the best baseline.",
+  "abstract": "Origin–destination (OD) flow prediction is crucial for predicting inter-station passenger flows in intelligent transport systems. However, previous OD prediction methods have ignored the delay of OD flows and failed to focus on the supplementary effect of the arrival OD flow (Out-OD) flow data on OD flows. We innovatively propose an OD flow prediction method based on Bidirectional Attention and Interconnected Feature Evolution (BiST-IF) to address these challenges. Firstly, we propose a correction method based on period delay probability and real-time flow features for OD flow information. Furthermore, for the flow information of different periods, we design a bi-directional attention module to achieve the preliminary prediction by deconstructing and analyzing the temporal and flow features of OD flow and fusing the temporal and spatial features. After that, we design the mutual information module of Out-OD and OD flow, combining it with the new gating algorithm to enhance the periodic features. Finally, the prediction results from the periodic pattern and the temporary fluctuation of OD flow are fused to obtain the OD flow prediction results. Extensive experiments on two real-world datasets show that the prediction performance of BiST-IF significantly outperforms other state-of-the-art models. Specifically, BiST-IF improves the MAE and RMSE by an average of 7.55% and 7.31% on the HZMetro dataset, and 5.77% and 2.33% on the NYC-TOD2018 dataset, respectively, compared to the best baseline approach.",
+  "zh_title": "通过双向时空推理与互联特征演化增强起讫点（OD）流量预测",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/316ecb396217f8d626c0a93690b969dfa0dccf89",
    "OpenAlex": "https://openalex.org/W4404634789",
-   "dblp": "https://dblp.org/rec/journals/eswa/YuZGZSZZY25.html"
+   "dblp": "https://dblp.org/rec/journals/eswa/YuZGZSZZY25.html",
+   "Publisher page (ScienceDirect)": "https://www.sciencedirect.com/science/article/pii/S0957417424025466",
+   "XJTLU Scholar record": "https://scholar.xjtlu.edu.cn/en/publications/enhancing-origindestination-flow-prediction-via-bi-directional-sp/"
   },
   "url": "https://codezx6.github.io/papers/bist-if.html",
-  "pdf": null,
   "bibtex": "@article{yu2025bistif,\n  title        = {Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution},\n  author       = {Yu, Piao and Zhang, Xu and Gong, Yongshun and Zhang, Jian and Sun, Haoliang and Zhang, Junjie and Zhang, Xinxin and Yin, Yilong},\n  journal      = {Expert Systems with Applications},\n  year         = {2025},\n  volume       = {264},\n  pages        = {125679},\n  doi          = {10.1016/j.eswa.2024.125679},\n  issn         = {0957-4174},\n  url          = {https://doi.org/10.1016/j.eswa.2024.125679}\n}",
-  "apa": "Yu, P., Zhang, X., Gong, Y., Zhang, J., Sun, H., Zhang, J., Zhang, X., & Yin, Y. (2025). Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution. Expert Systems with Applications, 264, 125679. https://doi.org/10.1016/j.eswa.2024.125679"
+  "apa": "Yu, P., Zhang, X., Gong, Y., Zhang, J., Sun, H., Zhang, J., Zhang, X., & Yin, Y. (2025). Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution. Expert Systems with Applications, 264, Article 125679. https://doi.org/10.1016/j.eswa.2024.125679"
  },
  {
   "key": "yao2024leaf",
@@ -284,33 +301,41 @@
   "cite_date": "2024/11/04",
   "volume": "10",
   "pages": "e2365",
+  "article_number": "e2365",
   "doi": "10.7717/peerj-cs.2365",
   "pmid": "39650513",
   "pmcid": "PMC11623051",
   "issn": [
    "2376-5992"
   ],
+  "oa_label": "Open access, CC BY 4.0",
   "keywords": [
-   "plant leaf disease recognition",
-   "tomato disease",
+   "visual recognition",
+   "leaf disease identification",
    "attention mechanism",
-   "computer vision",
-   "smart agriculture"
+   "tomato leaf disease",
+   "object detection",
+   "YOLOv4-tiny",
+   "DyHead",
+   "computer vision"
   ],
-  "tldr": "An enhanced-attention vision model for fast and accurate recognition of tomato leaf diseases, aimed at early disease prevention in agriculture.",
+  "tldr": "A tomato leaf disease detector that adds the DyHead attention module to YOLOv4-tiny and trains it with a Focaler-SIoU box loss. On PlantDoc tomato leaf images it reaches 93.64% mAP, 10.3 percentage points above the YOLOv4-tiny baseline.",
   "abstract": "Recognition methods have made significant strides across various domains, such as image classification, automatic segmentation, and autonomous driving. Efficient identification of leaf diseases through visual recognition is critical for mitigating economic losses. However, recognizing leaf diseases is challenging due to complex backgrounds and environmental factors. These challenges often result in confusion between lesions and backgrounds, limiting information extraction from small lesion targets. To tackle these challenges, this article proposes a visual leaf disease identification method based on an enhanced attention mechanism. By integrating multi-head attention mechanisms, this method accurately identifies small targets of tomato lesions and demonstrates robustness in complex conditions, such as varying illumination. Additionally, the method incorporates Focaler-SIoU to enhance learning capabilities for challenging classification samples. Experimental results showcase that the proposed algorithm enhances average detection accuracy by 10.3% compared to the baseline model, while maintaining a balanced identification speed. This method facilitates rapid and precise identification of tomato diseases, offering a valuable tool for disease prevention and economic loss reduction.",
   "zh_title": "基于增强注意力机制的叶片病害自动视觉识别",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/b4efe40553aff0e5cf28531191940d426be4b727",
    "OpenAlex": "https://openalex.org/W4404048777",
-   "dblp": "https://dblp.org/rec/journals/peerj-cs/YaoDZLSZ24.html",
+   "dblp": "https://dblp.org/rec/journals/peerj-cs/YaoDZLSZ24",
    "PubMed": "https://pubmed.ncbi.nlm.nih.gov/39650513/",
-   "PMC": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11623051/"
+   "PMC": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11623051/",
+   "Publisher page": "https://peerj.com/articles/cs-2365"
+  },
+  "links": {
+   "Code and data (Figshare)": "https://doi.org/10.6084/m9.figshare.27210138.v1"
   },
   "url": "https://codezx6.github.io/papers/leaf-disease-attention.html",
-  "pdf": null,
   "bibtex": "@article{yao2024leaf,\n  title        = {Automatic visual recognition for leaf disease based on enhanced attention mechanism},\n  author       = {Yao, Yumeng and Deng, Xiaodun and Zhang, Xu and Li, Junming and Sun, Wenxuan and Zhang, Gechao},\n  journal      = {PeerJ Computer Science},\n  year         = {2024},\n  volume       = {10},\n  pages        = {e2365},\n  doi          = {10.7717/peerj-cs.2365},\n  issn         = {2376-5992},\n  url          = {https://doi.org/10.7717/peerj-cs.2365}\n}",
-  "apa": "Yao, Y., Deng, X., Zhang, X., Li, J., Sun, W., & Zhang, G. (2024). Automatic visual recognition for leaf disease based on enhanced attention mechanism. PeerJ Computer Science, 10, e2365. https://doi.org/10.7717/peerj-cs.2365"
+  "apa": "Yao, Y., Deng, X., Zhang, X., Li, J., Sun, W., & Zhang, G. (2024). Automatic visual recognition for leaf disease based on enhanced attention mechanism. PeerJ Computer Science, 10, Article e2365. https://doi.org/10.7717/peerj-cs.2365"
  },
  {
   "key": "cao2024s3fsl",
@@ -327,38 +352,42 @@
   "venue": "IEEE Transactions on Geoscience and Remote Sensing",
   "venue_type": "journal",
   "year": 2024,
-  "online_date": "2024-07-25",
-  "cite_date": "2024/07/25",
+  "online_date": "2024-07-29",
+  "cite_date": "2024",
   "volume": "62",
   "pages": "1-15",
+  "article_number": "5525315",
   "doi": "10.1109/TGRS.2024.3434484",
   "issn": [
+   "0196-2892",
    "1558-0644"
   ],
   "keywords": [
    "hyperspectral image classification",
    "few-shot learning",
    "cross-domain",
+   "domain adaptation",
+   "distribution alignment",
    "spatial-spectral",
-   "semantic",
+   "semantic-enhanced domain alignment",
    "remote sensing"
   ],
-  "tldr": "A cross-domain few-shot learner for hyperspectral images that jointly exploits spatial, spectral, and semantic information to classify new scenes from very few labelled samples.",
+  "tldr": "S3CFSL classifies new hyperspectral scenes from five labelled samples per class by transferring knowledge from the labelled Chikusei scene. It combines a cross-spatial–spectral transformer, Gaussian feature denoising and semantic-enhanced domain alignment, and reports 98.52% overall accuracy on Pavia Centre, 88.79% on Salinas and 77.63% on Houston.",
   "abstract": "Preprocessing procedures are commonly employed to reduce water-absorption bands and noise in hyperspectral images (HSIs). Nevertheless, they typically do not entirely eradicate noise. This is especially evident in scenarios that necessitate data of exceptional quality, such as cross-domain few-shot classification tasks. Within these specific conditions, the influence of remaining background noise on the ultimate results of classification is substantial. Furthermore, the presence of sample selection biases in the few-shot task might lead to the emergence of false statistical correlations between data from distinct domains, resulting in a decrease in the model’s ability to generalize. We propose a new method called spatial-spectral–semantic cross-domain few-shot learning (S3CFSL) to address the challenge. This method promotes the learning of transferable information by incorporating feature denoising operations in the feature extraction process to restore essential information. Concurrently, it enhances cross-domain distributional consistency by introducing a semantic-aware strategy to strengthen the association between cross-domain data and semantic information. Specifically, the spatial and spectral dual channels (SSDCs), in conjunction with the cross-spatial-spectral transformer (CSST), are designed as a feature extractor to acquire interactive spatial-spectral features. The feature-denoising operations can further acquiring transferable information from cross-domain features, thus facilitating meta-learning in both the source domain (SD) and the target domain (TD). Meanwhile, a semantic-enhanced domain alignment (SEDA) is designed to promote domain adaptation by using a semantic-aware strategy, which significantly enhances distributional consistency for cross-domain tasks. Our results exhibit exceptional classification efficacy in comparison to other state-of-the-art approaches on three public HSI datasets.",
   "zh_title": "面向高光谱图像分类的空间-光谱-语义跨域小样本学习（S3CFSL）",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/242b35eb25062545b7d6c03ca87639ee2e2f5988",
    "OpenAlex": "https://openalex.org/W4401070664",
-   "dblp": "https://dblp.org/rec/journals/tgrs/CaoZCZLD24.html"
+   "dblp": "https://dblp.org/rec/journals/tgrs/CaoZCZLD24",
+   "Publisher page": "https://ieeexplore.ieee.org/document/10613782"
   },
   "url": "https://codezx6.github.io/papers/spatial-spectral-semantic-fsl.html",
-  "pdf": null,
-  "bibtex": "@article{cao2024s3fsl,\n  title        = {Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification},\n  author       = {Cao, Mengxin and Zhang, Xu and Cheng, Jinyong and Zhao, Guixin and Li, Wei and Dong, Xiangjun},\n  journal      = {IEEE Transactions on Geoscience and Remote Sensing},\n  year         = {2024},\n  volume       = {62},\n  pages        = {1--15},\n  doi          = {10.1109/TGRS.2024.3434484},\n  issn         = {1558-0644},\n  url          = {https://doi.org/10.1109/TGRS.2024.3434484}\n}",
-  "apa": "Cao, M., Zhang, X., Cheng, J., Zhao, G., Li, W., & Dong, X. (2024). Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification. IEEE Transactions on Geoscience and Remote Sensing, 62, 1-15. https://doi.org/10.1109/TGRS.2024.3434484"
+  "bibtex": "@article{cao2024s3fsl,\n  title        = {Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification},\n  author       = {Cao, Mengxin and Zhang, Xu and Cheng, Jinyong and Zhao, Guixin and Li, Wei and Dong, Xiangjun},\n  journal      = {IEEE Transactions on Geoscience and Remote Sensing},\n  year         = {2024},\n  volume       = {62},\n  pages        = {5525315},\n  doi          = {10.1109/TGRS.2024.3434484},\n  issn         = {0196-2892},\n  url          = {https://doi.org/10.1109/TGRS.2024.3434484}\n}",
+  "apa": "Cao, M., Zhang, X., Cheng, J., Zhao, G., Li, W., & Dong, X. (2024). Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification. IEEE Transactions on Geoscience and Remote Sensing, 62, Article 5525315. https://doi.org/10.1109/TGRS.2024.3434484"
  },
  {
   "key": "zhang2023stcsl",
-  "label": "ST-CSL",
+  "label": "ST-FCL",
   "title": "Spatio-temporal fusion and contrastive learning for urban flow prediction",
   "authors": [
    "Xu Zhang",
@@ -374,9 +403,10 @@
   "venue_type": "journal",
   "year": 2023,
   "online_date": "2023-10-21",
-  "cite_date": "2023/10/21",
+  "cite_date": "2023/12",
   "volume": "282",
   "pages": "111104",
+  "article_number": "111104",
   "doi": "10.1016/j.knosys.2023.111104",
   "issn": [
    "0950-7051"
@@ -384,28 +414,30 @@
   "code": "https://github.com/CodeZx6/ST-CSL",
   "keywords": [
    "urban flow prediction",
+   "crowd flow prediction",
    "contrastive learning",
    "spatio-temporal fusion",
-   "periodicity",
-   "functional regions",
+   "multi-view representation fusion",
+   "multi-view influencing factors",
+   "spatio-temporal systems",
    "traffic prediction"
   ],
-  "tldr": "ST-CSL fuses temporal-view and spatial-view contrastive learning so an urban flow predictor captures global periodicity and the hidden flow relationships between functionally similar regions.",
-  "abstract": "Urban flow prediction is critical for urban planning, management, and safety. However, owing to the inherent instability of urban flows, prediction accuracy requires the fusion of multi-view influencing factors. Current prediction methods are insensitive to periodic changes in urban flows, and rarely consider the implied spatial and temporal correlations between similar functional areas. Thus, we propose a method based on spatiotemporal fusion and contrastive learning. We construct an extraction module of spatial and temporal views based on contrastive learning in the spatial and temporal dimensions. With the temporal view extraction, we can obtain the distribution and change in the global urban flow periodicity. Using the spatial view extraction, we can obtain the implied flow variation relationship between similar regions.",
-  "zh_title": "时空融合与对比学习的城市流量预测（ST-CSL）",
+  "tldr": "ST-FCL predicts grid-level urban inflow and outflow by fusing temporal and spatial views, learned through contrastive pretraining, with an external-factor view. On the full TaxiBJ dataset it reaches RMSE 14.71, against 15.41 for the best baseline, ATFM.",
+  "abstract": "Urban flow prediction is critical for urban planning, management, and safety. However, owing to the inherent instability of urban flows, prediction accuracy requires the fusion of multi-view influencing factors. Current prediction methods are insensitive to periodic changes in urban flows, and rarely consider the implied spatial and temporal correlations between similar functional areas. Thus, we propose a method based on spatiotemporal fusion and contrastive learning. We construct an extraction module of spatial and temporal views based on contrastive learning in the spatial and temporal dimensions. With the temporal view extraction, we can obtain the distribution and change in the global urban flow periodicity. Using the spatial view extraction, we can obtain the implied flow variation relationship between similar regions. Therefore, our model can capture the high-level semantic features of urban flow changes from multiple views. We also design a multi-view fusion and prediction network to combine multi-view representations that impact urban flow. We experimentally evaluated our proposed approach using two real-world datasets and demonstrated state-of-the-art forecasting performance, as well as effectiveness in resource-limited environments.",
+  "zh_title": "基于时空融合与对比学习的城市流量预测（ST-FCL）",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/7cb8031bd9ea33bda9f0da50f5fff6ed3a20b16c",
    "OpenAlex": "https://openalex.org/W4387842152",
-   "dblp": "https://dblp.org/rec/journals/kbs/ZhangGZWGLZD23.html"
+   "dblp": "https://dblp.org/rec/journals/kbs/ZhangGZWGLZD23.html",
+   "Publisher page": "https://www.sciencedirect.com/science/article/pii/S0950705123008547"
   },
   "url": "https://codezx6.github.io/papers/st-csl.html",
-  "pdf": null,
   "bibtex": "@article{zhang2023stcsl,\n  title        = {Spatio-temporal fusion and contrastive learning for urban flow prediction},\n  author       = {Zhang, Xu and Gong, Yongshun and Zhang, Chengqi and Wu, Xiaoming and Guo, Ying and Lu, Wenpeng and Zhao, Long and Dong, Xiangjun},\n  journal      = {Knowledge-Based Systems},\n  year         = {2023},\n  volume       = {282},\n  pages        = {111104},\n  doi          = {10.1016/j.knosys.2023.111104},\n  issn         = {0950-7051},\n  url          = {https://doi.org/10.1016/j.knosys.2023.111104}\n}",
-  "apa": "Zhang, X., Gong, Y., Zhang, C., Wu, X., Guo, Y., Lu, W., Zhao, L., & Dong, X. (2023). Spatio-temporal fusion and contrastive learning for urban flow prediction. Knowledge-Based Systems, 282, 111104. https://doi.org/10.1016/j.knosys.2023.111104"
+  "apa": "Zhang, X., Gong, Y., Zhang, C., Wu, X., Guo, Y., Lu, W., Zhao, L., & Dong, X. (2023). Spatio-temporal fusion and contrastive learning for urban flow prediction. Knowledge-Based Systems, 282, Article 111104. https://doi.org/10.1016/j.knosys.2023.111104"
  },
  {
   "key": "zhang2023mcstl",
-  "label": "MCSTL",
+  "label": "MC-STL",
   "title": "Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction",
   "authors": [
    "Xu Zhang",
@@ -415,35 +447,37 @@
    "Chengqi Zhang",
    "Xiangjun Dong"
   ],
-  "venue": "Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (CIKM '23)",
+  "venue": "Proceedings of the 32nd ACM International Conference on Information and Knowledge Management",
   "venue_type": "conference",
   "year": 2023,
   "online_date": "2023-10-21",
   "cite_date": "2023/10/21",
   "pages": "3298-3307",
   "doi": "10.1145/3583780.3614958",
+  "oa_label": "Free to read in the ACM Digital Library",
   "code": "https://github.com/CodeZx6/MCSTL",
   "keywords": [
    "urban flow prediction",
-   "masked pre-training",
+   "spatio-temporal predictive modeling",
+   "spatio-temporal pre-training",
+   "mask-enhanced learning",
    "contrastive learning",
-   "graph attention",
-   "spatio-temporal learning",
-   "CIKM"
+   "traffic prediction",
+   "graph convolutional network (GCN)"
   ],
-  "tldr": "MCSTL pre-trains an urban flow model with a mask-reconstruction task across space and time and a graph-based contrastive task that weights regions by inter-regional attention, then fine-tunes for flow prediction.",
+  "tldr": "MC-STL pre-trains two encoders for urban flow prediction: a ViT encoder learns to reconstruct regions masked at different timestamps, and its attention weights also build a GCN adjacency matrix; a global-local cross-attention encoder learns a temporal-order contrastive task. It reaches RMSE 14.53 on full TaxiBJ.",
   "abstract": "As a critical mission of intelligent transportation systems, urban flow prediction (UFP) benefits in many city services including trip planning, congestion control, and public safety. Despite the achievements of previous studies, limited efforts have been observed on simultaneous investigation of the heterogeneity in both space and time aspects. That is, regional correlations would be variable at different timestamps. In this paper, we propose a spatio-temporal learning framework with mask and contrast enhancements to capture spatio-temporal variabilities among city regions. We devise a mask-enhanced pre-training task to learn latent correlations across the spatial and temporal dimensions, and then a graph-based method is developed to extract the significance of regions by using the inter-regional attention weights. To further acquire contrastive correlations of regions, we elaborate a pre-trained contrastive learning task with the global-local cross-attention mechanism. Thereafter, two well-trained encoders have strong capability to capture latent spatio-temporal representations for the flow forecasting with time-varying. Extensive experiments conducted on real-world urban flow datasets demonstrate that our method compares favorably with other state-of-the-art models.",
-  "zh_title": "掩码与对比增强的时空学习用于城市流量预测（MCSTL）",
+  "zh_title": "掩码与对比增强的时空学习用于城市流量预测（MC-STL）",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/49bd0933736a7151511c09ae41461bcdfc4ec4f4",
    "OpenAlex": "https://openalex.org/W4387846311",
    "dblp": "https://dblp.org/rec/conf/cikm/ZhangGZWZ023.html",
-   "Wikidata": "https://www.wikidata.org/wiki/Q137174743"
+   "Wikidata": "https://www.wikidata.org/wiki/Q137174743",
+   "ACM Digital Library": "https://dl.acm.org/doi/10.1145/3583780.3614958"
   },
   "url": "https://codezx6.github.io/papers/mcstl.html",
-  "pdf": null,
-  "bibtex": "@inproceedings{zhang2023mcstl,\n  title        = {Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction},\n  author       = {Zhang, Xu and Gong, Yongshun and Zhang, Xinxin and Wu, Xiaoming and Zhang, Chengqi and Dong, Xiangjun},\n  booktitle    = {Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (CIKM '23)},\n  year         = {2023},\n  pages        = {3298--3307},\n  publisher    = {ACM},\n  doi          = {10.1145/3583780.3614958},\n  url          = {https://doi.org/10.1145/3583780.3614958}\n}",
-  "apa": "Zhang, X., Gong, Y., Zhang, X., Wu, X., Zhang, C., & Dong, X. (2023). Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction. In Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (CIKM '23) (pp. 3298–3307). ACM. https://doi.org/10.1145/3583780.3614958"
+  "bibtex": "@inproceedings{zhang2023mcstl,\n  title        = {Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction},\n  author       = {Zhang, Xu and Gong, Yongshun and Zhang, Xinxin and Wu, Xiaoming and Zhang, Chengqi and Dong, Xiangjun},\n  booktitle    = {Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},\n  year         = {2023},\n  series       = {CIKM '23},\n  pages        = {3298--3307},\n  publisher    = {ACM},\n  doi          = {10.1145/3583780.3614958},\n  url          = {https://doi.org/10.1145/3583780.3614958}\n}",
+  "apa": "Zhang, X., Gong, Y., Zhang, X., Wu, X., Zhang, C., & Dong, X. (2023). Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction. In Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (pp. 3298–3307). ACM. https://doi.org/10.1145/3583780.3614958"
  },
  {
   "key": "dang2026urmdet",
@@ -456,31 +490,36 @@
   "venue": "Array",
   "venue_type": "journal",
   "year": 2026,
-  "online_date": "2026-09-01",
-  "cite_date": "2026/09/01",
+  "online_date": "2026-08-07",
+  "cite_date": "2026/09",
   "volume": "31",
   "pages": "101124",
+  "article_number": "101124",
   "doi": "10.1016/j.array.2026.101124",
   "issn": [
    "2590-0056"
   ],
+  "oa_label": "Open access, CC BY 4.0",
   "keywords": [
-   "fire detection",
-   "smoke detection",
-   "multimodal detection",
-   "uncertainty modeling",
-   "reliability",
-   "trustworthy AI"
+   "trustworthy AI",
+   "multimodal fusion",
+   "uncertainty quantification",
+   "reliability learning",
+   "safety-critical perception",
+   "object detection",
+   "fire and smoke analytics",
+   "fire and smoke detection"
   ],
-  "tldr": "A trustworthy multimodal fire-and-smoke detector that models uncertainty and reliability of each modality.",
+  "tldr": "URMDet-SimFire is an uncertainty- and reliability-aware multimodal object detection framework for fire and smoke that reweights each input modality by its estimated reliability and calibrates each detection's confidence by its uncertainty. In simulation only, it raised F1 from 0.4348 (vision-only baseline) to 0.4638.",
+  "abstract": "Trustworthy multimodal perception is essential for safety-critical analytics, where detection systems must contend with noisy visual observations, missing sensor signals, smoke-like interference, and distributional shifts across environments. Vision-only detectors degrade under precisely these conditions, while naively combining additional modalities can amplify corrupted signals. We propose URMDet-SimFire, an uncertainty- and reliability-aware multimodal object detection framework that addresses this fragility by explicitly modeling the trustworthiness of each input source at inference time. We couple a YOLOv8-style visual branch with four non-visual modality encoders for thermal cues, environmental sensors, smoke-diffusion attributes, and textual scene priors. Two trust-modeling components are then introduced: an uncertainty calibration module that adjusts detection confidence using classification evidence and localization variance, and a reliability-guided fusion module that dynamically reweights each modality according to its current noise level, missingness, and cross-modal consistency. Because collecting real industrial fire data at scale is dangerous and costly, we validate the framework in a controllable simulator that reproduces typical visual degradations, sensor corruption, modality dropouts, and occlusion patterns. We evaluate it through main comparisons, ablations of each trust-modeling component, robustness under four corruption types, and efficiency profiling. The results show that naive multimodal late fusion can underperform vision-only detection when modalities are unreliable, that uncertainty calibration alone is insufficient, and that the proposed reliability-guided design recovers detection quality. The framework offers a reproducible simulation-based paradigm for trust-aware multimodal media analytics.",
   "zh_title": "URMDet-SimFire：面向火灾与烟雾分析的不确定性与可靠性建模的可信多模态检测",
   "ids": {
    "Semantic Scholar": "https://www.semanticscholar.org/paper/10e8961fa597541667af33cb02ede8f2ad337f9f",
-   "OpenAlex": "https://openalex.org/W7201831227"
+   "OpenAlex": "https://openalex.org/W7201831227",
+   "Publisher page": "https://www.sciencedirect.com/science/article/pii/S2590005626004479"
   },
   "url": "https://codezx6.github.io/papers/urmdet-simfire.html",
-  "pdf": null,
   "bibtex": "@article{dang2026urmdet,\n  title        = {{URMDet-SimFire}: Trustworthy multimodal detection with uncertainty and reliability modeling for fire and smoke analytics},\n  author       = {Dang, Zhonghua and Zhang, Xu},\n  journal      = {Array},\n  year         = {2026},\n  volume       = {31},\n  pages        = {101124},\n  doi          = {10.1016/j.array.2026.101124},\n  issn         = {2590-0056},\n  url          = {https://doi.org/10.1016/j.array.2026.101124}\n}",
-  "apa": "Dang, Z., & Zhang, X. (2026). URMDet-SimFire: Trustworthy multimodal detection with uncertainty and reliability modeling for fire and smoke analytics. Array, 31, 101124. https://doi.org/10.1016/j.array.2026.101124"
+  "apa": "Dang, Z., & Zhang, X. (2026). URMDet-SimFire: Trustworthy multimodal detection with uncertainty and reliability modeling for fire and smoke analytics. Array, 31, Article 101124. https://doi.org/10.1016/j.array.2026.101124"
  }
 ]

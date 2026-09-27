@@ -6,7 +6,7 @@ Preferred citation: the BibTeX on each paper page or at https://codezx6.github.i
 
 ## Topic overviews
 
-- [Speech emotion recognition and emotional text-to-speech for humanoid robots](https://codezx6.github.io/topics/speech-emotion.html): Two 2026 arXiv papers address both directions of affective speech: recognising emotion in speech (PhysioSER; Zhang, Cao, Yang and Wu, 2026) and generating emotional speech (DUET; Zhang, Cao and Wu, 2026). Both methods are designed as compact plug-in components for large pretrained speech models, and both were deployed on a humanoid robot.
+- [Speech emotion recognition and emotional text-to-speech for humanoid robots](https://codezx6.github.io/topics/speech-emotion.html): Two 2026 arXiv papers address both directions of affective speech: recognising emotion in speech (PhysioSER; Zhang et al., 2026) and generating emotional speech (DUET; Zhang et al., 2026). Both methods are designed as plug-and-play frameworks that keep the pretrained model frozen, and both were deployed on a humanoid robot.
 - [Urban flow prediction with masked and contrastive spatio-temporal pre-training](https://codezx6.github.io/topics/urban-flow-prediction.html): Urban flow prediction forecasts future flows across city regions from historical flow data and supports services such as trip planning, congestion control, and public safety. Three papers (Zhang et al., CIKM 2023; Zhang et al., Knowledge-Based Systems 2023; Zhang et al., Neural Networks 2025) develop self-supervised spatio-temporal pre-training for this task.
 - [Origin-destination (OD) flow and demand prediction for metro and taxi systems](https://codezx6.github.io/topics/origin-destination-prediction.html): Origin-destination (OD) prediction forecasts the flow or demand between pairs of stations or regions, which supports real-time traffic management, vehicle dispatch, and resource allocation in intelligent transportation systems. Two papers (Yu et al., Expert Systems with Applications 2025; Gong et al., Expert Systems with Applications 2026) study this problem on metro and taxi data.
 - [Hyperspectral image classification: cross-domain few-shot learning and superpixel mutual enhancement](https://codezx6.github.io/topics/hyperspectral-image-classification.html): Two IEEE Transactions on Geoscience and Remote Sensing papers (Cao et al., 2024; Cao et al., 2025) study hyperspectral image (HSI) classification.
@@ -14,25 +14,24 @@ Preferred citation: the BibTeX on each paper page or at https://codezx6.github.i
 
 ## Papers
 
-- [DUET: Unified Dual-Space Emotion Control for Diffusion and Flow-Matching Driven Text-to-Speech](https://codezx6.github.io/papers/duet.html): Xu Zhang, Longbing Cao, Zhangkai Wu. arXiv:2606.00066 (2026). DOI 10.48550/arXiv.2606.00066. DUET adds fine-grained, plug-and-play emotion control to pretrained diffusion and flow-matching TTS models by steering a linearly decodable emotion direction in hidden space and guiding the mel output through a differentiable vocoder, with no retraining.
-- [PhysioSER: Learning Physiology-Informed Vocal Spectrotemporal Representations for Speech Emotion Recognition](https://codezx6.github.io/papers/physioser.html): Xu Zhang, Longbing Cao, Runze Yang, Zhangkai Wu. arXiv:2602.13259 (2026). DOI 10.48550/arXiv.2602.13259. PhysioSER couples vocal amplitude and phase through voice anatomy and physiology (VAP) informed quaternion representations, aligned with a frozen self-supervised backbone, giving an interpretable and efficient plug-and-play speech emotion recognizer validated on 14 datasets and 10 languages.
-- [DSTCN: Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction](https://codezx6.github.io/papers/dstcn.html): Yongshun Gong, Piao Yu, Xu Zhang, Xinxin Zhang, Xiushan Nie, Haoliang Sun. Expert Systems with Applications, vol. 299, 130095 (2026). DOI 10.1016/j.eswa.2025.130095. DSTCN (Dynamic Spatio-Temporal Correlation Network) forecasts origin-destination demand with three modules: Glstm2D for bidirectional origin/destination demand trends, Simformer for Transformer-based inter-regional similarity over the OD matrix, and FF-TM for temporal fusion; it beats state-of-the-art baselines on NYC-TOD2018, NYC-TOD2019, and HZMetro.
-- [S2CMEN: A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image](https://codezx6.github.io/papers/mutual-enhancement-hsi.html): Mengxin Cao, Yongmin Li, Xu Zhang, Guixin Zhao, Guohua Lv, Aimei Dong, Jinyong Cheng, Wei Li, Xiangjun Dong. IEEE Transactions on Geoscience and Remote Sensing, vol. 63, 1–14 (2025). DOI 10.1109/TGRS.2025.3608942. A network in which superpixel segmentation and hyperspectral classification reinforce each other, so segmentation boundaries and class predictions improve jointly.
-- [MR-UFP: Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information](https://codezx6.github.io/papers/mr-ufp.html): Xu Zhang, Mengxin Cao, Yongshun Gong, Xiaoming Wu, Xiangjun Dong, Ying Guo, Long Zhao, Chengqi Zhang. Neural Networks, vol. 182, 106900 (2025). DOI 10.1016/j.neunet.2024.106900. MR-UFP improves urban flow prediction on small or noisy data by pre-training with spatial-temporal masking and contrastive learning, then jointly training the predictor with a multi-scale region-classification task that mutually reinforces spatial features.
-- [BiST-IF: Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution](https://codezx6.github.io/papers/bist-if.html): Piao Yu, Xu Zhang, Yongshun Gong, Jian Zhang, Haoliang Sun, Junjie Zhang, Xinxin Zhang, Yilong Yin. Expert Systems with Applications, vol. 264, 125679 (2025). DOI 10.1016/j.eswa.2024.125679. BiST-IF predicts metro and taxi origin-destination flows by correcting delayed OD matrices, applying bi-directional origin/destination attention, and letting OD and arrival (Out-OD) flows evolve jointly through mutual-information attention.
-- [Automatic visual recognition for leaf disease based on enhanced attention mechanism](https://codezx6.github.io/papers/leaf-disease-attention.html): Yumeng Yao, Xiaodun Deng, Xu Zhang, Junming Li, Wenxuan Sun, Gechao Zhang. PeerJ Computer Science, vol. 10, e2365 (2024). DOI 10.7717/peerj-cs.2365. An enhanced-attention vision model for fast and accurate recognition of tomato leaf diseases, aimed at early disease prevention in agriculture.
-- [S3CFSL: Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification](https://codezx6.github.io/papers/spatial-spectral-semantic-fsl.html): Mengxin Cao, Xu Zhang, Jinyong Cheng, Guixin Zhao, Wei Li, Xiangjun Dong. IEEE Transactions on Geoscience and Remote Sensing, vol. 62, 1–15 (2024). DOI 10.1109/TGRS.2024.3434484. A cross-domain few-shot learner for hyperspectral images that jointly exploits spatial, spectral, and semantic information to classify new scenes from very few labelled samples.
-- [ST-CSL: Spatio-temporal fusion and contrastive learning for urban flow prediction](https://codezx6.github.io/papers/st-csl.html): Xu Zhang, Yongshun Gong, Chengqi Zhang, Xiaoming Wu, Ying Guo, Wenpeng Lu, Long Zhao, Xiangjun Dong. Knowledge-Based Systems, vol. 282, 111104 (2023). DOI 10.1016/j.knosys.2023.111104. ST-CSL fuses temporal-view and spatial-view contrastive learning so an urban flow predictor captures global periodicity and the hidden flow relationships between functionally similar regions.
-- [MCSTL: Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction](https://codezx6.github.io/papers/mcstl.html): Xu Zhang, Yongshun Gong, Xinxin Zhang, Xiaoming Wu, Chengqi Zhang, Xiangjun Dong. CIKM 2023, pp. 3298–3307. DOI 10.1145/3583780.3614958. MCSTL pre-trains an urban flow model with a mask-reconstruction task across space and time and a graph-based contrastive task that weights regions by inter-regional attention, then fine-tunes for flow prediction.
-- [URMDet-SimFire: Trustworthy multimodal detection with uncertainty and reliability modeling for fire and smoke analytics](https://codezx6.github.io/papers/urmdet-simfire.html): Zhonghua Dang, Xu Zhang. Array, vol. 31, 101124 (2026). DOI 10.1016/j.array.2026.101124. A trustworthy multimodal fire-and-smoke detector that models uncertainty and reliability of each modality.
+- [DUET: Unified Dual-Space Emotion Control for Diffusion and Flow-Matching Driven Text-to-Speech](https://codezx6.github.io/papers/duet.html): Xu Zhang, Longbing Cao, Zhangkai Wu. arXiv:2606.00066 (2026). DOI 10.48550/arXiv.2606.00066. DUET adds emotion control to frozen diffusion and flow-matching TTS models by steering hidden states along a linearly decodable emotion direction and refining the mel estimate with emotion-recognizer gradients passed through a differentiable vocoder. With GradTTS on ESD it reaches 75.5% average emotion accuracy (strongest supervised baseline: 46.8%).
+- [PhysioSER: Learning Physiology-Informed Vocal Spectrotemporal Representations for Speech Emotion Recognition](https://codezx6.github.io/papers/physioser.html): Xu Zhang, Longbing Cao, Runze Yang, Zhangkai Wu. arXiv:2602.13259 (2026). DOI 10.48550/arXiv.2602.13259. PhysioSER complements a frozen self-supervised (SSL) backbone with a compact physiology-informed branch that encodes vocal amplitude and phase features with quaternion convolutions, for speech emotion recognition. With frozen WavLM on CREMA-D, it raises weighted accuracy from 69.69% to 75.20%.
+- [DSTCN: Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction](https://codezx6.github.io/papers/dstcn.html): Yongshun Gong, Piao Yu, Xu Zhang, Xinxin Zhang, Xiushan Nie, Haoliang Sun. Expert Systems with Applications, vol. 299, article 130095 (2026). DOI 10.1016/j.eswa.2025.130095. DSTCN (Dynamic Spatio-Temporal Correlation Network) forecasts origin-destination demand matrices with three modules: Glstm2D for origin- and destination-side demand trends, Simformer for Transformer-based spatial similarity across the OD matrix, and FF-TM for feature fusion and temporal modeling. On NYC-TOD2018 its MAE of 1.469 is 3.04% below the best baseline.
+- [S2CMEN: A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image](https://codezx6.github.io/papers/mutual-enhancement-hsi.html): Mengxin Cao, Yongmin Li, Xu Zhang, Guixin Zhao, Guohua Lv, Aimei Dong, Jinyong Cheng, Wei Li, Xiangjun Dong. IEEE Transactions on Geoscience and Remote Sensing, vol. 63, article 5524714 (2025). DOI 10.1109/TGRS.2025.3608942. S²CMEN (S2CMEN) is a hyperspectral image classification network in which superpixel segmentation and classification enhance each other through a unified loss, combining superpixel-based global spatial context with Spectral-Swin Transformer spectral features. It reaches 97.38% overall accuracy on Indian Pines.
+- [MR-UFP: Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information](https://codezx6.github.io/papers/mr-ufp.html): Xu Zhang, Mengxin Cao, Yongshun Gong, Xiaoming Wu, Xiangjun Dong, Ying Guo, Long Zhao, Chengqi Zhang. Neural Networks, vol. 182, article 106900 (2025). DOI 10.1016/j.neunet.2024.106900. MR-UFP predicts the inflow and outflow of city grid regions, even with limited training data, by pre-training encoders with spatial-temporal masking and contrastive learning and training flow prediction jointly with a multi-scale region-classification task. On full TaxiBJ and BikeNYC it beats all 13 baselines (RMSE 14.32 and 4.45).
+- [BiST-IF: Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution](https://codezx6.github.io/papers/bist-if.html): Piao Yu, Xu Zhang, Yongshun Gong, Jian Zhang, Haoliang Sun, Junjie Zhang, Xinxin Zhang, Yilong Yin. Expert Systems with Applications, vol. 264, article 125679 (2025). DOI 10.1016/j.eswa.2024.125679. BiST-IF predicts origin–destination (OD) flows between metro stations or urban areas by correcting delayed recent OD matrices, applying bi-directional origin/destination attention, and fusing arrival-side (Out-OD) flows through an attention-based mutual information mechanism. It lowers MAE by an average of 7.55% on HZMetro relative to the best baseline.
+- [Automatic visual recognition for leaf disease based on enhanced attention mechanism](https://codezx6.github.io/papers/leaf-disease-attention.html): Yumeng Yao, Xiaodun Deng, Xu Zhang, Junming Li, Wenxuan Sun, Gechao Zhang. PeerJ Computer Science, vol. 10, article e2365 (2024). DOI 10.7717/peerj-cs.2365. A tomato leaf disease detector that adds the DyHead attention module to YOLOv4-tiny and trains it with a Focaler-SIoU box loss. On PlantDoc tomato leaf images it reaches 93.64% mAP, 10.3 percentage points above the YOLOv4-tiny baseline.
+- [S3CFSL: Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification](https://codezx6.github.io/papers/spatial-spectral-semantic-fsl.html): Mengxin Cao, Xu Zhang, Jinyong Cheng, Guixin Zhao, Wei Li, Xiangjun Dong. IEEE Transactions on Geoscience and Remote Sensing, vol. 62, article 5525315 (2024). DOI 10.1109/TGRS.2024.3434484. S3CFSL classifies new hyperspectral scenes from five labelled samples per class by transferring knowledge from the labelled Chikusei scene. It combines a cross-spatial–spectral transformer, Gaussian feature denoising and semantic-enhanced domain alignment, and reports 98.52% overall accuracy on Pavia Centre, 88.79% on Salinas and 77.63% on Houston.
+- [ST-FCL: Spatio-temporal fusion and contrastive learning for urban flow prediction](https://codezx6.github.io/papers/st-csl.html): Xu Zhang, Yongshun Gong, Chengqi Zhang, Xiaoming Wu, Ying Guo, Wenpeng Lu, Long Zhao, Xiangjun Dong. Knowledge-Based Systems, vol. 282, article 111104 (2023). DOI 10.1016/j.knosys.2023.111104. ST-FCL predicts grid-level urban inflow and outflow by fusing temporal and spatial views, learned through contrastive pretraining, with an external-factor view. On the full TaxiBJ dataset it reaches RMSE 14.71, against 15.41 for the best baseline, ATFM.
+- [MC-STL: Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction](https://codezx6.github.io/papers/mcstl.html): Xu Zhang, Yongshun Gong, Xinxin Zhang, Xiaoming Wu, Chengqi Zhang, Xiangjun Dong. CIKM 2023, pp. 3298–3307. DOI 10.1145/3583780.3614958. MC-STL pre-trains two encoders for urban flow prediction: a ViT encoder learns to reconstruct regions masked at different timestamps, and its attention weights also build a GCN adjacency matrix; a global-local cross-attention encoder learns a temporal-order contrastive task. It reaches RMSE 14.53 on full TaxiBJ.
+- [URMDet-SimFire: Trustworthy multimodal detection with uncertainty and reliability modeling for fire and smoke analytics](https://codezx6.github.io/papers/urmdet-simfire.html): Zhonghua Dang, Xu Zhang. Array, vol. 31, article 101124 (2026). DOI 10.1016/j.array.2026.101124. URMDet-SimFire is an uncertainty- and reliability-aware multimodal object detection framework for fire and smoke that reweights each input modality by its estimated reliability and calibrates each detection's confidence by its uncertainty. In simulation only, it raised F1 from 0.4348 (vision-only baseline) to 0.4638.
 
 ## Code
 
-- [DSTCN code](https://github.com/CodeZx6/DSTCN): DSTCN: Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction
 - [MR-UFP code](https://github.com/CodeZx6/MR-UPF): MR-UFP: Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information
 - [BiST-IF code](https://github.com/CodeZx6/BiST-IF): BiST-IF: Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution
-- [ST-CSL code](https://github.com/CodeZx6/ST-CSL): ST-CSL: Spatio-temporal fusion and contrastive learning for urban flow prediction
-- [MCSTL code](https://github.com/CodeZx6/MCSTL): MCSTL: Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction
+- [ST-FCL code](https://github.com/CodeZx6/ST-CSL): ST-FCL: Spatio-temporal fusion and contrastive learning for urban flow prediction
+- [MC-STL code](https://github.com/CodeZx6/MCSTL): MC-STL: Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction
 
 ## Optional
 
@@ -48,37 +47,57 @@ Authors: Xu Zhang, Longbing Cao, Zhangkai Wu
 Venue: arXiv:2606.00066 (2026)
 arXiv: https://arxiv.org/abs/2606.00066 (DOI 10.48550/arXiv.2606.00066)
 Page: https://codezx6.github.io/papers/duet.html
-Keywords: emotional text-to-speech, emotion control, diffusion TTS, flow-matching TTS, activation steering, classifier guidance, plug-and-play, humanoid robot, Ameca
+Keywords: emotional text-to-speech, emotion control, diffusion-based TTS, flow-matching TTS, representation steering, classifier guidance, differentiable vocoder, humanoid robot
 
-TL;DR: DUET adds fine-grained, plug-and-play emotion control to pretrained diffusion and flow-matching TTS models by steering a linearly decodable emotion direction in hidden space and guiding the mel output through a differentiable vocoder, with no retraining.
+TL;DR: DUET adds emotion control to frozen diffusion and flow-matching TTS models by steering hidden states along a linearly decodable emotion direction and refining the mel estimate with emotion-recognizer gradients passed through a differentiable vocoder. With GradTTS on ESD it reaches 75.5% average emotion accuracy (strongest supervised baseline: 46.8%).
 
-Task: Emotion-controllable text-to-speech (emotional TTS)
-Model type: Inference-time control for pretrained diffusion and flow-matching TTS; no backbone fine-tuning
-Core finding: Emotion is a linearly decodable direction of frozen hidden states, nearly orthogonal to the speaker-identity direction
-Mechanism: Hidden-space steering + mel-space guidance in one per-step update
-Evaluation: 5 architecturally diverse pretrained TTS backbones, 3 datasets, 10 supervised emotional-TTS baselines, human rating of emotion appropriateness
-Deployment: Ameca humanoid robot
+Task: Emotion control for pretrained diffusion and flow-matching text-to-speech models, with the TTS backbone kept frozen (no retraining)
+Full name: DUET = unified DUal-space Emotion conTrol
+Method components: Hidden-state steering along probe-derived emotion directions, scaled to the hidden-state norm, plus mel-space guidance with emotion2vec gradients backpropagated through the Vocos vocoder, in one per-step update
+Backbones (frozen): F5-TTS (DiT flow-matching), Matcha-TTS (Transformer flow-matching), GradTTS (score-based diffusion), ProDiff (DDPM, progressive distillation), StableTTS (lightweight flow-matching)
+Datasets: Test splits of ESD, CREMA-D and IEMOCAP; target emotions angry, happy and sad
+Metrics: Emotion accuracy (%) macro-averaged over two fine-tuned SER models, HuBERT-large and WavLM-large, neither used for guidance or probe labeling; human NMOS and EMOS on a 1-5 scale
+Baselines: 10 supervised emotional TTS systems: Qwen3-TTS, CosyVoice2, EmoVoice, Chatterbox, ChatTTS, IndexTTS2, OpenAudio, EmoSphere++, EmotiVoice, EmoKnob
+Headline result: DUET + GradTTS reaches 75.5% average emotion accuracy on ESD, 28.7 points above the strongest baseline, Qwen3-TTS (46.8%)
+Stated limitations: Weaker on temporally concentrated emotions such as anger, because one uniform steering direction is applied across positions; categorical emotions only
+Robot deployment: Ameca humanoid robot, with phoneme-to-viseme lip synchronization and emotion-matched facial expression presets
+Publication and access: arXiv preprint arXiv:2606.00066 (cs.SD; eess.AS), v1 submitted 20 May 2026; free to read on arXiv under arXiv's non-exclusive distribution licence
 
-Q: What problem does DUET solve?
-A: Diffusion and flow-matching TTS models sound natural but have no explicit emotion control because emotional signals are entangled with speaker identity. DUET adds fine-grained emotion control to such pretrained models without retraining them.
+Main results:
+- ESD test split, DUET plugged into frozen GradTTS, average over angry/happy/sad (Table 1): Average emotion accuracy = 75.5% (compared with Qwen3-TTS, strongest of 10 supervised baselines = 46.8%). Quote: "On ESD, DUET plugged into GradTTS achieves the best result of 75.5%, an absolute improvement of 28.7% over the strongest baseline Qwen3-TTS at 46.8%."
+- CREMA-D test split (91 speakers), DUET plugged into frozen ProDiff (Table 1): Average emotion accuracy = 75.5% (compared with Qwen3-TTS, strongest baseline on CREMA-D = 38.0%). Quote: "Results on CREMA-D, which contains 91 speakers, show the largest DUET-baseline margin, indicating robustness to broader speaker variation."
+- Weakest backbone: DUET plugged into frozen StableTTS, all three datasets (Table 1): Average emotion accuracy = 43.3% (ESD), 32.8% (CREMA-D), 48.8% (IEMOCAP) (compared with Qwen3-TTS = 46.8% (ESD), 38.0% (CREMA-D), 44.2% (IEMOCAP); StableTTS beats all baselines only on IEMOCAP). Quote: "StableTTS is the only backbone that does not surpass every supervised baseline, a limitation attributable to its lightweight architecture whose fewer layers constrain its emotion-encoding capacity."
+- Component ablation on F5-TTS with ESD (Table 2): Full DUET = 64.9%; without hidden-state steering = 40.6%; without mel-space guidance = 45.4% (average SER accuracy). Quote: "Removing hidden state steering causes a 24.3% average drop and removing mel-space guidance causes a 19.5% drop, validating that both components contribute substantially."
+- Blind listening test, 20 listeners, 36 samples, 1-5 scale, vs the three strongest baselines (Table 3): Emotion appropriateness EMOS = 3.93 (highest) (compared with Qwen3-TTS = 3.75, EmoKnob = 3.48, CosyVoice2 = 3.32). Quote: "DUET achieves the highest EMOS of 3.93, exceeding Qwen3-TTS by 0.18 and CosyVoice2 by 0.61."
+- Same listening test, naturalness (Table 3): Naturalness NMOS = 3.83 (third of four systems) (compared with Qwen3-TTS = 4.18 (best), CosyVoice2 = 4.02, EmoKnob = 3.54). Quote: "Its NMOS of 3.83 exceeds EmoKnob at 3.54 despite requiring no explicit emotion supervision, and the moderate gap to Qwen3-TTS reflects the slight spectral perturbation introduced by mel-space guidance."
 
-Q: What is the key discovery behind DUET?
-A: Emotion embedding emerges as a linearly decodable direction in the frozen hidden states of these models, and that direction is nearly orthogonal to the direction that encodes speaker identity. This makes emotion steerable without changing who is speaking.
+Q: What does DUET stand for?
+A: DUET stands for unified DUal-space Emotion conTrol, written out in the title as Unified Dual-Space Emotion Control. Section 3 of the arXiv paper uses the heading "DUET: Unified Dual-Space Emotion Steering".
 
-Q: Does DUET require training or fine-tuning the TTS model?
-A: No. DUET is plug-and-play: it intervenes during generation with a single per-step update that combines hidden-space steering along the target emotion direction and mel-space guidance through gradients from a differentiable vocoder.
+Q: What is the key finding behind DUET?
+A: In frozen diffusion and flow-matching TTS models, emotion emerges as a linearly decodable direction of the hidden states that is nearly orthogonal to the speaker-identity direction (absolute cosine similarity 0.029 on F5-TTS). Steering along it shifts the emotion direction while leaving the speaker-identity direction nearly unchanged in the hidden state.
 
-Q: How was DUET evaluated?
-A: On five architecturally diverse pretrained TTS backbones across three datasets, where it outperforms 10 supervised state-of-the-art emotional TTS baselines and achieves the highest human-rated emotion appropriateness. It was also deployed on an Ameca humanoid robot.
+Q: Does DUET require retraining the TTS model?
+A: No. The TTS backbone stays frozen, and DUET acts during generation with one per-step update that combines hidden-state steering with mel-space guidance, in which emotion2vec gradients are backpropagated through the Vocos vocoder to the clean mel estimate. The only trained parts are lightweight linear probes on frozen hidden states, used to choose the steering layer and derive the emotion direction.
+
+Q: How was DUET evaluated, and what are its main results?
+A: DUET was plugged into five frozen backbones (F5-TTS, Matcha-TTS, GradTTS, ProDiff, StableTTS) and tested on ESD, CREMA-D and IEMOCAP against 10 supervised emotional TTS baselines, with emotion accuracy averaged over HuBERT-large and WavLM-large recognizers. Its best average accuracies are 75.5% on ESD (GradTTS), 75.5% on CREMA-D (ProDiff) and 75.8% on IEMOCAP (Matcha-TTS), against 46.8%, 38.0% and 44.2% for the strongest baseline, Qwen3-TTS. Four of the five backbones beat every baseline on average, while StableTTS does so only on IEMOCAP.
+
+Q: How does DUET do in human listening tests?
+A: In a blind test, 20 listeners rated 36 samples on a 1-5 scale, comparing DUET with the three strongest baselines. DUET had the highest emotion-appropriateness score (EMOS 3.93, vs 3.75 for Qwen3-TTS), but its naturalness score (NMOS 3.83) was below Qwen3-TTS (4.18) and CosyVoice2 (4.02), though above EmoKnob (3.54). The authors attribute the gap to Qwen3-TTS to slight spectral perturbation from mel-space guidance.
+
+Q: How is DUET different from EmoSteer-TTS?
+A: EmoSteer-TTS is a training-free method that steers flow-matching TTS with activation vectors and per-position SER selection, and the DUET authors state that prior TTS emotion steering has operated on DiT architectures only. DUET is applied to both diffusion backbones (GradTTS, ProDiff) and flow-matching backbones (F5-TTS, Matcha-TTS, StableTTS), and adds mel-space guidance through a differentiable vocoder. EmoSteer-TTS is not among the 10 baselines in Table 1, so the paper reports no direct numerical comparison with it.
 
 中文标题: DUET：面向扩散与流匹配文本转语音的统一双空间情感控制
-中文摘要: 扩散式与流匹配式 TTS 自然度高但缺乏显式情感控制，因为情感信号与说话人身份纠缠。我们发现情感嵌入是冻结隐状态中一个线性可解码的方向，且几乎与说话人身份方向正交。据此提出即插即用框架 DUET：生成时在单次逐步更新中统一双空间控制，隐空间 steering 沿目标情感方向平移，Mel 空间 guidance 通过可微分声码器反传梯度细化频谱。在 5 个结构各异的预训练 TTS 骨干和 3 个数据集上，DUET 超过 10 个有监督情感 TTS 基线，并获得最高的人工情感恰当性评分；已部署于 Ameca 人形机器人。
+中文摘要: 扩散与流匹配 TTS 往往缺乏显式情感控制。本文发现情感是冻结隐状态中的线性可解码方向，与说话人身份近乎正交。DUET 在每个去噪步结合隐状态操控与梅尔谱空间引导（梯度经可微分声码器反传），无需重训模型。在 5 个冻结骨干、3 个数据集上，4 个骨干平均情感准确率超过全部 10 个有监督基线（ESD 上 75.5% 对 46.8%）；主观情感恰当性最高，自然度低于 Qwen3-TTS。
 
 Key points:
-- Emotion is a linearly decodable direction in the frozen hidden states of diffusion and flow-matching TTS models, and it is nearly orthogonal to the speaker-identity direction.
-- DUET unifies hidden-space steering and mel-space guidance in a single per-step update during sampling, so any pretrained backbone gains emotion control without fine-tuning.
-- Evaluated on five architecturally different pretrained TTS backbones and three datasets, DUET outperforms 10 supervised emotional-TTS baselines and receives the highest human-rated emotion appropriateness.
-- Deployed on an Ameca humanoid robot to produce expressive emotional speech for embodied interaction.
+- In frozen diffusion and flow-matching TTS models, emotion is a linearly decodable direction of the hidden states, nearly orthogonal to speaker identity (absolute cosine similarity 0.029 on F5-TTS).
+- DUET unifies hidden-state steering and mel-space guidance in one per-step update. Steering uses probe-derived emotion directions at the most discriminative layer; guidance backpropagates emotion2vec gradients through the Vocos vocoder to the mel estimate.
+- On ESD, CREMA-D and IEMOCAP, four of five DUET-equipped frozen backbones (F5-TTS, Matcha-TTS, GradTTS, ProDiff) beat all 10 supervised emotional-TTS baselines in average emotion accuracy; StableTTS beats them only on IEMOCAP.
+- Ablation on F5-TTS with ESD: removing hidden-state steering lowers average emotion accuracy from 64.9% to 40.6%, and removing mel-space guidance lowers it to 45.4%, so both components contribute.
+- In a blind test with 20 listeners, DUET has the highest emotion appropriateness (EMOS 3.93 vs 3.75 for Qwen3-TTS), but its naturalness (NMOS 3.83) trails Qwen3-TTS (4.18) and CosyVoice2 (4.02).
 
 Abstract: Diffusion and flow-matching based text-to-speech (TTS) models excel in naturalness but often lack explicit emotion control, as emotional signals remain entangled with speaker identity. We discover that emotion embedding emerges as a linearly decodable direction of frozen hidden states, nearly orthogonal to the direction embedding speaker identity. This inspires a plug-and-play framework DUET for emotion control over pretrained diffusion and flow-matching based TTS models. During generation, DUET unifies dual-space control to achieve fine-grained emotion intervention in a single per-step update: hidden space steering shifts generation along the target emotion direction, while mel-space guidance refines spectral details through gradients backpropagated from a differentiable vocoder. We validate DUET on five architecturally diverse pretrained TTS backbones across three datasets, where it outperforms 10 supervised state-of-the-art emotional TTS baselines across paradigms and achieves the highest human-rated emotion appropriateness. To further showcase its qualitative behavior, we deploy DUET on an Ameca humanoid robot, where it produces richly expressive emotional speech on the humanoid, demonstrating the strong potential for plug-and-play affective interaction for embodied agents.
 
@@ -97,7 +116,7 @@ BibTeX:
 }
 ```
 
-APA: Zhang, X., Cao, L., & Wu, Z. (2026). DUET: Unified Dual-Space Emotion Control for Diffusion and Flow-Matching Driven Text-to-Speech. arXiv preprint arXiv:2606.00066. https://doi.org/10.48550/arXiv.2606.00066
+APA: Zhang, X., Cao, L., & Wu, Z. (2026). DUET: Unified Dual-Space Emotion Control for Diffusion and Flow-Matching Driven Text-to-Speech. arXiv. https://doi.org/10.48550/arXiv.2606.00066
 
 ---
 
@@ -107,36 +126,57 @@ Authors: Xu Zhang, Longbing Cao, Runze Yang, Zhangkai Wu
 Venue: arXiv:2602.13259 (2026)
 arXiv: https://arxiv.org/abs/2602.13259 (DOI 10.48550/arXiv.2602.13259)
 Page: https://codezx6.github.io/papers/physioser.html
-Keywords: speech emotion recognition, physiology-informed, quaternion convolution, amplitude and phase, self-supervised speech models, interpretable SER, humanoid robot
+Keywords: speech emotion recognition, physiology-informed vocal representation, quaternion neural networks, self-supervised learning, amplitude and phase, group delay and instantaneous frequency, humanoid robot
 
-TL;DR: PhysioSER couples vocal amplitude and phase through voice anatomy and physiology (VAP) informed quaternion representations, aligned with a frozen self-supervised backbone, giving an interpretable and efficient plug-and-play speech emotion recognizer validated on 14 datasets and 10 languages.
+TL;DR: PhysioSER complements a frozen self-supervised (SSL) backbone with a compact physiology-informed branch that encodes vocal amplitude and phase features with quaternion convolutions, for speech emotion recognition. With frozen WavLM on CREMA-D, it raises weighted accuracy from 69.69% to 75.20%.
 
-Task: Speech emotion recognition (SER), utterance level
-Model type: Compact plug-and-play module on top of a frozen self-supervised (SSL) speech backbone
-Inputs: Physiology-informed amplitude and phase views (vocal-tract filter and glottal source)
-Mechanism: Quaternion embedding + Hamilton-structured quaternion convolutions; Contrastive Projection and Alignment with the SSL branch; shallow attention fusion head
-Evaluation: 14 datasets, 10 languages, 6 SSL backbones
-Deployment: Real-time on a humanoid robotic platform
+Task: Utterance-level speech emotion recognition (SER), motivated by humanoid-robot uses such as social interaction and robotic psychological diagnosis
+Architecture: Compact plug-and-play physiology-informed branch running in parallel with a frozen self-supervised (SSL) backbone; CPA aligns the two, and a shallow attention fusion head classifies
+Inputs: Raw waveform for the SSL branch; for the physiology branch, an STFT-derived quartet: log-magnitude M, log-magnitude rate ρ (spectral flux), instantaneous frequency f_inst, group delay τ_g
+Encoder: Quaternion Spectrotemporal Encoder (QSE): each bin embedded as Q = M + iρ + j f_inst + k τ_g, then Hamilton-product quaternion convolutions, quaternion batch normalization and radial qReLU
+Alignment and fusion: Contrastive Projection and Alignment (CPA): projection heads and a symmetric InfoNCE loss, with the SSL model frozen; then a shallow Transformer encoder and compact classifier
+SSL backbones: Six, all frozen: Wav2vec2, HuBERT, WavLM, Emotion2Vec, BEATs and the CLAP audio encoder, covering four pre-training paradigms
+Datasets: 14 public acted or simulated emotional speech datasets: 5 English (CREMA-D, EMNS, JLCorpus, EmoV-DB, RAVDESS) and 9 non-English (RESD, nEMO, AESDD, Emozionalmente, Oréau, MESD, SUBESCO, PAVOQUE, CaFE)
+Metrics and protocol: Weighted accuracy (WA), unweighted accuracy (UA), macro-F1; 7:1:2 train/validation/test split; mean of five random seeds; every Δ is a relative % change
+Baselines: Backbone-only (same frozen backbone, masked attention pooling and classifier, no physiology branch); on CREMA-D also fully fine-tuned WavLM and a real-valued CNN variant
+Headline result: CREMA-D with frozen WavLM: WA 69.69% → 75.20% (+7.91% relative) with 2.03M trainable parameters; fully fine-tuned WavLM reaches 73.66% with 94.61M
+Deployment: Real-time on the Ameca humanoid robot: vocal emotion is mapped to Ameca's facial expressions without automatic speech recognition; the paper links a demo video
+
+Main results:
+- CREMA-D, frozen WavLM backbone: WA = 75.20% (UA 75.62%, macro-F1 75.63%) (compared with Backbone-only frozen WavLM: WA 69.69% (+7.91% relative)). Quote: "On dataset CREMA-D with a frozen WavLM [8], WA increases from 69.69% to 75.20%."
+- CREMA-D, parameter efficiency: WA = 75.20% with 2.03M trainable parameters (frozen WavLM) (compared with Fully fine-tuned WavLM: WA 73.66% with 94.61M parameters). Quote: "PhysioSER achieves a superior 75.20% WA with only 2.03M trainable parameters (2.1% of the baseline)"
+- CREMA-D ablation: quaternion QSE vs real-valued CNN of comparable size: WA = 75.20% (quaternion) vs 72.78% (Normal CNN) (compared with Real-valued CNN is 3.22% lower (relative)). Quote: "While Normal CNN improves over WavLM Only, it trails our quaternion model by 3.22% WA."
+- CREMA-D ablation: feature subsets: Magnitude-only WA = 74.60% (−0.80% relative); Phase-only WA = 70.50% (−6.25% relative) (compared with Full quartet: WA 75.20%). Quote: "removing phase information (Magnitude-only) causes a minor 0.80% drop, whereas discarding magnitude (Phase-only) leads to a substantial 6.25% decline."
+- JLCorpus (10 classes), Wav2vec2 backbone: WA = 66.88% (compared with Backbone-only: WA 28.33% (+136.07% relative, the largest WA gain in Tables I-II)). Quote: "the model yields large relative improvements for weaker backbones (e.g., +136.07% WA on JLCorpus with Wav2vec2)"
+- CaFE (French, 7 classes), Wav2Vec2 backbone: UA = 35.45% (−6.64% relative); WA = 35.83% (+11.65%); F1 = 35.86% (+12.77%) (compared with Backbone-only: UA 37.97%, WA 32.09%, F1 31.80%; the only negative Δ among the 252 reported in Tables I-II). Quote: "Wav2Vec2 32.09 35.83 +11.65 37.97 35.45 −6.64 31.80 35.86 +12.77"
 
 Q: What is PhysioSER?
-A: A physiology-informed method for speech emotion recognition that builds amplitude and phase views of the voice from vocal anatomy and physiology, models their interaction with quaternion convolutions, and aligns them with a frozen self-supervised speech model.
+A: PhysioSER is a physiology-informed method for speech emotion recognition. It adds a compact branch that encodes vocal amplitude and phase features with Hamilton-structured quaternion convolutions, aligns it with a frozen self-supervised (SSL) backbone through Contrastive Projection and Alignment (CPA), and classifies the emotion with a shallow attention fusion head.
 
 Q: Why model phase as well as amplitude?
-A: Physiological research shows that the dynamics of vocal amplitude and phase correlate with emotion through the vocal tract filter and the glottal source, yet most deep SER models use amplitude only and never couple the two.
+A: Physiological research shows that the dynamics of vocal amplitude and phase correlate with emotion through the vocal tract filter and the glottal source. Yet most existing deep SER models use amplitude only. Methods that do use phase often concatenate it with amplitude as a separate feature or treat the two as independent channels, instead of modelling the physiology-informed coupling between them.
 
-Q: Can PhysioSER be added to an existing SSL model such as WavLM or HuBERT?
-A: Yes. It is designed as a compact plug-and-play branch that complements a frozen SSL backbone; the two branches are aligned by Contrastive Projection and Alignment and fused by a shallow attention head.
+Q: Which acoustic features does PhysioSER extract?
+A: It extracts four features from the short-time Fourier transform: log-magnitude M, log-magnitude rate ρ (spectral flux), instantaneous frequency f_inst and group delay τ_g. The authors describe them as spanning vocal-tract timbre, temporal energy modulation, laryngeal oscillation rate and phase dispersion. Each time-frequency bin is embedded as the quaternion M + iρ + j f_inst + k τ_g.
 
-Q: How broadly was it tested?
-A: Across 14 datasets, 10 languages, and 6 backbones, with real-time deployment on a humanoid robot.
+Q: How much does PhysioSER improve a frozen WavLM, and at what cost?
+A: On CREMA-D, weighted accuracy rises from 69.69% (frozen WavLM plus classifier) to 75.20%, a 7.91% relative gain, with 2.03M trainable parameters. Fully fine-tuning WavLM uses 94.61M parameters and reaches 73.66% WA.
+
+Q: Which backbones and datasets was PhysioSER evaluated on?
+A: It was tested with six frozen backbones (Wav2vec2, HuBERT, WavLM, Emotion2Vec, BEATs and the CLAP audio encoder) on 14 public emotional speech datasets, 5 English and 9 non-English. WA and macro-F1 improve over the Backbone-only baseline for every backbone-dataset pair; the only drop in the main result tables (Tables I-II) is UA on CaFE with Wav2Vec2 (−6.64% relative).
+
+Q: Which robot was PhysioSER deployed on?
+A: PhysioSER was deployed on the Ameca humanoid robot. It processes continuous audio in Ameca's perception-action loop and maps vocal emotion directly to Ameca's facial expressions, without automatic speech recognition or linguistic analysis. The paper links a demo video.
 
 中文标题: 学习生理信息引导的嗓音时频表示用于语音情感识别（PhysioSER）
-中文摘要: 语音情感识别对社交机器人与机器人心理评估等任务至关重要，但现有深度模型大多不可解释，且几乎只使用幅度信息。嗓音生理学表明，幅度与相位的动态通过声道滤波器和声门源与情感相关。PhysioSER 基于发声解剖与生理（VAP）构造幅度与相位视图，将其嵌入四元数域并用 Hamilton 结构四元数卷积建模二者交互；另一分支为冻结的自监督语音模型。两路话语级特征通过对比投影对齐框架对齐，再由浅层注意力融合头分类。在 14 个数据集、10 种语言、6 种骨干上验证了其可解释性与效率，并在人形机器人上实时部署。
+中文摘要: PhysioSER 是生理信息引导的语音情感识别方法：基于嗓音解剖与生理（VAP）提取对数幅度、谱通量、瞬时频率与群时延，嵌入四元数域并用 Hamilton 结构四元数卷积建模交互，经对比投影与对齐（CPA）与冻结自监督骨干的特征对齐后融合分类。CREMA-D 上以冻结 WavLM 为骨干时，加权准确率由 69.69% 升至 75.20%；已在 Ameca 人形机器人上实时部署。
 
 Key points:
-- Most deep SER models use amplitude only; PhysioSER builds amplitude and phase views grounded in vocal-tract and glottal-source physiology and models their interaction with Hamilton-structured quaternion convolutions.
-- A Contrastive Projection and Alignment framework aligns the physiology branch with a frozen SSL backbone, followed by a shallow attention fusion head.
-- Evaluated across 14 datasets, 10 languages, and 6 SSL backbones, and deployed in real time on a humanoid robotic platform.
+- PhysioSER derives four STFT features grounded in voice anatomy and physiology: log-magnitude, log-magnitude rate (spectral flux), instantaneous frequency and group delay. It embeds each time-frequency bin as one quaternion.
+- A Hamilton-structured Quaternion Spectrotemporal Encoder (QSE) models the interactions among the four features. Replacing it with a real-valued CNN of comparable size lowers CREMA-D weighted accuracy from 75.20% to 72.78%.
+- Contrastive Projection and Alignment (CPA) aligns utterance-level features of the physiology branch and the frozen SSL branch with a symmetric InfoNCE loss; a shallow Transformer fusion head then classifies the emotion.
+- Across 14 datasets and 6 frozen backbones, PhysioSER improves WA and macro-F1 over the Backbone-only baseline in every pair. Gains are larger for weaker backbones, up to +136.07% relative WA (JLCorpus, Wav2vec2).
+- PhysioSER runs in real time on the Ameca humanoid robot, mapping vocal emotion directly to Ameca's facial expressions without automatic speech recognition.
 
 Abstract: Speech emotion recognition (SER) is essential for humanoid robot tasks such as social robotic interactions and robotic psychological diagnosis, where interpretable and efficient models are critical for safety and performance. Existing deep models trained on large datasets remain largely uninterpretable, often insufficiently modeling underlying emotional acoustic signals and failing to capture and analyze the core physiology of emotional vocal behaviors. Physiological research on human voices shows that the dynamics of vocal amplitude and phase correlate with emotions through the vocal tract filter and the glottal source. However, most existing deep models solely involve amplitude but fail to couple the physiological features of and between amplitude and phase. Here, we propose PhysioSER, a physiology-informed vocal spectrotemporal representation learning method, to address these issues with a compact, plug-and-play design. PhysioSER constructs amplitude and phase views informed by voice anatomy and physiology (VAP) to complement SSL models for SER. This VAP-informed framework incorporates two parallel workflows: a vocal feature representation branch to decompose vocal signals based on VAP, embed them into a quaternion field, and use Hamilton-structured quaternion convolutions for modeling their dynamic interactions; and a latent representation branch based on a frozen SSL backbone. Then, utterance-level features from both workflows are aligned by a Contrastive Projection and Alignment framework, followed by a shallow attention fusion head for SER classification. PhysioSER is shown to be interpretable and efficient for SER through extensive evaluations across 14 datasets, 10 languages, and 6 backbones, and its practical efficacy is validated by real-time deployment on a humanoid robotic platform.
 
@@ -155,43 +195,67 @@ BibTeX:
 }
 ```
 
-APA: Zhang, X., Cao, L., Yang, R., & Wu, Z. (2026). Learning Physiology-Informed Vocal Spectrotemporal Representations for Speech Emotion Recognition. arXiv preprint arXiv:2602.13259. https://doi.org/10.48550/arXiv.2602.13259
+APA: Zhang, X., Cao, L., Yang, R., & Wu, Z. (2026). Learning Physiology-Informed Vocal Spectrotemporal Representations for Speech Emotion Recognition. arXiv. https://doi.org/10.48550/arXiv.2602.13259
 
 ---
 
 ## DSTCN: Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction
 
 Authors: Yongshun Gong, Piao Yu, Xu Zhang, Xinxin Zhang, Xiushan Nie, Haoliang Sun
-Venue: Expert Systems with Applications, vol. 299, 130095 (2026)
+Venue: Expert Systems with Applications, vol. 299, article 130095 (2026)
 DOI: https://doi.org/10.1016/j.eswa.2025.130095
-Code: https://github.com/CodeZx6/DSTCN
 Page: https://codezx6.github.io/papers/dstcn.html
-Keywords: origin-destination demand prediction, metro OD matrix, spatio-temporal correlation, graph convolution, attention, intelligent transportation
+Keywords: origin-destination demand prediction, spatio-temporal modeling, Transformer, graph neural network, intelligent transportation systems, OD demand matrix, spatio-temporal correlation
 
-TL;DR: DSTCN (Dynamic Spatio-Temporal Correlation Network) forecasts origin-destination demand with three modules: Glstm2D for bidirectional origin/destination demand trends, Simformer for Transformer-based inter-regional similarity over the OD matrix, and FF-TM for temporal fusion; it beats state-of-the-art baselines on NYC-TOD2018, NYC-TOD2019, and HZMetro.
+TL;DR: DSTCN (Dynamic Spatio-Temporal Correlation Network) forecasts origin-destination demand matrices with three modules: Glstm2D for origin- and destination-side demand trends, Simformer for Transformer-based spatial similarity across the OD matrix, and FF-TM for feature fusion and temporal modeling. On NYC-TOD2018 its MAE of 1.469 is 3.04% below the best baseline.
 
-Task: Origin-destination (OD) demand prediction for intelligent transportation systems
-Components: Glstm2D (bidirectional origin/destination demand trend), Simformer (Transformer-based inter-regional similarity over the OD matrix), FF-TM (temporal fusion and modelling)
-Datasets: NYC-TOD2018, NYC-TOD2019, HZMetro
-Open access: Yes, CC BY
+Task: Origin-destination (OD) demand prediction: forecasting the N x N matrix of passengers travelling from each region to every other region in upcoming time intervals
+Method components: Glstm2D (D-Glstm and O-Glstm: BiLSTM plus spatio-temporal graph learning), Simformer (Transformer-based spatial similarity module), FF-TM (feature fusion, GRU, multi-head temporal convolution)
+Datasets: NYC-TOD2018 and NYC-TOD2019 (NYC yellow-taxi OD demand, 69 Manhattan zones, hourly); HZMetro (80 Hangzhou metro stations, 1 to 25 January 2019, 10-minute intervals)
+Metrics and protocol: MAE and RMSE; 6:2:2 train/validation/test split; results averaged over 10 runs
+Baselines: 12 baselines: HA; OD demand methods GEML, MPGCN, HMOD, CMOD; urban-flow models adapted to OD (GRU, LSTM, STGCN, STSGCN, DGCN, STTN, TGCRN)
+Headline result: MAE/RMSE 1.469/3.284 on NYC-TOD2018 and 1.273/2.909 on NYC-TOD2019, 3.04% to 4.56% below the best baseline on each metric (p < .001)
+Corresponding author: Xu Zhang
+Venue: Expert Systems with Applications, vol. 299, article 130095; issue dated March 2026; available online 24 October 2025
+Article history: Received 1 June 2025; revised 29 August 2025; accepted 17 October 2025
+Open access: Open access under CC BY 4.0 in a hybrid journal
+Code and data: The paper links no code repository; data are available on request
+
+Main results:
+- NYC-TOD2018 (Manhattan yellow-taxi OD demand, next-hour forecast): MAE = 1.469; RMSE = 3.284 (compared with Best baselines: MAE 1.515 (STGCN), RMSE 3.441 (DGCN); 3.04% and 4.56% lower). Quote: "Concretely, DSTCN achieves average improvements of 3.04 %, 4.56 %, 3.19 %, and 4.09 % in MAE and RMSE on NYC-TOD2018 and NYC-TOD2019, respectively, over the best baseline."
+- NYC-TOD2019 (Manhattan yellow-taxi OD demand, next-hour forecast): MAE = 1.273; RMSE = 2.909 (compared with Best baselines: MAE 1.315 (STSGCN), RMSE 3.033 (DGCN); 3.19% and 4.09% lower). Quote: "Our proposed DSTCN achieves the best performance across all metrics and datasets, with improvements being statistically significant (p < .001)."
+- High-demand areas: OD submatrices of the 20 stations with the highest departure demand (NYC-TOD2018 and NYC-TOD2019): MAE = 4.952, RMSE = 7.752 (2018); MAE = 4.326, RMSE = 6.879 (2019) (compared with Best baselines 2018: MAE 5.184 (STGCN), RMSE 8.225 (DGCN); 2019: MAE 4.530, RMSE 7.236 (DGCN)). Quote: "DSTCN achieves relative improvements of 4.48 % and 5.75 % (MAE and RMSE) for NYC-TOD2018, and 4.50 % and 4.93 % for NYC-TOD2019"
+- HZMetro (Hangzhou metro OD demand, 10/30/60-minute horizons): MAE = 0.931 / 0.924 / 0.935; RMSE = 1.827 / 1.832 / 1.827 (compared with Best baseline MAE 1.030 (MPGCN, 10 min), 1.041 (MPGCN, 30 min), 1.060 (DGCN, 60 min); MAE 9.61% to 11.79% lower). Quote: "As shown in Table 7, DSTCN consistently achieves the lowest MAE and RMSE across all forecasting horizons, outperforming all competing baselines."
+- Efficiency on NYC-TOD2018 (Table 8): Parameters = 14.42 M; average inference = 1.204 ms/sample (compared with STGCN 0.18 M / 0.217 ms; DGCN 0.77 M / 0.203 ms; GEML 2.50 M / 0.119 ms; CMOD 0.30 M / 2.388 ms). Quote: "The analysis shows that DSTCN intentionally trades a higher computational budget for superior accuracy."
+- Ablation on NYC-TOD2018 (Table 9): Full model MAE = 1.469; w/o GRU 1.548; w/o Glstm2D 1.533; w/o Simformer 1.484 (compared with On NYC-TOD2019 MAE, the attention-fusion variant and the w/o Mul-TCL variant (both 1.269) are slightly below the full model (1.273)). Quote: "while grid cell features (Simformer) are helpful, area demand change features (Glstm2D) are more critical for accurate prediction"
 
 Q: What does DSTCN predict?
-A: Next-step origin-destination demand, i.e. how many trips will start in each region and end in each other region, which supports real-time traffic management, vehicle dispatch, and resource allocation.
+A: It forecasts the N x N OD demand matrix, whose entry (i, j) is the number of passengers departing region i for region j in a time interval. The horizon is the next hour on the NYC taxi datasets and 10, 30 or 60 minutes on HZMetro. The paper presents this as support for real-time traffic management, dynamic vehicle dispatch and resource allocation.
 
-Q: What are the three components of DSTCN?
-A: Glstm2D jointly learns demand evolution from the origin and destination perspectives; Simformer uses a Transformer to extract dynamic inter-regional correlations across the OD matrix; FF-TM fuses multi-source spatio-temporal features for prediction.
+Q: What are the three modules of DSTCN?
+A: Glstm2D models demand trends along both axes of the OD matrix with a destination branch (D-Glstm) and an origin branch (O-Glstm), each combining a BiLSTM with spatio-temporal graph learning. Simformer is a Transformer-based spatial similarity module: it merges 4 x 4 blocks of OD cells, adds one-hot day-of-week and hour-of-day features, and applies multi-head self-attention. FF-TM (feature fusion and time modeling) fuses the two feature streams and models their temporal evolution with a GRU and a multi-head temporal convolution layer.
 
-Q: Which datasets were used?
-A: Three large-scale real-world datasets: NYC-TOD2018, NYC-TOD2019 (New York taxi OD) and HZMetro (Hangzhou metro).
+Q: Which datasets were used to evaluate DSTCN?
+A: NYC-TOD2018 and NYC-TOD2019 are built from New York City TLC yellow-taxi trip records over 69 Manhattan zones, aggregated hourly for the full years 2018 and 2019. HZMetro, from the Alibaba Tianchi platform, holds about 58 million transaction records from 80 Hangzhou metro stations (1 to 25 January 2019), aggregated in 10-minute intervals between 6:00 and 24:00.
+
+Q: How accurate is DSTCN compared with baselines?
+A: On NYC-TOD2018 and NYC-TOD2019, DSTCN reaches MAE/RMSE of 1.469/3.284 and 1.273/2.909, which is 3.04% to 4.56% lower than the best of 12 baselines on each metric, and the paper reports these gains as statistically significant (p < .001). On HZMetro its MAE is 0.931, 0.924 and 0.935 at 10, 30 and 60 minutes, 9.61% to 11.79% below the best baseline.
+
+Q: How large and how fast is DSTCN?
+A: On NYC-TOD2018, DSTCN has 14.42 M parameters and takes 1.204 ms per sample at inference, against 0.18 M and 0.217 ms for STGCN and 0.30 M and 2.388 ms for CMOD. The authors say DSTCN trades a higher computational budget for accuracy: its larger size contributes to a moderate training time, yet it shows the fastest and most stable convergence among the tested models.
+
+Q: Is code for DSTCN available?
+A: The paper does not link a code repository. Its data availability statement says that data will be made available on request.
 
 中文标题: 利用动态时空相关性进行起讫点（OD）需求预测
-中文摘要: 准确的 OD 需求预测是智能交通系统的基础。OD 需求具有复杂、动态且高度耦合的时空模式。我们提出动态时空相关网络 DSTCN，包含三个模块：双向需求趋势建模模块 Glstm2D，从起点与终点两个视角联合学习需求演化；基于 Transformer 的空间相似性模块 Simformer，动态提取并整合 OD 矩阵上的区域间相关性；时间融合建模模块 FF-TM，融合多源时空特征完成下一步预测。在 NYC-TOD2018、NYC-TOD2019 和 HZMetro 三个大规模真实数据集上，DSTCN 稳定优于最新基线。
+中文摘要: 准确的起讫点（OD）需求预测是智能交通系统的基础。本文提出动态时空相关网络 DSTCN，包含三个模块：双向需求趋势建模模块 Glstm2D 从起点与终点两个视角联合学习需求演化；基于 Transformer 的空间相似性模块 Simformer 动态提取并整合 OD 矩阵中的区域间相关性；特征融合与时间建模模块 FF-TM 融合多源时空特征，完成下一步预测。在 NYC-TOD2018、NYC-TOD2019 和 HZMetro 三个真实数据集上，DSTCN 均优于最先进基线：NYC-TOD2018 上 MAE 为 1.469，较最优基线降低 3.04%；HZMetro 上 10/30/60 分钟预测的 MAE 较最优基线降低 9.61%–11.79%。
 
 Key points:
-- Glstm2D jointly learns demand evolution from both the origin and the destination perspective.
-- Simformer dynamically extracts and integrates inter-regional correlations across the OD matrix with a Transformer.
-- FF-TM combines multi-source spatio-temporal features for next-step prediction.
-- Evaluated on three large-scale real-world datasets (NYC-TOD2018, NYC-TOD2019, HZMetro); published open access (CC BY) in Expert Systems with Applications, vol. 299 (2026), online October 2025.
+- Glstm2D pairs a destination-side branch (D-Glstm) with an origin-side branch (O-Glstm). Each combines a BiLSTM with spatio-temporal graph learning (STGL) to model demand trends along both axes of the OD matrix.
+- Simformer merges each 4 x 4 block of OD cells, adds one-hot day-of-week and hour-of-day features, and applies multi-head self-attention. FF-TM fuses both feature streams, then models time with a GRU and multi-head temporal convolution.
+- On NYC-TOD2018 and NYC-TOD2019 (69 Manhattan taxi zones, hourly), DSTCN reaches MAE/RMSE 1.469/3.284 and 1.273/2.909, 3.04% to 4.56% below the best of 12 baselines on each metric (p < .001).
+- On HZMetro (80 Hangzhou metro stations, 10-minute intervals), DSTCN has the lowest MAE and RMSE at 10, 30 and 60 minutes, with MAE 0.931, 0.924 and 0.935, 9.61% to 11.79% below the best baseline.
+- In the NYC-TOD2018 efficiency test, DSTCN has 14.42 M parameters (baselines 0.18 to 2.50 M) and 1.204 ms/sample inference, slower than three of four baselines. Ablations show removing the GRU or Glstm2D raises MAE most.
 
 Abstract: Accurate Origin-Destination (OD) demand prediction is fundamental to intelligent transportation systems (ITS), enabling real-time traffic management, dynamic vehicle dispatch, and efficient resource allocation in urban environments. However, OD demand exhibits complex, dynamic, and highly coupled spatio-temporal patterns that remain challenging for existing models. We propose a novel Dynamic Spatio-Temporal Correlation Network (DSTCN) for OD demand forecasting. DSTCN features three key components: (1) a bidirectional demand trend modeling module (Glstm2D) that jointly learns demand evolution from both origin and destination perspectives; (2) a Transformer-based spatial similarity module (Simformer) to dynamically extract and integrate inter-regional correlations across the OD matrix; and (3) a temporal fusion and modeling module (FF-TM) that combines and processes multi-source spatio-temporal features for next-step prediction. Extensive experiments on three large-scale real-world datasets (NYC-TOD2018, NYC-TOD2019, and HZMetro) demonstrate that DSTCN consistently outperforms state-of-the-art baselines across diverse urban scenarios.
 
@@ -210,42 +274,65 @@ BibTeX:
 }
 ```
 
-APA: Gong, Y., Yu, P., Zhang, X., Zhang, X., Nie, X., & Sun, H. (2026). Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction. Expert Systems with Applications, 299, 130095. https://doi.org/10.1016/j.eswa.2025.130095
+APA: Gong, Y., Yu, P., Zhang, X., Zhang, X., Nie, X., & Sun, H. (2026). Exploiting dynamic spatio-temporal correlations for origin-destination demand prediction. Expert Systems with Applications, 299, Article 130095. https://doi.org/10.1016/j.eswa.2025.130095
 
 ---
 
 ## S2CMEN: A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image
 
 Authors: Mengxin Cao, Yongmin Li, Xu Zhang, Guixin Zhao, Guohua Lv, Aimei Dong, Jinyong Cheng, Wei Li, Xiangjun Dong
-Venue: IEEE Transactions on Geoscience and Remote Sensing, vol. 63, 1–14 (2025)
+Venue: IEEE Transactions on Geoscience and Remote Sensing, vol. 63, article 5524714 (2025)
 DOI: https://doi.org/10.1109/TGRS.2025.3608942
 Page: https://codezx6.github.io/papers/mutual-enhancement-hsi.html
-Keywords: hyperspectral image classification, superpixel segmentation, mutual enhancement, remote sensing, deep learning
+Keywords: hyperspectral image classification, superpixel segmentation, feature fusion, Transformer, graph convolutional network, mutual enhancement, global spatial context, remote sensing
 
-TL;DR: A network in which superpixel segmentation and hyperspectral classification reinforce each other, so segmentation boundaries and class predictions improve jointly.
+TL;DR: S²CMEN (S2CMEN) is a hyperspectral image classification network in which superpixel segmentation and classification enhance each other through a unified loss, combining superpixel-based global spatial context with Spectral-Swin Transformer spectral features. It reaches 97.38% overall accuracy on Indian Pines.
 
 Task: Hyperspectral image (HSI) classification
-Idea: Superpixel segmentation and classification enhance each other under a unit loss
-Modules: GSAM (ASSN + GCN) for global spatial correlation; SSFM for spatial-spectral fusion; MES mutual enhancement strategy
-Datasets and overall accuracy: Indian Pines 97.38%, Pavia University 92.33%, Houston 91.38%
+Core idea: Superpixel segmentation and classification enhance each other; the two branches are jointly optimized via a unified loss (the abstract calls it a unit loss)
+GSAM: Global spatial adaptive module: an adaptive spectral-superpixel network (ASSN) plus a graph convolutional network (GCN) that captures global spatial dependencies by adaptively deriving superpixels
+SSFM: Spatial-spectral fusion module: a Spectral-Swin Transformer (SW-Attention and SWS-Attention, convolutional Q/K/V) extracts long-range spectral features and fuses them with the global spatial features
+MES: Mutual enhancement strategy: under the unit loss, the superpixel segmentation loss and the classification loss mutually enhance each other
+Datasets: Indian Pines (IP), Pavia University (PU) and Houston
+Headline result: Overall accuracy (OA): 97.38% on Indian Pines, 92.33% on Pavia University, 91.38% on Houston
+Ablation: Fig. 8 reports GSAM ablation experiments on the IP, PU and Houston datasets
+Venue: IEEE Transactions on Geoscience and Remote Sensing, vol. 63 (2025), Art. no. 5524714, pp. 1-14; IEEE Xplore document 11159546
+Published online: 11 September 2025 (IEEE Xplore)
+Access: Not open access on IEEE Xplore
 
-Q: What is new in S2CMEN?
-A: Most HSI classifiers use local patch-level spectral-spatial cues. S2CMEN adds global spatial contextual correlation by adaptively deriving superpixels from the image and letting the segmentation and classification losses reinforce each other.
+Main results:
+- Indian Pines (IP): Overall accuracy (OA) = 97.38%. Quote: "achieves overall classification accuracies of 97.38%, 92.33%, and 91.38% on Indian Pines (IPs), Pavia University (PU), and Houston, respectively"
+- Pavia University (PU): Overall accuracy (OA) = 92.33%. Quote: "achieves overall classification accuracies of 97.38%, 92.33%, and 91.38% on Indian Pines (IPs), Pavia University (PU), and Houston, respectively"
+- Houston: Overall accuracy (OA) = 91.38%. Quote: "achieves overall classification accuracies of 97.38%, 92.33%, and 91.38% on Indian Pines (IPs), Pavia University (PU), and Houston, respectively"
 
-Q: Can GSAM be reused with other models?
-A: Yes. The global spatial adaptive module provides a transferable global spatial representation that can be integrated with other spectral feature extraction models.
+Q: Which paper introduced S2CMEN, and how is the name written?
+A: S2CMEN was introduced in "A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image" (IEEE Transactions on Geoscience and Remote Sensing, 2025). The paper writes the name with a superscript 2, S²CMEN, and expands it as superpixel segmentation and classification mutual enhancement network.
 
-Q: What accuracy does it reach?
-A: Overall accuracies of 97.38% on Indian Pines, 92.33% on Pavia University, and 91.38% on Houston.
+Q: What problem does S2CMEN address?
+A: Most existing HSI classification methods rely on local spectral-spatial cues from patch-level representations, and limited attention has been given to global spatial contextual correlations among pixels. S2CMEN adds them through a global spatial adaptive module (GSAM), in which an adaptive spectral-superpixel network (ASSN) and a graph convolutional network (GCN) capture global spatial relationships by adaptively deriving superpixels. GSAM offers a transferable global spatial representation that can be integrated with other spectral feature extraction models.
+
+Q: How does S2CMEN extract spectral features?
+A: Its spatial-spectral fusion module (SSFM) uses a Spectral-Swin Transformer to extract long-range, detailed spectral features, then fuses them with the global spatial features. The Spectral-Swin Transformer uses spectral window attention (SW-Attention) and spectral window shift attention (SWS-Attention). It computes the query, key and value matrices with convolutional operations to better process high-dimensional spectral features.
+
+Q: How are superpixel segmentation and classification trained together in S2CMEN?
+A: The segmentation and classification branches are jointly optimized via a unified loss, which the abstract calls a unit loss. Under this constraint, the mutual enhancement strategy (MES) makes the superpixel segmentation loss and the classification loss mutually enhance each other.
+
+Q: Which datasets is S2CMEN evaluated on, and what accuracy does it reach?
+A: It is evaluated on three public hyperspectral datasets: Indian Pines (IP), Pavia University (PU) and Houston. Its overall classification accuracies are 97.38%, 92.33% and 91.38%, respectively, and the abstract reports that it consistently surpasses existing state-of-the-art methods.
+
+Q: Where is S2CMEN published, and is it open access?
+A: It appears in IEEE Transactions on Geoscience and Remote Sensing, vol. 63 (2025), Art. no. 5524714, pp. 1-14, DOI 10.1109/TGRS.2025.3608942 (IEEE Xplore document 11159546). The IEEE version is not open access.
 
 中文标题: 用于高光谱图像超像素分割与分类的互增强网络（S2CMEN）
-中文摘要: 现有高光谱图像分类方法多依赖块级局部光谱-空间线索，较少利用像素间的全局空间上下文相关性。我们提出超像素分割与分类互增强网络 S2CMEN：全局空间自适应模块 GSAM 由自适应光谱-超像素网络 ASSN 与图卷积网络 GCN 组成，自适应地从高光谱图像中导出超像素并捕获全局空间关系，且可迁移到其他光谱特征提取模型；空间-光谱融合模块 SSFM 融合全局空间特征与光谱特征；在统一损失约束下，互增强策略 MES 使分割损失与分类损失相互促进。在 Indian Pines、Pavia University、Houston 上总体精度分别为 97.38%、92.33%、91.38%。
+中文摘要: S2CMEN（S²CMEN）通过超像素分割与分类的互增强，将像素间的全局空间相关性与光谱信息结合，用于高光谱图像分类。全局空间自适应模块 GSAM 由自适应光谱-超像素网络 ASSN 与图卷积网络 GCN 组成，自适应地导出超像素以捕获全局空间关系；空间-光谱融合模块 SSFM 用 Spectral-Swin Transformer 提取长程光谱特征，并与全局空间特征融合；互增强策略 MES 在统一损失约束下使超像素分割损失与分类损失相互促进。在 Indian Pines、Pavia University、Houston 上总体分类精度分别为 97.38%、92.33%、91.38%。
 
 Key points:
-- Treats superpixel segmentation and pixel classification as mutually enhancing tasks rather than a fixed preprocessing pipeline.
-- Published in IEEE TGRS, volume 63 (2025).
+- Treats superpixel segmentation and classification as mutually enhancing tasks: an adaptive spectral-superpixel network (ASSN) derives superpixels from the image, and the segmentation and classification branches are jointly optimized via a unified loss.
+- The global spatial adaptive module (GSAM) combines ASSN with a graph convolutional network (GCN) to capture global spatial dependencies; its global spatial representation can be integrated with other spectral feature extraction models.
+- The spatial-spectral fusion module (SSFM) uses a Spectral-Swin Transformer with spectral window attention (SW-Attention) and spectral window shift attention (SWS-Attention), computing query, key and value matrices with convolutional operations.
+- Reaches overall classification accuracies of 97.38% on Indian Pines, 92.33% on Pavia University and 91.38% on Houston; Fig. 8 reports a GSAM ablation on all three datasets.
 
-Abstract: Most existing hyperspectral image (HSI) classification methods primarily focus on capturing subtle spectral variations by leveraging local spectral-spatial cues derived from patch-level representations. However, limited attention has been given to exploring the global spatial contextual correlations among pixels of HSI. In this study, we propose the Superpixel Segmentation and Classification Mutual Enhancement Network (S2CMEN), a novel framework that integrates global spatial correlations with spectral information through the mutual enhancement of superpixel segmentation and classification. Specifically, a global spatial adaptive module (GSAM) is designed to obtain the direct correlation of the global classes in HSI. It consists of an Adaptive Spectral-Superpixel Network (ASSN) and a Graph Convolutional Network (GCN), forming a synergistic architecture that effectively captures global spatial relationships by adaptively deriving superpixel results from HSIs. Notably, GSAM offers a transferable global spatial representation for HSI tasks, enabling integration with other spectral feature extraction models. Furthermore, we develop a Spatial-Spectral Fusion Module (SSFM) to obtain comprehensive spectral features and fuse them with the extracted global spatial features. Finally, under the constraint of a unit loss, the Mutual Enhancement Strategy (MES) can make the superpixel segmentation loss and the classification loss mutually enhance each other for better performance. We conducted extensive experiments on three public datasets. The proposed S2CMEN achieves overall classification accuracies of 97.38%, 92.33%, and 91.38% on Indian Pines, Pavia University, and Houston, respectively, consistently surpassing existing state-of-the-art methods.
+Abstract: Most existing hyperspectral image (HSI) classification methods primarily focus on capturing subtle spectral variations by leveraging local spectral–spatial cues derived from patch-level representations. However, limited attention has been given to exploring the global spatial contextual correlations among pixels of HSI. In this study, we propose the superpixel segmentation and classification mutual enhancement network (S²CMEN), a novel framework that integrates global spatial correlations with spectral information through the mutual enhancement of superpixel segmentation and classification. Specifically, a global spatial adaptive module (GSAM) is designed to obtain the direct correlation of the global classes in HSI. It consists of an adaptive spectral-superpixel network (ASSN) and a graph convolutional network (GCN), forming a synergistic architecture that effectively captures global spatial relationships by adaptively deriving superpixel results from HSIs. Notably, GSAM offers a transferable global spatial representation for HSI tasks, enabling integration with other spectral feature extraction models. Furthermore, we develop a spatial–spectral fusion module (SSFM) to obtain comprehensive spectral features and fuse them with the extracted global spatial features. Finally, under the constraint of a unit loss, the mutual enhancement strategy (MES) can make the superpixel segmentation loss and the classification loss mutually enhance each other for better performance. We conducted extensive experiments on three public datasets. The proposed S²CMEN achieves overall classification accuracies of 97.38%, 92.33%, and 91.38% on Indian Pines (IPs), Pavia University (PU), and Houston, respectively, consistently surpassing existing state-of-the-art methods.
 
 BibTeX:
 ```bibtex
@@ -255,50 +342,76 @@ BibTeX:
   journal      = {IEEE Transactions on Geoscience and Remote Sensing},
   year         = {2025},
   volume       = {63},
-  pages        = {1--14},
+  pages        = {5524714},
   doi          = {10.1109/TGRS.2025.3608942},
-  issn         = {1558-0644},
+  issn         = {0196-2892},
   url          = {https://doi.org/10.1109/TGRS.2025.3608942}
 }
 ```
 
-APA: Cao, M., Li, Y., Zhang, X., Zhao, G., Lv, G., Dong, A., Cheng, J., Li, W., & Dong, X. (2025). A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image. IEEE Transactions on Geoscience and Remote Sensing, 63, 1-14. https://doi.org/10.1109/TGRS.2025.3608942
+APA: Cao, M., Li, Y., Zhang, X., Zhao, G., Lv, G., Dong, A., Cheng, J., Li, W., & Dong, X. (2025). A Mutually Enhancement Network for Superpixel Segmentation and Classification of Hyperspectral Image. IEEE Transactions on Geoscience and Remote Sensing, 63, Article 5524714. https://doi.org/10.1109/TGRS.2025.3608942
 
 ---
 
 ## MR-UFP: Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information
 
 Authors: Xu Zhang, Mengxin Cao, Yongshun Gong, Xiaoming Wu, Xiangjun Dong, Ying Guo, Long Zhao, Chengqi Zhang
-Venue: Neural Networks, vol. 182, 106900 (2025)
+Venue: Neural Networks, vol. 182, article 106900 (2025)
 DOI: https://doi.org/10.1016/j.neunet.2024.106900
 Code: https://github.com/CodeZx6/MR-UPF
 Page: https://codezx6.github.io/papers/mr-ufp.html
-Keywords: urban flow prediction, spatial-temporal heterogeneity, contrastive pre-training, random masking, multi-scale region classification, multi-task learning, intelligent transportation systems
+Keywords: urban flow prediction, mutual reinforcement, multi-scale region information, spatial–temporal systems, spatial-temporal random masking, contrastive pre-training, multi-scale region classification, intelligent transportation systems
 
-TL;DR: MR-UFP improves urban flow prediction on small or noisy data by pre-training with spatial-temporal masking and contrastive learning, then jointly training the predictor with a multi-scale region-classification task that mutually reinforces spatial features.
+TL;DR: MR-UFP predicts the inflow and outflow of city grid regions, even with limited training data, by pre-training encoders with spatial-temporal masking and contrastive learning and training flow prediction jointly with a multi-scale region-classification task. On full TaxiBJ and BikeNYC it beats all 13 baselines (RMSE 14.32 and 4.45).
 
-Task: Urban flow prediction (inflow/outflow of city regions)
-Pre-training: Spatial-temporal random masking + spatial-temporal contrastive learning
-Auxiliary task: Multi-scale region classification that mutually reinforces spatial feature extraction
-Other modules: Adaptive environment fusion, real-time graph processing, joint loss for feedback correction
-Evaluation: Two real-world datasets; robust with minimal data
+Task: Urban flow prediction: forecasting the inflow and outflow of each grid region in a city, a key component of intelligent transportation systems
+Pre-training: EncM, a ViT encoder pre-trained to reconstruct spatio-temporally masked regions (75% masking rate), and EncC, a global–local cross-attention encoder pre-trained with a triplet loss on temporally shuffled negatives
+Auxiliary task: Multi-scale region classification (road/non-road, coarse, fine-grained) on hand-labeled region texts, trained jointly with flow prediction so the two tasks reinforce each other
+Other modules: Time-text and Region-text Encoders, adaptive environment feature fusion, and a real-time graph processing module (RGPM) that turns EncM attention weights into an adjacency matrix for a GCN
+Joint loss: Three region losses combined with learnable weights into L_rcf; Loss = 2·L_P·L_rcf/(L_P + L_rcf), so the smaller loss gets more weight and neither dominates
+Datasets: TaxiBJ (Beijing taxis, 2×32×32 grid, 30-min intervals, holiday and weather data) and BikeNYC (New York City bikes, 2×16×8 grid, 1-h intervals, no weather data)
+Region labels: Hand-labeled from real maps: 2/5/142 classes (TaxiBJ) and 2/8/24 (BikeNYC) at the three scales; released with the code at github.com/CodeZx6/MR-UPF
+Metrics and baselines: RMSE and MAE averaged over 5 random seeds, with t-tests; 13 baselines including ST-ResNet, ATFM, AGCRN, STGCN, PDFormer, STAEformer, ST-FCL, MC-STL and DeepMeshCity
+Headline result: Full TaxiBJ RMSE/MAE 14.32/8.56 vs 14.53/8.70 for MC-STL; full BikeNYC 4.45/2.19 vs 4.63/2.21 for DeepMeshCity
+Authorship: Xu Zhang and Mengxin Cao contributed equally; Xiaoming Wu and Xiangjun Dong are corresponding authors
+Publication: Neural Networks, vol. 182, article 106900 (February 2025 issue); received 19 June 2024, accepted 7 November 2024, available online 16 November 2024
+Access: Subscription article, not open access. The PolyU Institutional Research Archive lists an accepted manuscript under embargo until 28 February 2027
 
-Q: Why does MR-UFP work with small or noisy datasets?
-A: Spatial feature sensitivity is the bottleneck on small data. MR-UFP pre-trains with masking and contrastive learning to mine heterogeneity directly from historical flows, and turns spatial feature extraction into a mutual-reinforcement task with a multi-scale region-classification auxiliary task.
+Main results:
+- TaxiBJ, full dataset (last 28 days as test set): RMSE = 14.32, MAE = 8.56 (compared with MC-STL (strongest baseline): RMSE 14.53, MAE 8.70; p < 0.01). Quote: "our proposed MR-UFP model yielded a mean RMSE of 14.32 and an MAE of 8.56. This represents an enhancement in prediction accuracy by 1.47% and 1.64% over the sub-optimal model MC-STL, respectively."
+- BikeNYC, full dataset (last 10 days as test set; no weather data): RMSE = 4.45, MAE = 2.19 (compared with DeepMeshCity (strongest baseline): RMSE 4.63, MAE 2.21; Table 2 gives p < 0.01 (RMSE) and p < 0.03 (MAE)). Quote: "In the experiment utilizing the complete BikeNYC dataset, we used the last 10 days for testing. As shown in Table 2, MR-UFP achieved an RMSE of 4.45 and an MAE of 2.19."
+- BikeNYC, 20% data subset (last 10% as test set): RMSE = 4.15, MAE = 2.09 (compared with DeepMeshCity: RMSE 4.55, MAE 2.13). Quote: "MR-UFP (Ours) 4.15 ± 0.03 2.09 ± 0.01"
+- TaxiBJ P3, 20% data subset (last 10% as test set): RMSE = 15.57, MAE = 9.95 (compared with Best baselines: ST-FCL RMSE 16.82; MC-STL MAE 10.77). Quote: "MR-UFP(Ours) 15.57 ± 0.04 9.95 ± 0.03"
+- TaxiBJ subsets P3(80%), P3(100%) and P4(20%): RMSE rank = second-best; MAE rank = best. Quote: "Notably, in the datasets P3(80%), P3(100%), and P4(20%), although the RMSE of MR-UFP was sub-optimal, the MAE reached optimal levels."
+- Ablation, full TaxiBJ P1: Full model RMSE = 15.36 (MAE 9.16); without region classification (w/o-MultiFC) RMSE = 15.80 (MAE 9.35) (compared with Without EncM branch (w/o-STMask) 15.80; without EncC branch (w/o-STCon) 15.72; without environment features 15.66; without both pre-trainings 15.52; without masked pre-training only 15.45 (RMSE)). Quote: "the RMSE loss of the variant ‘MR-UFP-w/o-MultiFC’ increases to 15.80 when this auxiliary task is entirely removed"
 
-Q: How are the two tasks balanced?
-A: A joint loss function optimises feature embedding and feedback correction between flow prediction and region classification.
+Q: Why is the code repository named MR-UPF when the paper says MR-UFP?
+A: MR-UFP is the method name used throughout the Neural Networks paper, short for urban flow prediction via mutual reinforcement with multi-scale regional information. The GitHub repository github.com/CodeZx6/MR-UPF uses a different letter order; it holds the code and the hand-labeled region data, and the paper's footnote link github.com/CodeZx6/Data-of-MR-UPF now redirects to it.
 
-Q: How does it relate to MCSTL and ST-CSL?
-A: It continues the same line of masked and contrastive pre-training for urban flows introduced in MCSTL (CIKM 2023) and ST-CSL (Knowledge-Based Systems 2023), adding multi-scale regional information and mutual reinforcement.
+Q: Does MR-UFP help when training data is limited?
+A: The paper trains on 20%, 40%, 60%, 80% and 100% subsets of TaxiBJ P1–P4 and BikeNYC, testing on the last 10% of each; with 20% of BikeNYC it reaches RMSE 4.15 versus 4.55 for DeepMeshCity. It is best on most subsets, but its RMSE is second-best on TaxiBJ P3(80%), P3(100%) and P4(20%), where its MAE is still lowest. The abstract motivates the method with small or noisy datasets, but the paper does not report experiments with added noise.
 
-中文标题: 基于多尺度区域信息互增强的城市流量预测（MR-UFP）
-中文摘要: 城市流量预测是智能交通系统的关键。现有方法很少处理城市流量的时空异质性，且通常只从流量本身提取空间特征，在小数据或噪声数据上空间特征敏感性成为瓶颈。MR-UFP 首先用时空随机掩码与时空对比学习预训练，直接从历史流量中挖掘时空异质性；其次通过多尺度区域分类辅助任务，把空间特征提取与嵌入转化为互增强任务，自适应环境融合模块与实时图处理动态关联区域与环境特征；最后设计联合损失平衡两个任务。在两个真实数据集上优于基线，小数据下依然稳健。
+Q: How are the flow-prediction and region-classification losses balanced?
+A: The three region-classification losses (road/non-road, coarse, fine-grained) are combined with learnable weights into L_rcf. L_rcf and the prediction loss L_P are then weighted inversely to their magnitudes, giving Loss = 2·L_P·L_rcf/(L_P + L_rcf), so neither loss dominates. On TaxiBJ P1 this gives RMSE/MAE 15.36/9.16, versus 15.41/9.21 for L_P + L_rcf and 15.44/9.24 for a plain sum of all four losses.
+
+Q: How does MR-UFP relate to MC-STL and ST-FCL?
+A: MC-STL (CIKM 2023) is the preliminary version of this work and uses mask-enhanced pre-training and contrastive learning with global–local cross-attention; the paper names its main new contribution as treating spatial feature extraction as a multi-scale region-classification task trained jointly with flow prediction rather than as an upstream step. ST-FCL (Knowledge-Based Systems 2023) is earlier work by the same first author on spatio-temporal fusion and contrastive learning. Both are baselines, and on full TaxiBJ MC-STL is the runner-up (RMSE 14.53 vs 14.32).
+
+Q: Which datasets and region labels does MR-UFP use?
+A: MR-UFP uses TaxiBJ (Beijing taxi trajectories, 2×32×32 grid, 30-min intervals, with holiday and weather data) and BikeNYC (New York City bike trips, 2×16×8 grid, 1-h intervals, holidays but no weather data). Regions were labeled by hand from real maps at three scales, road/non-road, coarse and fine-grained, giving 2, 5 and 142 classes on TaxiBJ and 2, 8 and 24 on BikeNYC. Errors are RMSE and MAE averaged over 5 random seeds, compared against 13 baselines.
+
+Q: Which components matter most in the ablation?
+A: On full TaxiBJ P1 the complete model scores RMSE 15.36 and MAE 9.16. Removing the multi-scale region-classification task (w/o-MultiFC) or the whole EncM branch (w/o-STMask) raises RMSE to 15.80; removing the contrastive EncC branch gives 15.72, removing environment features 15.66, and skipping both pre-training stages 15.52. Skipping only the masked or only the contrastive pre-training gives 15.45 or 15.47.
+
+中文标题: 借助多尺度区域信息的互增强学习提升城市流量预测（MR-UFP）
+中文摘要: 现有方法通常仅从城市流量中提取空间特征，数据量小或含噪时，空间特征敏感性成为瓶颈。MR-UFP先以时空随机掩码和时空对比学习预训练，挖掘时空异质性；再借助多尺度区域分类辅助任务，经联合损失使空间特征提取与流量预测互相增强，并以自适应环境融合和实时图处理关联区域与环境特征。在TaxiBJ和BikeNYC完整数据上优于13个基线（RMSE 14.32、4.45）。
 
 Key points:
-- Spatial-temporal random masking plus contrastive pre-training mines heterogeneity directly from historical flows.
-- Spatial feature extraction is reformulated as a mutual-reinforcement task with a multi-scale regional classification auxiliary task, with adaptive environment fusion and real-time graph processing.
-- A joint loss balances the two tasks; experiments on two real-world datasets show gains over baselines even with minimal data.
+- Two encoders are pre-trained on historical flows: EncM, a ViT encoder that learns to reconstruct spatio-temporally masked regions (75% masking worked best), and EncC, a global–local cross-attention encoder trained with a triplet loss.
+- Regions are hand-labeled from real maps at three scales (road/non-road, coarse, fine-grained; 2/5/142 classes on TaxiBJ), and classifying them is an auxiliary task trained jointly with flow prediction.
+- A joint loss, 2·L_P·L_rcf/(L_P + L_rcf), keeps either loss from dominating; on TaxiBJ P1 it gives RMSE 15.36 versus 15.41 for a plain L_P + L_rcf sum.
+- On full TaxiBJ and BikeNYC, MR-UFP beats all 13 baselines (RMSE 14.32 vs 14.53 for MC-STL; 4.45 vs 4.63 for DeepMeshCity) and is best on most 20–100% data subsets.
+- Ablation on TaxiBJ P1: removing region classification (w/o-MultiFC) or the whole EncM branch (w/o-STMask) raises RMSE from 15.36 to 15.80. RMSE is second-best on TaxiBJ P3(80%), P3(100%) and P4(20%), where MAE stays best.
 
 Abstract: Intelligent Transportation Systems (ITS) are essential for modern urban development, with urban flow prediction being a key component. Accurate flow prediction optimizes routes and resource allocation, benefiting residents, businesses, and the environment. However, few methods address the spatial-temporal heterogeneity of urban flows. Existing methods typically capture spatial features solely from urban flows, but spatial feature sensitivity becomes a bottleneck when dealing with small or noisy datasets. To address this issue, we propose a method for urban flow prediction via mutual reinforcement with multi-scale regional information (MR-UFP). Firstly, we employ spatial-temporal random masking and spatial-temporal contrastive learning pre-training to directly mine spatial-temporal heterogeneity from historical flow data. Secondly, we transform the task of spatial feature extraction and embedding for urban flow prediction into a mutual reinforcement task by multi-scale region classification auxiliary task. The adaptive environment fusion module and real-time graph processing dynamically correlate regional and environmental features during flow prediction. To balance the mutual reinforcement of the two tasks, we design a joint loss function to optimize feature embedding and feedback correction, ensuring robust and accurate urban flow prediction. Extensive experiments on two real-world datasets demonstrate that MR-UFP outperforms baseline models, showcasing its robustness and effectiveness even with minimal data.
 
@@ -317,45 +430,71 @@ BibTeX:
 }
 ```
 
-APA: Zhang, X., Cao, M., Gong, Y., Wu, X., Dong, X., Guo, Y., Zhao, L., & Zhang, C. (2025). Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information. Neural Networks, 182, 106900. https://doi.org/10.1016/j.neunet.2024.106900
+APA: Zhang, X., Cao, M., Gong, Y., Wu, X., Dong, X., Guo, Y., Zhao, L., & Zhang, C. (2025). Enhancing urban flow prediction via mutual reinforcement with multi-scale regional information. Neural Networks, 182, Article 106900. https://doi.org/10.1016/j.neunet.2024.106900
 
 ---
 
 ## BiST-IF: Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution
 
 Authors: Piao Yu, Xu Zhang, Yongshun Gong, Jian Zhang, Haoliang Sun, Junjie Zhang, Xinxin Zhang, Yilong Yin
-Venue: Expert Systems with Applications, vol. 264, 125679 (2025)
+Venue: Expert Systems with Applications, vol. 264, article 125679 (2025)
 DOI: https://doi.org/10.1016/j.eswa.2024.125679
 Code: https://github.com/CodeZx6/BiST-IF
 Page: https://codezx6.github.io/papers/bist-if.html
-Keywords: origin-destination flow prediction, OD delay correction, bi-directional attention, mutual information, Out-OD flow, HZMetro, NYC taxi, intelligent transportation
+Keywords: Origin–destination flow prediction, Spatio-temporal data, Bi-directional attention mechanism, Traffic prediction, Intelligent transport systems, OD delay correction, Out-OD flow, Mutual information mechanism
 
-TL;DR: BiST-IF predicts metro and taxi origin-destination flows by correcting delayed OD matrices, applying bi-directional origin/destination attention, and letting OD and arrival (Out-OD) flows evolve jointly through mutual-information attention.
+TL;DR: BiST-IF predicts origin–destination (OD) flows between metro stations or urban areas by correcting delayed recent OD matrices, applying bi-directional origin/destination attention, and fusing arrival-side (Out-OD) flows through an attention-based mutual information mechanism. It lowers MAE by an average of 7.55% on HZMetro relative to the best baseline.
 
-Task: Origin-destination (OD) flow prediction between stations or zones
-Problem addressed: Delayed availability of OD flows and the unused supplementary signal of arrival (Out-OD) flows
-Modules: OD Delay Correction; OD Bi-directional Attention (BiLSTM + origin-wise and destination-wise attention); Mutual Information Flow Evolution (multi-head attention + gated update)
-Datasets: HZMetro (80 stations, 10-minute intervals, Jan 2019), NYC-TOD2018 (69 Manhattan taxi zones, 30-minute intervals, Feb–Apr 2018)
+Task: Origin–destination (OD) flow prediction: forecasting passenger flows between metro stations or urban areas for intelligent transport systems
+Full name: Bi-directional Spatio-Temporal Inference and Interconnected Feature Evolution (title and body); the abstract expands BiST-IF as Bidirectional Attention and Interconnected Feature Evolution
+Modules: OD Delay Correction (ODDC); OD flow Bi-directional Attention (ODBA: BiLSTM, origin–destination bi-directional attention, spatio-temporal extraction); Mutual Information Flow Evolution (MFE: Out-OD features, 4-head attention, gated update)
+Inputs: Weekly, daily and recent OD matrices (ratio 2:1:2), with the recent ones delay-corrected, plus weekly Out-OD (arrival OD) history for MFE
+Datasets: HZMetro: 80 Hangzhou metro stations, 1–25 January 2019, 10-min intervals. NYC-TOD2018: yellow taxis in 69 Manhattan areas, 1 February–30 April 2018, 30-min intervals
+Metrics and protocol: MAE and RMSE; horizons 10/30/60 min (HZMetro) and 30/60/120 min (NYC-TOD2018); 6:2:2 train/validation/test split; MSE training loss
+Baselines: Nine: HA, GRU, LSTM; OD methods GEML, MPGCN, HIAM; urban flow methods STGCN, DGCN, STTN. The paper names HIAM the top baseline
+Headline result: Average MAE/RMSE reduction against the best baseline: 7.55%/7.31% on HZMetro and 5.77%/2.33% on NYC-TOD2018
+Model size and cost: 3,986,921 parameters and 89.69 s/epoch on NYC-TOD2018 (HIAM: 13,851,238 parameters, 102.98 s/epoch); PyTorch on a Tesla P100 GPU
+Authorship: Piao Yu and Xu Zhang contributed equally (co-first authors); Yongshun Gong is the corresponding author
+Venue: Expert Systems with Applications, vol. 264, article 125679 (March 2025 issue); received 13 May 2024, accepted 31 October 2024, available online 22 November 2024
+Access: Not open access: subscription article on ScienceDirect, © 2024 Elsevier Ltd.
 
-Q: What is the OD delay problem?
-A: A trip's destination is only known when it ends, so recent OD matrices are incomplete. BiST-IF corrects them using period-delay probability and real-time flow features.
+Main results:
+- HZMetro, all stations, 10/30/60-min horizons (Table 2): MAE = 0.907/0.903/0.896; RMSE = 1.799/1.797/1.797 (compared with HIAM, the best baseline in every HZMetro column: MAE 0.984/0.973/0.970, RMSE 1.941/1.937/1.940. Average reduction 7.55% MAE and 7.31% RMSE). Quote: "Specifically, BiST-IF improves the MAE and RMSE by an average of 7.55% and 7.31% on the HZMetro dataset, and 5.77% and 2.33% on the NYC-TOD2018 dataset, respectively, compared to the best baseline approach."
+- NYC-TOD2018, all areas, 30/60/120-min horizons (Table 2): MAE = 1.010/1.018/1.025; RMSE = 2.390/2.404/2.424 (compared with Best baseline per column: MAE 1.080 (HIAM, HIAM, STGCN); RMSE 2.460 (HIAM), 2.461 (DGCN), 2.469 (DGCN). Gains are 6.48/5.74/5.09% in MAE but only 2.85/2.32/1.82% in RMSE). Quote: "Compared to current state-of-the-art baseline methods, BiST-IF shows improvements of 7.83%, 7.32%, 7.19%, 7.23%, 7.63%, 7.37%, 6.48%, 2.85%, 5.74%, 2.32%, 5.09%, and 1.82% in terms of MAE and RMSE for predicting three different time intervals on the HZMetro and NYC-TOD2018 datasets."
+- Major stations (top 20 by throughput), HZMetro 10-min horizon (Table 3): MAE = 2.303; RMSE = 3.974 (compared with HIAM 2.412/4.330, so BiST-IF is 4.52% (MAE) and 8.22% (RMSE) lower. On NYC-TOD2018 major areas at 30 min: 3.440/5.439 vs best MAE 3.626 (HIAM) and best RMSE 5.624 (DGCN)). Quote: "Experimental results show that our proposed BiST-IF method significantly outperforms other methods in predicting OD flows between major stations."
+- HZMetro, BiST-IF without OD delay correction, 10/30/60-min horizons (Sec. 5.5): RMSE = 1.804/1.809/1.827 (compared with Full BiST-IF with ODDC: RMSE 1.799/1.797/1.797). Quote: "we conducted experiments using the BiST-IF model without OD delay correction on the HZMetro dataset. The RMSE increased to 1.804, 1.809, and 1.827"
+- HZMetro ablation, w/o BiLSTM trend extraction, 10/30/60-min horizons (Table 5): MAE = 0.937/0.933/0.930 (largest MAE increase among the HZMetro ablation variants) (compared with Full BiST-IF 0.907/0.903/0.896; best baseline HIAM 0.984/0.973/0.970). Quote: "we observe that the lack of any component leads to performance degradation, but still outperforms the best baseline prediction performance."
+- Computation cost on NYC-TOD2018 (Table 4): Parameters = 3,986,921; training time = 89.69 s/epoch (compared with HIAM (most parameters) 13,851,238 parameters, 102.98 s/epoch; GEML slowest at 388.89 s/epoch; GRU fastest at 1.04 s/epoch). Quote: "BiST-IF demonstrates a moderate computational cost."
 
-Q: What is Out-OD flow and why use it?
-A: Out-OD is the arrival-side OD flow. BiST-IF models the mutual information between OD and Out-OD flows so the two evolve jointly, improving destination-aware inference.
+Q: What does BiST-IF stand for?
+A: The paper title and body expand BiST-IF as Bi-directional Spatio-Temporal Inference and Interconnected Feature Evolution. The abstract expands the same acronym as Bidirectional Attention and Interconnected Feature Evolution.
 
-Q: Which datasets were used?
-A: HZMetro (Hangzhou metro, 80 stations, 10-minute intervals) and NYC-TOD2018 (69 Manhattan taxi zones, 30-minute intervals).
+Q: What is the OD delay problem, and how does BiST-IF correct it?
+A: OD data are collected at regular intervals, so some passengers are still in transit at the latest collection, and ignoring these en route flows biases prediction. The OD Delay Correction (ODDC) module uses period delay probability and real-time flow features to estimate the delayed flows and complete each recent OD matrix. Without it, HZMetro RMSE rises from 1.799, 1.797 and 1.797 to 1.804, 1.809 and 1.827 at 10, 30 and 60 minutes.
 
-中文标题: 通过双向时空推理与互联特征演化增强起讫点（OD）流量预测（BiST-IF）
-中文摘要: OD 流量预测对智能交通系统中的站间客流预测至关重要。以往方法忽略了 OD 流的延迟，也未利用到达 OD 流（Out-OD）对 OD 流的补充作用。BiST-IF 首先基于周期延迟概率与实时流量特征对 OD 流信息进行校正；其次针对不同周期的流量信息设计双向注意力模块，分解分析 OD 流的时间与流量特征并融合时空特征得到初步预测；随后设计 Out-OD 与 OD 流的互信息模块，建模二者互联的特征演化。在 HZMetro 与 NYC-TOD2018 上评测。
+Q: What is Out-OD flow and why does BiST-IF use it?
+A: Out-OD is the arrival OD flow: it records passengers arriving at a destination station from each origin at the time of recording, without their departure times, whereas plain OD data records departures and intended destinations but not arrival times. BiST-IF's Mutual Information Flow Evolution (MFE) module uses weekly Out-OD history to supplement this missing arrival information, with Out-OD features serving as the attention key for OD features and gated feature updates stabilising the periodic pattern.
+
+Q: How much does BiST-IF improve over the baselines?
+A: BiST-IF is compared with nine baselines: HA, GRU and LSTM; the OD flow methods GEML, MPGCN and HIAM; and the urban flow methods STGCN, DGCN and STTN. Relative to the best baseline, it lowers MAE and RMSE by an average of 7.55% and 7.31% on HZMetro and by 5.77% and 2.33% on NYC-TOD2018. The paper names HIAM as the top-performing baseline.
+
+Q: How large is BiST-IF and how costly is it to train?
+A: On NYC-TOD2018, BiST-IF has 3,986,921 parameters and trains at 89.69 s per epoch, against 13,851,238 parameters and 102.98 s per epoch for HIAM. The paper describes this as a moderate computational cost, and in its NYC-TOD2018 convergence comparison with STGCN, DGCN, MPGCN and HIAM, BiST-IF converges best.
+
+Q: Who are the first authors of BiST-IF?
+A: Piao Yu and Xu Zhang contributed equally as co-first authors, and Yongshun Gong is the corresponding author.
+
+中文标题: 通过双向时空推理与互联特征演化增强起讫点（OD）流量预测
+中文摘要: BiST-IF 用于智能交通系统中的起讫点（OD）流量预测，针对以往方法忽略 OD 流延迟、未关注到达 OD 流（Out-OD）补充作用的问题：先基于周期延迟概率与实时流量特征校正 OD 流；再用双向注意力模块融合时空特征得到初步预测；随后以 Out-OD 与 OD 流的互信息模块结合新的门控算法增强周期特征；最后融合周期模式与短时波动的预测结果。相比最佳基线，MAE/RMSE 平均降低 7.55%/7.31%（HZMetro）与 5.77%/2.33%（NYC-TOD2018）。
 
 Key points:
-- OD Delay Correction estimates delayed OD distributions from periodic patterns and recent Out-OD flows.
-- OD Bi-directional Attention extracts trends with BiLSTM and origin-wise plus destination-wise attention.
-- Mutual Information Flow Evolution fuses OD and Out-OD features with multi-head attention and gated updates.
-- Evaluated on HZMetro (80 stations, 10-minute intervals) and NYC-TOD2018 (69 Manhattan taxi zones, 30-minute intervals).
+- OD Delay Correction (ODDC) completes delayed recent OD matrices using period delay probability and real-time flow features. Without it, HZMetro RMSE rises from 1.799/1.797/1.797 to 1.804/1.809/1.827 (10/30/60 min).
+- OD flow Bi-directional Attention (ODBA) combines BiLSTM trend extraction, attention between origin and destination features, and a spatio-temporal feature extraction layer, applied to weekly, daily and recent OD inputs (ratio 2:1:2).
+- Mutual Information Flow Evolution (MFE) uses weekly Out-OD features as the key in 4-head attention over OD features; a new gated feature update module then stabilises the periodic pattern.
+- On HZMetro and NYC-TOD2018, BiST-IF beats nine baselines on every metric and horizon, with average MAE/RMSE reductions of 7.55%/7.31% and 5.77%/2.33% against the best baseline.
+- In ablations, removing F-update, MI-Mech, BiLSTM, BiAttn or STExtraction hurts accuracy, yet each variant still beats the best baseline. Dropping BiLSTM raises HZMetro 10-min MAE from 0.907 to 0.937.
 
-Abstract: Origin–destination (OD) flow prediction is crucial for predicting inter-station passenger flows in intelligent transport systems. However, previous OD prediction methods have ignored the delay of OD flows and failed to focus on the supplementary effect of the arrival OD flow (Out-OD) flow data on OD flows. We innovatively propose an OD flow prediction method based on Bidirectional Attention and Interconnected Feature Evolution (BiST-IF) to address these challenges. Firstly, we propose a correction method based on period delay probability and real-time flow features for OD flow information. Furthermore, for the flow information of different periods, we design a bi-directional attention module to achieve the preliminary prediction by deconstructing and analyzing the temporal and flow features of OD flow and fusing the temporal and spatial features. After that, we design the mutual information module of Out-OD and OD flows to model their interconnected feature evolution.
+Abstract: Origin–destination (OD) flow prediction is crucial for predicting inter-station passenger flows in intelligent transport systems. However, previous OD prediction methods have ignored the delay of OD flows and failed to focus on the supplementary effect of the arrival OD flow (Out-OD) flow data on OD flows. We innovatively propose an OD flow prediction method based on Bidirectional Attention and Interconnected Feature Evolution (BiST-IF) to address these challenges. Firstly, we propose a correction method based on period delay probability and real-time flow features for OD flow information. Furthermore, for the flow information of different periods, we design a bi-directional attention module to achieve the preliminary prediction by deconstructing and analyzing the temporal and flow features of OD flow and fusing the temporal and spatial features. After that, we design the mutual information module of Out-OD and OD flow, combining it with the new gating algorithm to enhance the periodic features. Finally, the prediction results from the periodic pattern and the temporary fluctuation of OD flow are fused to obtain the OD flow prediction results. Extensive experiments on two real-world datasets show that the prediction performance of BiST-IF significantly outperforms other state-of-the-art models. Specifically, BiST-IF improves the MAE and RMSE by an average of 7.55% and 7.31% on the HZMetro dataset, and 5.77% and 2.33% on the NYC-TOD2018 dataset, respectively, compared to the best baseline approach.
 
 BibTeX:
 ```bibtex
@@ -372,36 +511,67 @@ BibTeX:
 }
 ```
 
-APA: Yu, P., Zhang, X., Gong, Y., Zhang, J., Sun, H., Zhang, J., Zhang, X., & Yin, Y. (2025). Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution. Expert Systems with Applications, 264, 125679. https://doi.org/10.1016/j.eswa.2024.125679
+APA: Yu, P., Zhang, X., Gong, Y., Zhang, J., Sun, H., Zhang, J., Zhang, X., & Yin, Y. (2025). Enhancing origin–destination flow prediction via bi-directional spatio-temporal inference and interconnected feature evolution. Expert Systems with Applications, 264, Article 125679. https://doi.org/10.1016/j.eswa.2024.125679
 
 ---
 
 ## Automatic visual recognition for leaf disease based on enhanced attention mechanism
 
 Authors: Yumeng Yao, Xiaodun Deng, Xu Zhang, Junming Li, Wenxuan Sun, Gechao Zhang
-Venue: PeerJ Computer Science, vol. 10, e2365 (2024)
+Venue: PeerJ Computer Science, vol. 10, article e2365 (2024)
 DOI: https://doi.org/10.7717/peerj-cs.2365
 Page: https://codezx6.github.io/papers/leaf-disease-attention.html
-Keywords: plant leaf disease recognition, tomato disease, attention mechanism, computer vision, smart agriculture
+Keywords: visual recognition, leaf disease identification, attention mechanism, tomato leaf disease, object detection, YOLOv4-tiny, DyHead, computer vision
 
-TL;DR: An enhanced-attention vision model for fast and accurate recognition of tomato leaf diseases, aimed at early disease prevention in agriculture.
+TL;DR: A tomato leaf disease detector that adds the DyHead attention module to YOLOv4-tiny and trains it with a Focaler-SIoU box loss. On PlantDoc tomato leaf images it reaches 93.64% mAP, 10.3 percentage points above the YOLOv4-tiny baseline.
 
-Task: Visual recognition (detection) of tomato leaf diseases
-Mechanism: Enhanced multi-head attention for small lesion targets; Focaler-SIoU to improve learning on hard samples
-Result: Average detection accuracy +10.3% over the baseline model with balanced speed
-Open access: Yes, CC BY; also in PubMed Central (PMC11623051)
+Task: Detection and classification of tomato leaf diseases, treated as small-target (lesion) recognition
+Base detector: YOLOv4-tiny (written 'YOLOv4 (tiny)') with a CSPDarknet53-Tiny backbone; images resized to 416 × 416 pixels
+Attention module: DyHead (Dai et al., 2021): scale-, spatial- and task-aware attention on the detection head; 2 stacked modules, embedding dimension 128
+Box regression loss: Focaler-SIoU (Zhang & Zhang, 2024): SIoU plus Focaler-IoU, k = 0, g = 0.95; replaces YOLOv4's default CIoU to emphasise hard samples
+Dataset: 668 PlantDoc tomato leaf images (7 diseases plus healthy), augmented to 6,012 samples; 9:1 train/test split
+Metrics: mAP, average detection time per image, per-class AP and F1 at IoU = 0.5
+Compared detectors: YOLOv4-tiny (baseline), Faster R-CNN, SSD, YOLOv3, YOLOv7-tiny, YOLOv5
+Headline result: 93.64% mAP vs 83.31% for YOLOv4-tiny (+10.3 percentage points); 0.0110 s vs 0.0073 s per image on a GTX 1080 Ti GPU
+Corresponding authors: Yumeng Yao and Gechao Zhang
+Journal: PeerJ Computer Science, vol. 10, article e2365 (21 pages); submitted 3 June 2024, accepted 6 September 2024, published 4 November 2024
+Open access: Open access under CC BY 4.0; full text also in PubMed Central (PMC11623051)
+Code and data: Code and processed data on Figshare, doi:10.6084/m9.figshare.27210138.v1 (CC BY 4.0)
 
-Q: What makes leaf disease recognition hard?
-A: Complex backgrounds and environmental factors such as varying illumination cause confusion between lesions and background, and small lesions carry little information.
+Main results:
+- PlantDoc tomato leaves, 8 classes; comparison with the base model (Table 3): mAP = 93.64%; 0.0110 s per image (compared with YOLOv4-tiny baseline: mAP 83.31%, 0.0073 s per image (faster than the proposed model)). Quote: "Our model achieves 93.64% accuracy, which is a 10.3% improvement compared to the YOLOv4 (tiny)/baseline model."
+- PlantDoc tomato leaves; comparison with other detectors (Table 3): mAP = 93.64%; 0.0110 s per image (compared with Strongest other detector YOLOv5: mAP 92.44%, 0.0135 s; YOLOv7-tiny: 91.29%, 0.0114 s). Quote: "It even surpasses YOLOv7(tiny) at 91.29% and YOLOv5 at 92.44%, with faster detection speed."
+- DyHead ablation on YOLOv4-tiny, 2 stacked modules, embedding dimension 128 (DyHead table, printed as Table 1): mAP = 93.17%; 0.0110 s per image (compared with Baseline 83.31% at 0.0073 s; 4 modules with dimension 64 reach 93.13% at 0.0160 s). Quote: "The model achieves a detection accuracy of 93.17%, with a slight reduction in speed."
+- Box-loss ablation on YOLOv4 with DyHead (IoU table, printed as Table 2): Focaler-SIoU: mAP = 93.64%; 0.0110 s per image (compared with Default CIoU 93.17%; SIoU without Focaler 93.27%; CIoU with Focaler 93.15%). Quote: "the integration of Focaler-SIoU elevates the average detection accuracy of the method to 93.64%"
+- Per-class results, tomato yellow leaf curl virus (called 'tomato leaf flavivirus' in the text), IoU = 0.5 (Tables 4 and 5): AP = 65.23%; F1 = 0.63 (still the lowest class; all other classes have AP of 95.26% or higher) (compared with YOLOv4-tiny baseline: AP 47.31%, F1 0.45). Quote: "for tomato leaf flavivirus, the proposed algorithm exhibits the highest increase in AP value, with an improvement of about 17.9% compared to the YOLOv4 (tiny)/baseline model"
 
-Q: What does the method change?
-A: It integrates multi-head attention to focus on small tomato lesion targets and adds Focaler-SIoU to strengthen learning on challenging samples, giving a 10.3% improvement in average detection accuracy over the baseline.
+Q: Does the method have a name?
+A: No. The paper does not name its model: the result tables call it 'Ours', and the loss ablation rows read 'YOLOv4 with DyHead'. The conclusion describes it as a real-time tomato disease recognition algorithm based on YOLOv4 (tiny).
+
+Q: What is the 'enhanced attention mechanism' in this paper?
+A: It is DyHead (Dai et al., CVPR 2021), a module added to strengthen the YOLOv4-tiny detection head. The paper's 'multi-head attention' refers to DyHead's scale-aware, spatial-aware and task-aware attention. The final model stacks 2 DyHead modules with embedding dimension 128.
+
+Q: Which dataset was used?
+A: The paper uses 668 tomato leaf images from the PlantDoc dataset (cited in the text as MakeML's 'Leaf Type Detection'), covering leaf mold, bacterial spot, Septoria leaf spot, tomato yellow leaf curl virus, early blight, tomato mosaic virus, late blight and healthy leaves. Random data augmentation with lighting and rotation variations expanded them to 6,012 images, split 9:1 into training and test sets.
+
+Q: How accurate and how fast is it?
+A: It reaches 93.64% mAP against 83.31% for the YOLOv4-tiny baseline (+10.3 percentage points), at 0.0110 s per image versus 0.0073 s for the baseline (GTX 1080 Ti GPU, Core i7 CPU). It also has higher mAP and lower per-image time than Faster R-CNN (88.26%), SSD (88.78%), YOLOv3 (90.09%), YOLOv7-tiny (91.29%) and YOLOv5 (92.44%).
+
+Q: What does Focaler-SIoU contribute?
+A: Focaler-SIoU replaces YOLOv4's default CIoU box-regression loss. It combines SIoU, which adds angle, distance and shape costs, with Focaler-IoU, which remaps IoU over an interval (k = 0, g = 0.95) to emphasise hard samples. On the DyHead model it raises mAP from 93.17% (CIoU) to 93.64% at the same 0.0110 s per image.
+
+Q: Are the code and data available?
+A: Yes. The code and processed data are on Figshare (doi:10.6084/m9.figshare.27210138.v1, CC BY 4.0). The original PlantDoc dataset is on GitHub at pratikkayal/PlantDoc-Object-Detection-Dataset.
 
 中文标题: 基于增强注意力机制的叶片病害自动视觉识别
-中文摘要: 叶片病害的高效视觉识别对减少农业经济损失至关重要，但复杂背景与环境因素常导致病斑与背景混淆、小病斑信息难以提取。本文提出基于增强注意力机制的叶片病害视觉识别方法：融合多头注意力以准确识别番茄小病斑目标，在光照变化等复杂条件下保持鲁棒；引入 Focaler-SIoU 增强对困难样本的学习能力。实验表明平均检测精度较基线提升 10.3%，同时保持均衡的识别速度。
+中文摘要: 复杂背景与光照变化等环境因素易导致番茄叶片病斑与背景混淆、小病斑信息难以提取。本文以 YOLOv4-tiny 为基础模型，在检测头中引入融合尺度、空间与任务感知注意力的 DyHead 模块，并以 Focaler-SIoU 替代默认的 CIoU 边框损失，加强对困难样本的学习。在 PlantDoc 番茄叶片数据（7 种病害加健康叶片）上，mAP 由基线的 83.31% 提升至 93.64%，单张图像检测耗时 0.0110 秒。
 
 Key points:
-- Open access (CC BY) in PeerJ Computer Science, also indexed in PubMed Central.
+- Stacking 2 DyHead modules (embedding dimension 128) on YOLOv4-tiny raises mAP on PlantDoc tomato leaves from 83.31% to 93.17%, while per-image time grows from 0.0073 s to 0.0110 s.
+- Replacing the default CIoU box loss with Focaler-SIoU (SIoU plus Focaler-IoU, k = 0, g = 0.95) lifts mAP to 93.64% at the same 0.0110 s; SIoU alone gives 93.27%.
+- The final model has higher mAP and lower per-image time than Faster R-CNN (88.26%), SSD (88.78%), YOLOv3 (90.09%), YOLOv7-tiny (91.29%) and YOLOv5 (92.44%), but is slower than YOLOv4-tiny.
+- Tomato yellow leaf curl virus, the lowest-AP class, gains most: AP rises from 47.31% to 65.23% and F1 from 0.45 to 0.63; the other seven classes reach 95.26 to 99.87% AP.
+- In a qualitative lighting test (Fig. 4: low, normal and bright light), YOLOv4-tiny missed lesions in all three settings that the proposed model detected.
 
 Abstract: Recognition methods have made significant strides across various domains, such as image classification, automatic segmentation, and autonomous driving. Efficient identification of leaf diseases through visual recognition is critical for mitigating economic losses. However, recognizing leaf diseases is challenging due to complex backgrounds and environmental factors. These challenges often result in confusion between lesions and backgrounds, limiting information extraction from small lesion targets. To tackle these challenges, this article proposes a visual leaf disease identification method based on an enhanced attention mechanism. By integrating multi-head attention mechanisms, this method accurately identifies small targets of tomato lesions and demonstrates robustness in complex conditions, such as varying illumination. Additionally, the method incorporates Focaler-SIoU to enhance learning capabilities for challenging classification samples. Experimental results showcase that the proposed algorithm enhances average detection accuracy by 10.3% compared to the baseline model, while maintaining a balanced identification speed. This method facilitates rapid and precise identification of tomato diseases, offering a valuable tool for disease prevention and economic loss reduction.
 
@@ -420,36 +590,67 @@ BibTeX:
 }
 ```
 
-APA: Yao, Y., Deng, X., Zhang, X., Li, J., Sun, W., & Zhang, G. (2024). Automatic visual recognition for leaf disease based on enhanced attention mechanism. PeerJ Computer Science, 10, e2365. https://doi.org/10.7717/peerj-cs.2365
+APA: Yao, Y., Deng, X., Zhang, X., Li, J., Sun, W., & Zhang, G. (2024). Automatic visual recognition for leaf disease based on enhanced attention mechanism. PeerJ Computer Science, 10, Article e2365. https://doi.org/10.7717/peerj-cs.2365
 
 ---
 
 ## S3CFSL: Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification
 
 Authors: Mengxin Cao, Xu Zhang, Jinyong Cheng, Guixin Zhao, Wei Li, Xiangjun Dong
-Venue: IEEE Transactions on Geoscience and Remote Sensing, vol. 62, 1–15 (2024)
+Venue: IEEE Transactions on Geoscience and Remote Sensing, vol. 62, article 5525315 (2024)
 DOI: https://doi.org/10.1109/TGRS.2024.3434484
 Page: https://codezx6.github.io/papers/spatial-spectral-semantic-fsl.html
-Keywords: hyperspectral image classification, few-shot learning, cross-domain, spatial-spectral, semantic, remote sensing
+Keywords: hyperspectral image classification, few-shot learning, cross-domain, domain adaptation, distribution alignment, spatial-spectral, semantic-enhanced domain alignment, remote sensing
 
-TL;DR: A cross-domain few-shot learner for hyperspectral images that jointly exploits spatial, spectral, and semantic information to classify new scenes from very few labelled samples.
+TL;DR: S3CFSL classifies new hyperspectral scenes from five labelled samples per class by transferring knowledge from the labelled Chikusei scene. It combines a cross-spatial–spectral transformer, Gaussian feature denoising and semantic-enhanced domain alignment, and reports 98.52% overall accuracy on Pavia Centre, 88.79% on Salinas and 77.63% on Houston.
 
-Task: Cross-domain few-shot hyperspectral image classification
-Problems addressed: Residual noise after preprocessing; sample-selection bias causing spurious cross-domain correlations
-Modules: Spatial and spectral dual channels (SSDC) + cross-spatial-spectral transformer (CSST) as extractor; feature denoising; semantic-enhanced domain alignment (SEDA)
-Evaluation: Three public HSI datasets
+Task: Cross-domain few-shot hyperspectral image (HSI) classification, where source and target scenes have non-overlapping class label sets
+Problems addressed: Residual noise left after preprocessing, and sample-selection bias that can create false statistical correlations between domains and reduce generalisation
+Feature extractor: Spatial and spectral dual channels (SSDC) feeding a cross-spatial–spectral transformer (CSST) built from spatial–spectral cross-attention (SSC attention) and a spatial–spectral fusion extractor (SSFE)
+Feature denoising: A Gaussian filter is applied to the extracted features and its output is added back to the unfiltered features to avoid over-blurring
+Domain alignment: Semantic-enhanced domain alignment (SEDA): convolutional semantic masks and k-means clustering (k = 2) on top of a conditional domain adversarial network
+Datasets: Source: Chikusei (19 classes, 128 bands). Targets: Pavia Centre (9 classes), Salinas (16 classes), Houston (15 classes)
+Protocol and metrics: Five labelled target samples per class; 1-shot, C-way training episodes; 9 × 9 input patches; overall accuracy (OA), average accuracy (AA) and Kappa
+Baselines: SS CNN, DFSL, DCFSL, CMFSL, Gia-FSL, GCC-FSL, DMCM and SSTFSL (the ICIP 2023 conference version of this work)
+Headline result: OA 98.52% (Pavia Centre), 88.79% (Salinas), 77.63% (Houston); higher OA, AA and Kappa than all eight baselines (Tables V–VII)
+Corresponding authors: Guixin Zhao and Xiangjun Dong
+Venue: IEEE Transactions on Geoscience and Remote Sensing, vol. 62, 2024, article no. 5525315 (15 pages); published online 29 July 2024; IEEE Xplore document 10613782
+Access: Not open access: subscription article in IEEE Xplore, with no arXiv or repository copy found
 
-Q: What is cross-domain few-shot HSI classification?
-A: Learning to classify a new hyperspectral scene (target domain) from very few labelled samples by meta-learning on a different, labelled source domain.
+Main results:
+- Pavia Centre target (source Chikusei), 5 labelled samples per class, Table V: OA = 98.52%, AA = 95.77%, Kappa = 0.9728 (compared with GCC-FSL (strongest baseline): OA 98.45%, AA 95.53%, Kappa 0.9716; margin 0.07 OA points). Quote: "Different Classification Methods on the PC Dataset"
+- Salinas target (source Chikusei), 5 labelled samples per class, Table VI: OA = 88.79%, AA = 90.41%, Kappa = 0.8725 (compared with GCC-FSL: OA 88.33%, AA 90.04%, Kappa 0.8711; highest baseline AA is Gia-FSL at 90.11%). Quote: "Different Classification Methods on the SA Dataset"
+- Houston target (source Chikusei), 5 labelled samples per class, Table VII: OA = 77.63%, AA = 79.93%, Kappa = 0.7583 (compared with GCC-FSL: OA 77.44%, AA 79.76%, Kappa 0.7536; margin 0.19 OA points). Quote: "Different Classification Methods on the Houston Dataset"
+- Module ablation, OA on Pavia Centre / Salinas / Houston, Table VIII: Full S3CFSL OA = 98.52 / 88.79 / 77.63 (compared with Plain ViT extractor without denoising or SEDA: 94.33 / 81.46 / 69.77; SSDC + CSST with denoising but without SEDA: 97.25 / 87.44 / 75.69). Quote: "Ablation Analysis of the S3CFSL With a Combination of Different Modules for the Three Datasets on OA"
+- Denoising-filter ablation, OA on Pavia Centre / Salinas / Houston, Table IX: Gaussian filter OA = 98.52 / 88.79 / 77.63 (compared with Median filter 98.43 / 88.74 / 77.51; mean filter 98.48 / 88.55 / 77.08; no filter 98.36 / 88.06 / 77.14 (mean filter falls below no filter on Houston)). Quote: "Gaussian filtering is the best among them."
 
-Q: How does S3CFSL improve transfer?
-A: Feature-denoising operations restore essential information for transferable features, and a semantic-aware domain alignment (SEDA) strengthens the link between cross-domain data and semantic information, improving distributional consistency.
+Q: What is cross-domain few-shot hyperspectral image classification?
+A: Classifying a new hyperspectral scene (the target domain) that has only a few labelled samples, using knowledge transferred from a different scene with plentiful labels (the source domain) whose class label set does not overlap with the target's. S3CFSL alternates few-shot episodes on the source and target domains.
+
+Q: How does S3CFSL improve cross-domain transfer?
+A: Feature-denoising operations restore essential information for learning transferable features. They apply a Gaussian filter and add its output back to the unfiltered features. Semantic-enhanced domain alignment (SEDA) uses a semantic-aware strategy (semantic masks and k-means clustering, built on a conditional domain adversarial network) to strengthen the link between cross-domain data and semantic information, which improves cross-domain distributional consistency.
+
+Q: Which datasets and few-shot setting does S3CFSL use?
+A: Chikusei (19 classes, 128 bands) is the labelled source domain. The three target domains are Pavia Centre (ROSIS sensor, 9 classes, 102 bands), Salinas (AVIRIS sensor, 16 classes, 204 bands after 20 water-absorption bands are removed) and Houston (CASI sensor, University of Houston campus, 15 classes, 144 bands). The main comparison uses five labelled target samples per class, with 1-shot, C-way training episodes where C is the number of target classes.
+
+Q: What accuracy does S3CFSL achieve?
+A: With five labelled samples per target class, S3CFSL reports overall accuracy (OA) of 98.52% on Pavia Centre, 88.79% on Salinas and 77.63% on Houston, with average accuracy of 95.77%, 90.41% and 79.93% and Kappa of 0.9728, 0.8725 and 0.7583. These OA, AA and Kappa values are higher than those of all eight compared methods (SS CNN, DFSL, DCFSL, CMFSL, Gia-FSL, GCC-FSL, DMCM and SSTFSL) on every target dataset. The closest competitor, GCC-FSL, reaches 98.45%, 88.33% and 77.44% OA, so the OA margins are 0.07 to 0.46 points.
+
+Q: What does the S3CFSL ablation show?
+A: With a plain ViT feature extractor and neither feature denoising nor SEDA, OA is 94.33 / 81.46 / 69.77 on Pavia Centre / Salinas / Houston. Switching to the SSDC + CSST extractor gives 96.47 / 86.39 / 75.16, and adding feature denoising gives 97.25 / 87.44 / 75.69. The full S3CFSL with SEDA reaches 98.52 / 88.79 / 77.63, and in the filter ablation the Gaussian filter beats median, mean and no filtering on all three datasets.
+
+Q: How is S3CFSL related to SSTFSL?
+A: SSTFSL (Cao et al., ICIP 2023, "Few-Shot Hyperspectral Image Classification Based on Cross-Domain Spectral Semantic Relation Transformer", DOI 10.1109/ICIP49359.2023.10222564) is the preliminary conference version and a separate publication with a partly different author list. S3CFSL adds the CSST with SSDC feature extractor, feature denoising, a semantic-aware strategy for domain alignment, and validation on additional public datasets. Its OA is higher than that of SSTFSL on Pavia Centre (98.52 vs 97.85), Salinas (88.79 vs 86.86) and Houston (77.63 vs 76.82).
 
 中文标题: 面向高光谱图像分类的空间-光谱-语义跨域小样本学习（S3CFSL）
-中文摘要: 高光谱图像预处理通常无法完全消除噪声，在跨域小样本分类等对数据质量要求极高的场景中，残余背景噪声显著影响结果；小样本任务中的样本选择偏差还会导致跨域数据间的虚假统计相关，降低泛化能力。S3CFSL 在特征提取中引入特征去噪以恢复关键信息、促进可迁移信息学习，并通过语义感知策略增强跨域数据与语义信息的关联。具体地，空间与光谱双通道 SSDC 与跨空间-光谱 Transformer CSST 构成特征提取器，特征去噪促进源域与目标域上的元学习，语义增强域对齐 SEDA 提升跨域分布一致性。在三个公开高光谱数据集上优于现有方法。
+中文摘要: S3CFSL 用于跨域小样本高光谱图像分类：以空间与光谱双通道和跨空间-光谱 Transformer 提取特征，高斯滤波去噪后与原特征相加，并以语义增强域对齐提升分布一致性。以 Chikusei 为源域、每类 5 个标注样本，在 Pavia Centre、Salinas、Houston 上总体精度为 98.52%、88.79%、77.63%，高于八种对比方法。
 
 Key points:
-- Published in IEEE TGRS, volume 62 (2024), pages 1-15.
+- With Chikusei as the source domain and five labelled samples per target class, S3CFSL reaches overall accuracy (OA) of 98.52% on Pavia Centre, 88.79% on Salinas and 77.63% on Houston.
+- OA, AA and Kappa of S3CFSL exceed all eight baselines on every target dataset, but the OA margins over the closest competitor, GCC-FSL, are small: 0.07, 0.46 and 0.19 points.
+- Module ablation (OA on Pavia Centre / Salinas / Houston): plain ViT 94.33/81.46/69.77; SSDC + CSST extractor 96.47/86.39/75.16; plus feature denoising 97.25/87.44/75.69; plus SEDA (full model) 98.52/88.79/77.63.
+- Feature denoising adds Gaussian-filtered features back to the unfiltered ones. Gaussian filtering beats median, mean and no filtering on all three datasets; mean filtering even falls below no filtering on Houston.
+- Against its ICIP 2023 conference version SSTFSL, S3CFSL raises OA from 97.85% to 98.52% on Pavia Centre, 86.86% to 88.79% on Salinas and 76.82% to 77.63% on Houston.
 
 Abstract: Preprocessing procedures are commonly employed to reduce water-absorption bands and noise in hyperspectral images (HSIs). Nevertheless, they typically do not entirely eradicate noise. This is especially evident in scenarios that necessitate data of exceptional quality, such as cross-domain few-shot classification tasks. Within these specific conditions, the influence of remaining background noise on the ultimate results of classification is substantial. Furthermore, the presence of sample selection biases in the few-shot task might lead to the emergence of false statistical correlations between data from distinct domains, resulting in a decrease in the model’s ability to generalize. We propose a new method called spatial-spectral–semantic cross-domain few-shot learning (S3CFSL) to address the challenge. This method promotes the learning of transferable information by incorporating feature denoising operations in the feature extraction process to restore essential information. Concurrently, it enhances cross-domain distributional consistency by introducing a semantic-aware strategy to strengthen the association between cross-domain data and semantic information. Specifically, the spatial and spectral dual channels (SSDCs), in conjunction with the cross-spatial-spectral transformer (CSST), are designed as a feature extractor to acquire interactive spatial-spectral features. The feature-denoising operations can further acquiring transferable information from cross-domain features, thus facilitating meta-learning in both the source domain (SD) and the target domain (TD). Meanwhile, a semantic-enhanced domain alignment (SEDA) is designed to promote domain adaptation by using a semantic-aware strategy, which significantly enhances distributional consistency for cross-domain tasks. Our results exhibit exceptional classification efficacy in comparison to other state-of-the-art approaches on three public HSI datasets.
 
@@ -461,48 +662,78 @@ BibTeX:
   journal      = {IEEE Transactions on Geoscience and Remote Sensing},
   year         = {2024},
   volume       = {62},
-  pages        = {1--15},
+  pages        = {5525315},
   doi          = {10.1109/TGRS.2024.3434484},
-  issn         = {1558-0644},
+  issn         = {0196-2892},
   url          = {https://doi.org/10.1109/TGRS.2024.3434484}
 }
 ```
 
-APA: Cao, M., Zhang, X., Cheng, J., Zhao, G., Li, W., & Dong, X. (2024). Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification. IEEE Transactions on Geoscience and Remote Sensing, 62, 1-15. https://doi.org/10.1109/TGRS.2024.3434484
+APA: Cao, M., Zhang, X., Cheng, J., Zhao, G., Li, W., & Dong, X. (2024). Spatial-Spectral–Semantic Cross-Domain Few-Shot Learning for Hyperspectral Image Classification. IEEE Transactions on Geoscience and Remote Sensing, 62, Article 5525315. https://doi.org/10.1109/TGRS.2024.3434484
 
 ---
 
-## ST-CSL: Spatio-temporal fusion and contrastive learning for urban flow prediction
+## ST-FCL: Spatio-temporal fusion and contrastive learning for urban flow prediction
 
 Authors: Xu Zhang, Yongshun Gong, Chengqi Zhang, Xiaoming Wu, Ying Guo, Wenpeng Lu, Long Zhao, Xiangjun Dong
-Venue: Knowledge-Based Systems, vol. 282, 111104 (2023)
+Venue: Knowledge-Based Systems, vol. 282, article 111104 (2023)
 DOI: https://doi.org/10.1016/j.knosys.2023.111104
 Code: https://github.com/CodeZx6/ST-CSL
 Page: https://codezx6.github.io/papers/st-csl.html
-Keywords: urban flow prediction, contrastive learning, spatio-temporal fusion, periodicity, functional regions, traffic prediction
+Keywords: urban flow prediction, crowd flow prediction, contrastive learning, spatio-temporal fusion, multi-view representation fusion, multi-view influencing factors, spatio-temporal systems, traffic prediction
 
-TL;DR: ST-CSL fuses temporal-view and spatial-view contrastive learning so an urban flow predictor captures global periodicity and the hidden flow relationships between functionally similar regions.
+TL;DR: ST-FCL predicts grid-level urban inflow and outflow by fusing temporal and spatial views, learned through contrastive pretraining, with an external-factor view. On the full TaxiBJ dataset it reaches RMSE 14.71, against 15.41 for the best baseline, ATFM.
 
-Task: Urban flow prediction
-Idea: Contrastive learning in the temporal dimension (global periodicity) and the spatial dimension (implied relations between similar regions)
-Architecture: Separate closeness, period, and trend encoders fused by a residual network
-Code: https://github.com/CodeZx6/ST-CSL
+Task: Next-step urban flow prediction: inflow and outflow for every cell of a city grid
+Contrastive pretraining: Temporal view: triplet loss on Gaussian-blur-augmented data, with closest or aggregated (Top-K) sampling. Spatial view: InfoNCE-style loss with multiple positives chosen by a distance threshold λ
+Architecture: Mix Layers feed six pretrained encoders (temporal and spatial for the closeness, period and trend spans); their outputs are concatenated and decoded by convolutional layers
+External factors: Hour of the timestamp, weekend or holiday, temperature, wind speed and weather conditions, embedded and added to the input flow maps
+Datasets: TaxiBJ (Beijing taxis, 30-min intervals, 32×32 grid, four periods P1–P4) and BikeNYC (New York bikes, 1-h intervals, 16×8 grid)
+Metrics: RMSE, MAE and R² (coefficient of determination), reported with standard errors over five random seeds
+Baselines: HA, ARIMA, AutoEncoder, RNN, Seq2Seq, FNN, ST-ResNet, STGCN, ATFM, AGCRN, STTN, ST-GSP, STAEformer and PDFormer
+Headline result: Full TaxiBJ: RMSE 14.71, MAE 8.85, R² 0.9806 (ATFM: RMSE 15.41, MAE 9.18). Full BikeNYC: RMSE 4.71, MAE 2.50, R² 0.9286
+Training cost: 17.34 s per training epoch; 2564 MiB GPU memory at batch size 32; 200 epochs to beat the baselines (ATFM needs about 1000, STGSP about 1500)
+Implementation: PyTorch on an NVIDIA A100 GPU; Adam optimizer, batch size 64, max–min normalization to [0, 1]
+Authorship: Xu Zhang and Yongshun Gong contributed equally; Xiangjun Dong is the corresponding author
+Publication: Knowledge-Based Systems, vol. 282 (December 2023), article 111104; available online 21 October 2023. Not open access: © 2023 Elsevier B.V., all rights reserved
 
-Q: What limitation of earlier methods does ST-CSL target?
-A: They are insensitive to periodic changes in urban flows and rarely consider the implied spatial and temporal correlations between similar functional areas.
+Main results:
+- TaxiBJ, full dataset (test set: last 28 days): RMSE = 14.71 ± 0.03; MAE = 8.85 ± 0.01; R² = 0.9806 ± 0.0003 (compared with Best baseline RMSE and MAE: ATFM 15.41 ± 0.04 and 9.18 ± 0.03; best baseline R²: STGSP 0.9786 ± 0.0004; p < 0.01 for all three metrics). Quote: "As shown in Table 2, the RMSE was reduced to 14.71, the MAE was reduced to 8.85"
+- BikeNYC, full dataset (test set: last 10 days): RMSE = 4.71 ± 0.01; MAE = 2.50 ± 0.00; R² = 0.9286 ± 0.0001 (compared with Best baselines: PDFormer RMSE 4.84 ± 0.03; STGCN MAE 2.70 ± 0.03; STTN R² 0.9163 ± 0.0006; p < 0.01 for all three metrics). Quote: "As shown in Table 2, the RMSE of our method was 4.71, the MAE was 2.50"
+- TaxiBJ ablation, full dataset (Table 7): Full model with external view: RMSE = 14.62, MAE = 8.83 (compared with Same model without the external view: RMSE 15.60, MAE 9.20 (6.3% RMSE reduction)). Quote: "considering the environment during training resulted in a 6.3% decrease in the RMSE"
+- TaxiBJ P1, 20/40/60/80/100% data subsets (test set: last 10% of each): RMSE gain over best baseline = +0.78%, +2.54%, +5.04%, +2.42%, +7.53% (compared with RMSE p < 0.05 on the 40–100% subsets; the 20% gain is not significant (p = 0.18) (Table 3)). Quote: "For example, for the RMSE of P1, ST-FCL outperformed the best baseline by 0.78%, 2.54%, 5.04%, 2.42%, and 7.53% on the respective sub-datasets."
+- BikeNYC, 20/40/60/80/100% data subsets (test set: last 10% of each): RMSE gain over best baseline = +7.41%, +1.43%, +10.85%, +17.47%, +2.45% (compared with ST-FCL also has the lowest MAE on every subset; RMSE p < 0.05 on all five subsets, but the 100% MAE gain is not significant (p = 0.21) (Table 9)). Quote: "our proposed method achieved better RMSE results of 7.41%, 1.43%, 10.85%, 17.47% and 2.45% compared to the existing methods"
+- Training cost (Table 8): 17.34 s per epoch; 2564 MiB GPU memory at batch size 32; 200 epochs to beat the baselines (compared with ATFM: 25.08 s, 1719 MiB, about 1000 epochs; STGSP: 14.48 s, 2711 MiB, about 1500 epochs). Quote: "In contrast, our proposed ST-FCL required only 200 training epochs to achieve better results than the baselines."
 
-Q: What do the two contrastive views provide?
-A: The temporal view captures the distribution and change of global urban-flow periodicity; the spatial view captures the implied flow variation between similar regions.
+Q: Is ST-CSL the same as ST-FCL?
+A: Yes. The Knowledge-Based Systems paper calls the model ST-FCL. ST-CSL is the name of the authors' code repository for the paper (github.com/CodeZx6/ST-CSL).
 
-中文标题: 时空融合与对比学习的城市流量预测（ST-CSL）
-中文摘要: 城市流量预测对城市规划、管理与安全至关重要，但流量固有的不稳定性要求融合多视角影响因素。现有方法对周期变化不敏感，也很少考虑相似功能区之间隐含的时空关联。ST-CSL 在时间与空间维度上基于对比学习构建视图提取模块：时间视图获得全局流量周期性的分布与变化，空间视图获得相似区域间隐含的流量变化关系，从而捕捉城市流量变化的高层语义特征。
+Q: What limitation of earlier methods does ST-FCL target?
+A: According to the abstract, current methods are insensitive to periodic changes in urban flows and rarely consider the implied spatial and temporal correlations between similar functional areas.
+
+Q: How does ST-FCL build positive and negative samples for contrastive learning?
+A: For the temporal view, closest sampling takes the most and least similar samples to the anchor (by Euclidean distance) as positive and negative, and aggregated sampling builds them from distance-weighted Top-K samples; the temporal encoder is trained with a triplet loss on Gaussian-blur-augmented data. For the spatial view, regions whose distance to the anchor region is below a threshold λ are positives and the rest are negatives, and the loss is an InfoNCE-style loss with multiple positives.
+
+Q: How accurate is ST-FCL?
+A: On the full TaxiBJ dataset ST-FCL reaches RMSE 14.71, MAE 8.85 and R² 0.9806; the strongest baseline on RMSE and MAE, ATFM, reaches 15.41 and 9.18. On the full BikeNYC dataset it reaches RMSE 4.71, MAE 2.50 and R² 0.9286, against best baseline values of 4.84 (PDFormer) and 2.70 (STGCN). Table 2 reports p < 0.01 against the best baseline for every metric.
+
+Q: Does ST-FCL work with limited historical data?
+A: The paper tests 20%, 40%, 60%, 80% and 100% subsets of each TaxiBJ period (P1–P4) and of BikeNYC, with the last 10% of each subset as the test set. ST-FCL has the lowest RMSE and MAE on every subset, and its gain over the best baseline is significant (p < 0.05) in most but not all comparisons. On TaxiBJ P1, closest sampling works better with 20% and 40% of the data, and aggregated sampling with 60%, 80% and 100%.
+
+Q: How efficient is ST-FCL to train?
+A: In Table 8, one ST-FCL training epoch takes 17.34 s, and ST-FCL uses 2564 MiB of GPU memory at batch size 32. ST-FCL needs only 200 epochs to beat the baselines, while ATFM needs about 1000 and STGSP about 1500 epochs to reach their results. ATFM uses less GPU memory (1719 MiB) and STGSP is faster per epoch (14.48 s).
+
+中文标题: 基于时空融合与对比学习的城市流量预测（ST-FCL）
+中文摘要: 城市流量预测对城市规划、管理与安全至关重要。现有方法对周期变化不敏感，也很少考虑相似功能区之间隐含的时空关联。ST-FCL（代码库名 ST-CSL）基于对比学习构建时间与空间视图提取模块：时间视图获取全局流量周期性的分布与变化，空间视图获取相似区域间隐含的流量变化关系；多视图融合与预测网络融合各视图表示及天气、节假日等外部因素。该方法在 TaxiBJ 与 BikeNYC 上取得最优预测性能，并在资源受限环境中有效。
 
 Key points:
-- Temporal-view extraction captures the distribution and change of global urban-flow periodicity.
-- Spatial-view extraction captures implied flow variation between similar regions.
-- Separate closeness, period, and trend encoders are fused by a residual fusion network.
+- A temporal view extraction module captures global flow periodicity through contrastive pretraining with a triplet loss. Two proposed schemes, closest sampling and aggregated (Top-K) sampling, build its positive and negative pairs.
+- A spatial view extraction module mines implicit associations between similar functional zones. Its InfoNCE-style loss uses multiple positives: regions whose distance to the anchor region is below a threshold λ.
+- Mix Layers fuse each span's samples before six pretrained encoders (temporal and spatial for closeness, period and trend). Concatenated outputs go to a convolutional decoder; external-factor embeddings are added to input maps.
+- Full TaxiBJ: RMSE 14.71, MAE 8.85 (ATFM 15.41, 9.18). Full BikeNYC: RMSE 4.71, MAE 2.50 (best baselines 4.84 PDFormer, 2.70 STGCN). Table 2 reports p < 0.01 for every metric.
+- In the TaxiBJ ablation, adding the external view lowers RMSE by 6.3% (15.60 to 14.62). On 20–100% data subsets ST-FCL has the lowest RMSE and MAE, significant (p < 0.05) in most comparisons.
 
-Abstract: Urban flow prediction is critical for urban planning, management, and safety. However, owing to the inherent instability of urban flows, prediction accuracy requires the fusion of multi-view influencing factors. Current prediction methods are insensitive to periodic changes in urban flows, and rarely consider the implied spatial and temporal correlations between similar functional areas. Thus, we propose a method based on spatiotemporal fusion and contrastive learning. We construct an extraction module of spatial and temporal views based on contrastive learning in the spatial and temporal dimensions. With the temporal view extraction, we can obtain the distribution and change in the global urban flow periodicity. Using the spatial view extraction, we can obtain the implied flow variation relationship between similar regions.
+Abstract: Urban flow prediction is critical for urban planning, management, and safety. However, owing to the inherent instability of urban flows, prediction accuracy requires the fusion of multi-view influencing factors. Current prediction methods are insensitive to periodic changes in urban flows, and rarely consider the implied spatial and temporal correlations between similar functional areas. Thus, we propose a method based on spatiotemporal fusion and contrastive learning. We construct an extraction module of spatial and temporal views based on contrastive learning in the spatial and temporal dimensions. With the temporal view extraction, we can obtain the distribution and change in the global urban flow periodicity. Using the spatial view extraction, we can obtain the implied flow variation relationship between similar regions. Therefore, our model can capture the high-level semantic features of urban flow changes from multiple views. We also design a multi-view fusion and prediction network to combine multi-view representations that impact urban flow. We experimentally evaluated our proposed approach using two real-world datasets and demonstrated state-of-the-art forecasting performance, as well as effectiveness in resource-limited environments.
 
 BibTeX:
 ```bibtex
@@ -519,40 +750,69 @@ BibTeX:
 }
 ```
 
-APA: Zhang, X., Gong, Y., Zhang, C., Wu, X., Guo, Y., Lu, W., Zhao, L., & Dong, X. (2023). Spatio-temporal fusion and contrastive learning for urban flow prediction. Knowledge-Based Systems, 282, 111104. https://doi.org/10.1016/j.knosys.2023.111104
+APA: Zhang, X., Gong, Y., Zhang, C., Wu, X., Guo, Y., Lu, W., Zhao, L., & Dong, X. (2023). Spatio-temporal fusion and contrastive learning for urban flow prediction. Knowledge-Based Systems, 282, Article 111104. https://doi.org/10.1016/j.knosys.2023.111104
 
 ---
 
-## MCSTL: Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction
+## MC-STL: Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction
 
 Authors: Xu Zhang, Yongshun Gong, Xinxin Zhang, Xiaoming Wu, Chengqi Zhang, Xiangjun Dong
 Venue: CIKM 2023, pp. 3298–3307
 DOI: https://doi.org/10.1145/3583780.3614958
 Code: https://github.com/CodeZx6/MCSTL
 Page: https://codezx6.github.io/papers/mcstl.html
-Keywords: urban flow prediction, masked pre-training, contrastive learning, graph attention, spatio-temporal learning, CIKM
+Keywords: urban flow prediction, spatio-temporal predictive modeling, spatio-temporal pre-training, mask-enhanced learning, contrastive learning, traffic prediction, graph convolutional network (GCN)
 
-TL;DR: MCSTL pre-trains an urban flow model with a mask-reconstruction task across space and time and a graph-based contrastive task that weights regions by inter-regional attention, then fine-tunes for flow prediction.
+TL;DR: MC-STL pre-trains two encoders for urban flow prediction: a ViT encoder learns to reconstruct regions masked at different timestamps, and its attention weights also build a GCN adjacency matrix; a global-local cross-attention encoder learns a temporal-order contrastive task. It reaches RMSE 14.53 on full TaxiBJ.
 
-Task: Urban flow prediction (UFP)
-Pre-training tasks: Mask-enhanced reconstruction across space and time; contrastive learning with global-local cross-attention
-Graph component: Inter-regional attention weights determine region significance
-Evaluation: Real-world urban flow datasets vs. state-of-the-art models
-Open access: Yes, ACM Digital Library
+Task: Urban flow prediction (UFP): next-step forecasting of region-level inflow and outflow maps
+Mask-enhanced branch: ViT encoder (Enc_M) pre-trained to reconstruct regions masked at different timestamps; masking rate 0.75 gave the lowest RMSE among 0.25, 0.5 and 0.75
+Graph processing module (GPM): Enc_M attention weights, summed over heads and batch, thresholded and normalised, form the adjacency matrix of a two-layer GCN that extracts important regions
+Contrast-enhanced branch: Global-local spatio-temporal cross-attention encoder (Enc_C) pre-trained with a temporal-order triplet task: shuffled anchor as negative, same-order unit from another period as positive
+Prediction: Mask branch (Enc_M with GPM) and contrast branch (Enc_C with GRU) each end in a ResNet decoder; outputs are summed. Embedded holidays and weather are combined with the flow input.
+Datasets: TaxiBJ (Beijing taxis, 30-minute interval, 2×32×32, periods P1-P4 plus full set) and BikeNYC (New York bikes, 1-hour interval, 2×16×8): six evaluation sets
+Evaluation: RMSE and MAE against nine baselines: HA, RNN, ARIMA, ST-ResNet, AGCRN, Multi-STGCnet, ATFM, ST-SSL (BikeNYC and TaxiBJ P3 only) and ST-GSP
+Headline result: Lowest RMSE and MAE on all six sets. Full TaxiBJ 14.53 / 8.70 (ST-GSP 14.72 / 8.79); BikeNYC 4.81 / 2.38 (Multi-STGCnet 5.52 / 2.47)
+Authorship: Xu Zhang and Yongshun Gong contributed equally; Xiangjun Dong is the corresponding author
+Conference: CIKM '23, the 32nd ACM International Conference on Information and Knowledge Management, Birmingham, UK, 21-25 October 2023; pages 3298-3307; ISBN 979-8-4007-0124-5
+Code: Official PyTorch code at github.com/CodeZx6/MCSTL: evaluation scripts for TaxiBJ and BikeNYC, test data for BikeNYC and TaxiBJ P1, and a BikeNYC checkpoint
+Access: Free to read in the ACM Digital Library since ACM opened its whole library on 1 January 2026; publication rights licensed to ACM, no Creative Commons licence recorded
 
-Q: What does MCSTL model that earlier methods did not?
-A: Heterogeneity in both space and time at once: regional correlations vary across timestamps, so MCSTL learns time-varying spatio-temporal representations.
+Main results:
+- TaxiBJ, full dataset (last 28 days as test set): RMSE = 14.53, MAE = 8.70 (compared with Strongest baseline ST-GSP: RMSE 14.72, MAE 8.79). Quote: "Our proposed MC-STL model achieved an RMSE of 14.53 and an MAE of 8.70 on the full TaxiBJ dataset."
+- BikeNYC (last 10 days as test set): RMSE = 4.81, MAE = 2.38 (compared with Strongest baseline Multi-STGCnet: RMSE 5.52, MAE 2.47). Quote: "Table 2: The average RMSE and MAE on datasets. The best results are bold and the second best are underlined."
+- TaxiBJ periods P1, P2, P3, P4 (last 10% as test set): RMSE / MAE = 15.94 / 9.55 (P1), 16.63 / 10.12 (P2), 17.11 / 10.14 (P3), 15.56 / 9.05 (P4) (compared with Strongest baseline ATFM on each period: 16.09 / 9.80, 16.73 / 10.33, 17.77 / 10.53, 15.67 / 9.31). Quote: "MC-STL remained superior in prediction outcomes across all six datasets."
+- TaxiBJ, masking algorithm used in pre-training: Spatio-temporal random masking (MC-STL-STmask): RMSE = 14.53, MAE = 8.70 (compared with Conventional image random masking (MC-STL-mask): RMSE 14.91, MAE 8.86). Quote: "Table 4: Results of two masking algorithms on the TaxiBJ."
+- TaxiBJ ablation without external factors (MC-STL-w/o-Ext): RMSE = 17.01, MAE = 9.58 (compared with Full MC-STL: RMSE 14.53, MAE 8.70). Quote: "We found that removing external factors resulted in an increase of 2.48 in RMSE"
+- TaxiBJ ablation without any pre-training (MC-STL-w/o-Pre): RMSE = 14.65, MAE = 8.75 (compared with Full MC-STL: RMSE 14.53, MAE 8.70. The pre-training gain (0.12 RMSE) is smaller than the effect of removing the contrast branch (15.10) or the mask branch (14.77)). Quote: "MC-STL-w/o-Pre: Removes all pre-training related to mask and contrast-enhanced spatio-temporal learning."
 
-Q: How is MCSTL trained?
-A: Two pre-training tasks, mask-enhanced reconstruction and contrastive learning with global-local cross-attention, produce two encoders that are then used for flow forecasting.
+Q: Is MCSTL the same as MC-STL?
+A: Yes. The CIKM 2023 paper names the model MC-STL (mask- and contrast-enhanced spatio-temporal learning). Its official code repository is github.com/CodeZx6/MCSTL.
 
-中文标题: 掩码与对比增强的时空学习用于城市流量预测（MCSTL）
-中文摘要: 城市流量预测是智能交通系统的关键任务，但既有研究很少同时考察空间与时间两方面的异质性，即区域相关性会随时间变化。本文提出带掩码与对比增强的时空学习框架：设计掩码增强的预训练任务学习跨空间与时间维度的潜在相关性，并用基于图的方法通过区域间注意力权重提取区域重要性；进一步设计带全局-局部交叉注意力的对比预训练任务获取区域的对比相关性。两个训练好的编码器可捕获随时间变化的潜在时空表示。在真实城市流量数据集上优于现有方法。
+Q: What problem does MC-STL address?
+A: The paper notes that most existing urban flow models do not consider spatial and temporal heterogeneity simultaneously, although correlations between regions vary across timestamps. MC-STL uses two pre-training tasks, mask-enhanced and contrast-enhanced, to learn these time-varying spatio-temporal correlations.
+
+Q: How does MC-STL's masking differ from image-style random masking?
+A: Image random masking hides a region at every time step, which the paper argues captures spatial but not temporal relationships between regions. MC-STL masks different regions at different timestamps and reconstructs them from the remaining regions. On TaxiBJ this gives RMSE 14.53 / MAE 8.70, against 14.91 / 8.86 with image random masking.
+
+Q: How does MC-STL build its graph?
+A: A graph processing module (GPM) sums the multi-head self-attention weights of the mask-pre-trained ViT encoder over heads and over the batch, then thresholds and normalises them. The result is the adjacency matrix of a two-layer GCN that extracts important regions.
+
+Q: Which datasets, metrics and baselines does MC-STL use?
+A: MC-STL is evaluated on TaxiBJ (periods P1-P4 and the full set) and BikeNYC, six evaluation sets in total, with RMSE and MAE. The nine baselines are HA, RNN, ARIMA, ST-ResNet, AGCRN, Multi-STGCnet, ATFM, ST-SSL and ST-GSP; ST-SSL is reported only on BikeNYC and TaxiBJ (P3).
+
+Q: How well does MC-STL perform?
+A: In Table 2, MC-STL has the lowest RMSE and MAE on all six evaluation sets. On full TaxiBJ it reaches RMSE 14.53 / MAE 8.70 against 14.72 / 8.79 for ST-GSP, and on BikeNYC 4.81 / 2.38 against 5.52 / 2.47 for Multi-STGCnet.
+
+中文标题: 掩码与对比增强的时空学习用于城市流量预测（MC-STL）
+中文摘要: 现有城市流量预测方法大多未同时考虑空间与时间异质性。MC-STL 预训练两个编码器：ViT 编码器学习重建不同时刻被遮掩的区域，其注意力权重构成两层图卷积网络的邻接矩阵；全局-局部时空交叉注意力编码器学习时序对比任务。二者融合预测下一时刻流量，在 TaxiBJ 与 BikeNYC 六个评测集上均优于九个基线，完整 TaxiBJ 上 RMSE 为 14.53。
 
 Key points:
-- A mask-enhanced pre-training task learns latent correlations across spatial and temporal dimensions.
-- A graph-based method uses inter-regional attention weights to derive contrastive correlations between regions.
-- Published open access in the ACM Digital Library (CIKM 2023, pages 3298-3307).
+- Spatio-temporal random masking hides different regions at different timestamps. On TaxiBJ it gives RMSE 14.53 / MAE 8.70, against 14.91 / 8.86 with conventional image random masking.
+- A graph processing module (GPM) sums the self-attention weights of the mask-pre-trained ViT encoder over heads and batch and uses them as the adjacency matrix of a two-layer GCN.
+- The contrastive pretext task treats each temporally ordered batch as a unit: a temporally shuffled anchor is the negative, a unit from another period is the positive, and triplet loss trains the global-local cross-attention encoder.
+- Against nine baselines, MC-STL has the lowest RMSE and MAE on all six evaluation sets (TaxiBJ P1-P4, full TaxiBJ, BikeNYC); on full TaxiBJ it reaches RMSE 14.53 versus 14.72 for ST-GSP.
+- On TaxiBJ every ablated variant is worse than the full model. Removing external factors raises RMSE by 2.48 to 17.01; removing all pre-training raises it only to 14.65.
 
 Abstract: As a critical mission of intelligent transportation systems, urban flow prediction (UFP) benefits in many city services including trip planning, congestion control, and public safety. Despite the achievements of previous studies, limited efforts have been observed on simultaneous investigation of the heterogeneity in both space and time aspects. That is, regional correlations would be variable at different timestamps. In this paper, we propose a spatio-temporal learning framework with mask and contrast enhancements to capture spatio-temporal variabilities among city regions. We devise a mask-enhanced pre-training task to learn latent correlations across the spatial and temporal dimensions, and then a graph-based method is developed to extract the significance of regions by using the inter-regional attention weights. To further acquire contrastive correlations of regions, we elaborate a pre-trained contrastive learning task with the global-local cross-attention mechanism. Thereafter, two well-trained encoders have strong capability to capture latent spatio-temporal representations for the flow forecasting with time-varying. Extensive experiments conducted on real-world urban flow datasets demonstrate that our method compares favorably with other state-of-the-art models.
 
@@ -561,8 +821,9 @@ BibTeX:
 @inproceedings{zhang2023mcstl,
   title        = {Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction},
   author       = {Zhang, Xu and Gong, Yongshun and Zhang, Xinxin and Wu, Xiaoming and Zhang, Chengqi and Dong, Xiangjun},
-  booktitle    = {Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (CIKM '23)},
+  booktitle    = {Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},
   year         = {2023},
+  series       = {CIKM '23},
   pages        = {3298--3307},
   publisher    = {ACM},
   doi          = {10.1145/3583780.3614958},
@@ -570,29 +831,69 @@ BibTeX:
 }
 ```
 
-APA: Zhang, X., Gong, Y., Zhang, X., Wu, X., Zhang, C., & Dong, X. (2023). Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction. In Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (CIKM '23) (pp. 3298–3307). ACM. https://doi.org/10.1145/3583780.3614958
+APA: Zhang, X., Gong, Y., Zhang, X., Wu, X., Zhang, C., & Dong, X. (2023). Mask- and Contrast-Enhanced Spatio-Temporal Learning for Urban Flow Prediction. In Proceedings of the 32nd ACM International Conference on Information and Knowledge Management (pp. 3298–3307). ACM. https://doi.org/10.1145/3583780.3614958
 
 ---
 
 ## URMDet-SimFire: Trustworthy multimodal detection with uncertainty and reliability modeling for fire and smoke analytics
 
 Authors: Zhonghua Dang, Xu Zhang
-Venue: Array, vol. 31, 101124 (2026)
+Venue: Array, vol. 31, article 101124 (2026)
 DOI: https://doi.org/10.1016/j.array.2026.101124
 Page: https://codezx6.github.io/papers/urmdet-simfire.html
-Keywords: fire detection, smoke detection, multimodal detection, uncertainty modeling, reliability, trustworthy AI
+Keywords: trustworthy AI, multimodal fusion, uncertainty quantification, reliability learning, safety-critical perception, object detection, fire and smoke analytics, fire and smoke detection
 
-TL;DR: A trustworthy multimodal fire-and-smoke detector that models uncertainty and reliability of each modality.
+TL;DR: URMDet-SimFire is an uncertainty- and reliability-aware multimodal object detection framework for fire and smoke that reweights each input modality by its estimated reliability and calibrates each detection's confidence by its uncertainty. In simulation only, it raised F1 from 0.4348 (vision-only baseline) to 0.4638.
 
-Task: Multimodal fire and smoke detection
-Focus: Uncertainty and reliability modelling for trustworthy detection
-Open access: Yes, CC BY (Array, Elsevier)
+Task: Multimodal fire and smoke object detection (two classes: fire, smoke), validated in simulation
+Architecture: YOLOv8-style visual branch with edge-aware attention and scale-adaptive fusion, plus four non-visual encoders: thermal cues, environmental sensors, smoke-diffusion attributes, textual scene priors
+Trust-modeling modules: Uncertainty calibration from classification evidence and localization variance; reliability-guided fusion reweighting each modality by noise level, missingness and cross-modal consistency
+Datasets (synthetic): SimFire-Main: 600 scenes of 256x256 RGB images (seed 42), 1 to 3 objects each. SimFire-Corruption: illumination, missing modality, occlusion, sensor noise at five severities
+Metrics: Precision, recall, F1, AP50, AP75, mAP_proxy = 0.65·AP50 + 0.35·AP75 (a simulation proxy, not COCO mAP), mean IoU, ECE
+Baselines: Vision-only YOLOv8-sim, multimodal late fusion with fixed weights, uncertainty-aware fusion without reliability weighting
+Headline result (simulation): F1 0.4638 and mAP_proxy 0.3231 vs vision-only 0.4348 and 0.2754; ECE 0.2445 is not the lowest
+Validation setting: Simulation only: no real fire or smoke data for training, validation or testing; single random seed (42)
+Code and data: No public repository; simulation code and generated outputs available from the corresponding author on reasonable request
+Corresponding author: Xu Zhang
+Venue: Array (Elsevier), volume 31, September 2026, article 101124; online 7 August 2026
+Open access: Gold open access under CC BY 4.0
 
-Q: Where is this paper published?
-A: In Array (Elsevier), volume 31, 2026, open access under CC BY.
+Main results:
+- SimFire-Main (simulation), main comparison, Table 1: F1 = 0.4638; mAP_proxy = 0.3231 (compared with Vision-only YOLOv8-sim: F1 0.4348, mAP_proxy 0.2754). Quote: "Compared with the vision-only YOLOv8-sim baseline, URMDet-SimFire improves F1-score from 0.4348 to 0.4638 and mAP_proxy from 0.2754 to 0.3231."
+- SimFire-Main (simulation), naive multimodal late fusion vs vision-only, Table 1: Late fusion F1 = 0.3831; mAP_proxy = 0.2211 (compared with Vision-only YOLOv8-sim: F1 0.4348, mAP_proxy 0.2754). Quote: "The multimodal late fusion baseline performs worse than the vision-only baseline. Its F1-score decreases from 0.4348 to 0.3831, and mAP_proxy decreases from 0.2754 to 0.2211."
+- SimFire-Main (simulation), calibration, Table 1: ECE = 0.2445 (lower is better) (compared with Vision-only 0.2210 and late fusion 0.2290 are lower; uncertainty-aware fusion 0.2623 is higher). Quote: "The proposed method does not achieve the lowest ECE: its ECE of 0.2445 is higher than those of the vision-only and late-fusion baselines, although lower than that of uncertainty-aware fusion."
+- Ablation (simulation, Table 2): without scale-adaptive fusion: F1 = 0.3686; mAP_proxy = 0.1911 (compared with Full model in Table 2: F1 0.4583, mAP_proxy 0.3341). Quote: "Removing scale-adaptive fusion causes the largest performance degradation among the lightweight ablation variants. The F1-score drops to 0.3686, and mAP_proxy drops to 0.1911."
+- Simulated efficiency profile, Table 4 ('Simulated efficiency comparison of different methods.'): 7.6M parameters; 20.4 GFLOPs; 21.4 ms latency; 46.6 FPS (simulated) (compared with Vision-only YOLOv8-sim: 11.2M parameters, 28.4 GFLOPs, 26.5 ms, 37.7 FPS (simulated)). Quote: "The proposed URMDet-SimFire uses 7.6M parameters and 20.4 GFLOPs, with a latency of 21.4 ms and an FPS of 46.6."
+
+Q: Was URMDet-SimFire trained or tested on real fire data?
+A: No. All experiments use two synthetic datasets, SimFire-Main (600 scenes) and SimFire-Corruption, generated by a controllable simulator, and no real fire or smoke dataset is used for training, validation or testing. The authors say the results should be read as algorithm validation evidence, not deployment proof.
+
+Q: Which modalities does URMDet-SimFire use?
+A: Five simulated modalities: synthetic RGB images for a YOLOv8-style visual branch, plus thermal cues, environmental sensor readings, smoke-diffusion attributes and textual scene priors. In the implemented code, the non-visual modalities are normalized scalar or vector scores rather than high-dimensional real sensor streams.
+
+Q: Does adding more modalities always help fire and smoke detection?
+A: Not in this study. In the simulator, fixed-weight multimodal late fusion scored below vision-only detection (F1 0.3831 vs 0.4348). The full URMDet-SimFire, which adds uncertainty calibration and reliability-guided fusion, reached F1 0.4638.
+
+Q: Does URMDet-SimFire improve calibration (ECE)?
+A: Not over every baseline. Its ECE of 0.2445 is higher than the vision-only (0.2210) and late-fusion (0.2290) baselines, though lower than uncertainty-aware fusion (0.2623). The authors describe this as a calibration trade-off that warrants further study.
+
+Q: Which component matters most in the ablation?
+A: Scale-adaptive fusion. In the simulated ablation (Table 2), removing it caused the largest drop among the lightweight variants, with F1 falling from 0.4583 to 0.3686 and mAP_proxy from 0.3341 to 0.1911.
+
+Q: Is the URMDet-SimFire code available?
+A: The paper links no public repository. The simulation code and generated outputs are available from the corresponding author upon reasonable request.
 
 中文标题: URMDet-SimFire：面向火灾与烟雾分析的不确定性与可靠性建模的可信多模态检测
-中文摘要: 面向火灾与烟雾分析的可信多模态检测方法，对检测的不确定性与可靠性进行建模。发表于 Array（Elsevier）2026 年第 31 卷，开放获取。
+中文摘要: URMDet-SimFire 是面向火灾与烟雾的不确定性与可靠性感知多模态目标检测框架，结合 YOLOv8 风格视觉分支与热线索、环境传感器、烟雾扩散属性、文本场景先验四个非视觉模态。不确定性校准调整检测置信度，可靠性引导融合按噪声、缺失与跨模态一致性重加权各模态。实验仅在仿真器中完成：F1 由纯视觉基线 0.4348 升至 0.4638，ECE 未达最低。
+
+Key points:
+- In simulation (SimFire-Main), fixed-weight multimodal late fusion scored below vision-only detection: F1 0.3831 vs 0.4348, mAP_proxy 0.2211 vs 0.2754.
+- The full model, uncertainty calibration plus reliability-guided fusion, reached F1 0.4638 and mAP_proxy 0.3231, the top detection scores of the four compared methods. Uncertainty-aware fusion without reliability weighting reached mAP_proxy 0.3022.
+- Its expected calibration error (ECE 0.2445) is not the lowest: the vision-only (0.2210) and late-fusion (0.2290) baselines score lower, which the authors describe as a calibration trade-off.
+- In the ablation, removing scale-adaptive fusion caused the largest drop (mAP_proxy 0.3341 to 0.1911).
+- All results come from a controllable simulator with one random seed (42). No real fire or smoke data is used, and no real neural-network training is conducted.
+
+Abstract: Trustworthy multimodal perception is essential for safety-critical analytics, where detection systems must contend with noisy visual observations, missing sensor signals, smoke-like interference, and distributional shifts across environments. Vision-only detectors degrade under precisely these conditions, while naively combining additional modalities can amplify corrupted signals. We propose URMDet-SimFire, an uncertainty- and reliability-aware multimodal object detection framework that addresses this fragility by explicitly modeling the trustworthiness of each input source at inference time. We couple a YOLOv8-style visual branch with four non-visual modality encoders for thermal cues, environmental sensors, smoke-diffusion attributes, and textual scene priors. Two trust-modeling components are then introduced: an uncertainty calibration module that adjusts detection confidence using classification evidence and localization variance, and a reliability-guided fusion module that dynamically reweights each modality according to its current noise level, missingness, and cross-modal consistency. Because collecting real industrial fire data at scale is dangerous and costly, we validate the framework in a controllable simulator that reproduces typical visual degradations, sensor corruption, modality dropouts, and occlusion patterns. We evaluate it through main comparisons, ablations of each trust-modeling component, robustness under four corruption types, and efficiency profiling. The results show that naive multimodal late fusion can underperform vision-only detection when modalities are unreliable, that uncertainty calibration alone is insufficient, and that the proposed reliability-guided design recovers detection quality. The framework offers a reproducible simulation-based paradigm for trust-aware multimodal media analytics.
 
 BibTeX:
 ```bibtex
@@ -609,7 +910,7 @@ BibTeX:
 }
 ```
 
-APA: Dang, Z., & Zhang, X. (2026). URMDet-SimFire: Trustworthy multimodal detection with uncertainty and reliability modeling for fire and smoke analytics. Array, 31, 101124. https://doi.org/10.1016/j.array.2026.101124
+APA: Dang, Z., & Zhang, X. (2026). URMDet-SimFire: Trustworthy multimodal detection with uncertainty and reliability modeling for fire and smoke analytics. Array, 31, Article 101124. https://doi.org/10.1016/j.array.2026.101124
 
 ---
 
